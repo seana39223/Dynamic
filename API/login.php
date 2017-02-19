@@ -16,7 +16,11 @@ if($result->num_rows==0) {
 else {
     $encode = array();
         while($row = mysqli_fetch_assoc($result)) {
-        $encode[$row['question _text']][] = $row['answer_text'];
+        $encode[] = array (
+            'firstname' = $row['firstname'],
+            'lastname' = $row['lastname'],
+            'email' = $row['email']
+            );
     }
 }
 echo json_encode($encode);
