@@ -1,4 +1,5 @@
 <?php
+//TODO: Update and add password security.
 //Below code is based of code from https://www.w3schools.com/php/php_mysql_insert.asp
 include "config.php"
 $connection = new mysqli($server, $dbuser, $dbpass, $dbname);
