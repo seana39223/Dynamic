@@ -1,5 +1,5 @@
 <?php
-//Below code is based of code from http://www.kodingmadesimple.com/2015/01/convert-mysql-to-json-using-php.html
+//TODO: Update to have much more secure when necessary.
 include "config.php";
 $connection = new mysqli($server, $dbuser, $dbpass, $dbname);
 if ($connection->connect_error) {
