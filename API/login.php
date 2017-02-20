@@ -32,7 +32,6 @@ else {
     echo "Password is not correct.";
 }
 
-echo json_encode($encode);
 $connection->close();
 
 ?>
