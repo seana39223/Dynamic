@@ -1,13 +1,13 @@
 <?php
-//TODO: Update to have much more secure when necessary.
+//TODO: Update to be much more secure when necessary.
 include "config.php";
 $connection = new mysqli($server, $dbuser, $dbpass, $dbname);
 if ($connection->connect_error) {
     die ("Connection to the database failed." . $connection->connect_error);
 }
 
-$email = mysqli_real_escape_string($connection, $_GET['email']);
-$pass = mysqli_real_escape_string($connection, $_GET['pass']);
+$email = mysqli_real_escape_string($connection, $_POST['email']);
+$pass = mysqli_real_escape_string($connection, $_POST['pass']);
 $sql = "SELECT * FROM users WHERE email = '$email' and password = '$pass'";
 $result = $connection->query($sql);
 
