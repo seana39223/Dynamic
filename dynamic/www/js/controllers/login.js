@@ -1,12 +1,6 @@
 angular.module('login.controllers', [])
-.controller('LoginCtrl', function($scope, $ionicModal, $http, $state) {
+.controller('LoginCtrl', function($scope, $ionicModal, $http, $state, $ionicPopup) {
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -18,29 +12,31 @@ angular.module('login.controllers', [])
     $scope.modal = modal;
   });
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
+  $scope.loginFailed = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Invalid Credentials',
+      template: 'The email and/or the password you entered is not correct.'
+    });
+    alertPopup.then(function(res) {
+    });
   };
 
   // Perform the login action when the user submits the login form
   //Used http://www.nikola-breznjak.com/blog/codeproject/posting-data-from-ionic-app-to-php-server/?ckattempt=1 as guide point for following code.
   $scope.doLogin = function() {
-    var api = "http://seananderson.co.uk/api/test.php";
-    var details = {email : $scope.loginData.email, pass: $scope.loginData.password};
-    details = JSON.stringify(details);
-    $http.post(api, "details", {
-       headers : {
-        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-    }
-    }).then(function (res){
-      console.log(JSON.stringify(res));
+    var api = "http://seananderson.co.uk/api/login.php";
+    var data = { 
+         email: $scope.loginData.email,
+         pass: $scope.loginData.password
+       }
+    $http.post(api, data).then(function (res){
+      res = JSON.stringify(res);
+      if (res.indexOf("not correct") >= 0) {
+        $scope.loginFailed();
+      }
+      else {
+        $state.go('app.home');
+     };
     });
-  $state.go('app.home');
-  };
+  }
 })
