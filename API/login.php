@@ -10,8 +10,9 @@ if ($connection->connect_error) {
     die ("Connection to the database failed." . $connection->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
     $_POST = json_decode(file_get_contents('php://input'), true);
+}
 
 $email = mysqli_real_escape_string($connection, $_POST['email']);
 $pass = mysqli_real_escape_string($connection, $_POST['pass']);
