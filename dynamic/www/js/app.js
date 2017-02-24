@@ -31,6 +31,12 @@ angular.module('starter', ['ionic', 'login.controllers', 'home.controllers', 'ev
     controller: 'LoginCtrl'
   })
 
+  .state('register', {
+    url: '/register',
+    templateUrl: 'templates/register.html',
+    controller: 'RegisterCtrl'
+  })
+
     .state('app', {
     url: '/app',
     abstract: true,
