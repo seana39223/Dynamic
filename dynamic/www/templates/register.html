@@ -32,8 +32,18 @@
           <span class="input-label">Confirm Password</span>
           <input type="password" ng-model="register.cPassword">
         </label>
+        <label class="item item-input item-select">
+    	  <div class="input-label">
+            User Type
+          </div>
+            <select ng-model="register.userType">
+             <option>Music Lover</option>
+             <option selected>Artist</option>
+             <option>Venue Owner</option>
+           </select>
+         </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
+          <button class="button button-block button-positive" type="submit">Register</button>
         </label>
     </form>
   </ion-content>
