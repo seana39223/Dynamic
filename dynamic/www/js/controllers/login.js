@@ -39,4 +39,13 @@ angular.module('login.controllers', [])
      };
     });
   }
+
+  $scope.register = function() {
+    console.log("This is a test to make sure the page changes");
+    $state.go('register');
+  }
+})
+
+.controller('RegisterCtrl', function($scope){
+
 })
