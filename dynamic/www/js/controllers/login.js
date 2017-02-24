@@ -46,6 +46,3 @@ angular.module('login.controllers', [])
   }
 })
 
-.controller('RegisterCtrl', function($scope){
-
-})
