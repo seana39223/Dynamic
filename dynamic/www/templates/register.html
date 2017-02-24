@@ -10,25 +10,31 @@
         Please enter the details below to register:
       </p>
     </div>
-    <form ng-submit="doLogin()">
+    <form ng-submit="doRegistration()">
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Email</span>
-          <input type="text" ng-model="loginData.email">
+          <span class="input-label">First Name</span>
+          <input type="text" ng-model="register.fName">
         </label>
         <label class="item item-input">
+          <span class="input-label">Last Name</span>
+          <input type="text" ng-model="register.lName">
+        </label>
+	<label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="register.email">
+        </label>
+         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
+          <input type="password" ng-model="register.password">
+        </label>
+	<label class="item item-input">
+          <span class="input-label">Confirm Password</span>
+          <input type="password" ng-model="register.cPassword">
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Log in</button>
         </label>
     </form>
-    <form ng-submit="register()">
-      <div class="list">
-        <label class="item">
-          <button class="button button-block button-royal">Don't have an account, register here!</button>
-        </label>
-      </div>
-    </form>
+  </ion-content>
 </ion-modal-view>
