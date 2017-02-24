@@ -1,1 +1,23 @@
-/* Empty. Add your own CSS if you like */
+.login {
+	height:100%;
+    background-color: #3b5998; 
+}
+
+.login .title-and-welcome-message {
+	height:40%;
+}
+
+.login .title-and-welcome-message .title {
+	text-align:center;
+	color: #FFF;
+	font-size: 60px;
+	height:60%;
+}
+
+.login .title-and-welcome-message .welcome-message {
+	font-family: sans-serif;
+    text-align:center;
+	color: #FFF;
+	font-size: 30px;
+	line-height:100%;
+}
