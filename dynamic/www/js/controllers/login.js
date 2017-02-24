@@ -12,7 +12,7 @@ angular.module('login.controllers', [])
     $scope.modal = modal;
   });
 
-  $scope.loginFailed = function() {
+  loginFailed = function() {
     var alertPopup = $ionicPopup.alert({
       title: 'Invalid Credentials',
       template: 'The email and/or the password you entered is not correct.'
@@ -32,7 +32,7 @@ angular.module('login.controllers', [])
     $http.post(api, data).then(function (res){
       res = JSON.stringify(res);
       if (res.indexOf("not correct") >= 0) {
-        $scope.loginFailed();
+        loginFailed();
       }
       else {
         $state.go('app.home');
@@ -41,7 +41,6 @@ angular.module('login.controllers', [])
   }
 
   $scope.register = function() {
-    console.log("This is a test to make sure the page changes");
     $state.go('register');
   }
 })
