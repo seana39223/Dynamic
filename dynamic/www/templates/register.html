@@ -5,7 +5,6 @@
   </ion-header-bar>
   <ion-content scroll="false">
     <div class="title-and-welcome-message">
-      <h1 class="title">Dynamic</h1>
       <p class="welcome-message">
         Please enter the details below to register:
       </p>
@@ -45,6 +44,14 @@
         <label class="item">
           <button class="button button-block button-positive" type="submit">Register</button>
         </label>
+      </div>
+    </form>
+    <form ng-submit="returnToLogin()">
+      <div class="list">
+        <label class="item">
+          <button class="button button-block button-royal" type="submit">Return To Login</button>
+        </label>
+      </div>
     </form>
   </ion-content>
 </ion-modal-view>
