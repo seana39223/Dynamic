@@ -29,12 +29,13 @@ angular.module('login.controllers', [])
          email: $scope.loginData.email,
          pass: $scope.loginData.password
        }
-    $http.post(api, data).then(function (res){
-      res = JSON.stringify(res);
-      if (res.indexOf("not correct") >= 0) {
+    $http.post(api, data).success(function(data){
+      data = JSON.stringify(data);
+      if (data.indexOf("not correct") >= 0) {
         loginFailed();
       }
       else {
+        localStorage.setItem('email', $scope.loginData.email);
         $state.go('app.home');
      };
     });
