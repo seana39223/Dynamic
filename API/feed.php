@@ -21,6 +21,7 @@ $array = $user->fetch_array(MYSQLI_ASSOC);
 $id = $array['id'];
 
 //Below code works out which users they are following.
+$feeds = array();
 $sql = "SELECT following_id FROM following WHERE user_id = '$id'";
 $following = $connection->query($sql);
 //Below loops through all the users which are being followed by the initial user.
@@ -30,7 +31,19 @@ while($row = mysqli_fetch_assoc($following)) {
 	$feed = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 	$feed = mysqli_fetch_assoc($feed);
 	if ($feed!=NULL) {
-		var_dump("This feed has text.");
+		$id = $feed['user_id'];
+		var_dump($id);
+		$sql = "SELECT displayname FROM users WHERE id = '$id'";
+		$displayName = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
+		$displayName = mysqli_fetch_assoc($displayName);
+		$displayName = $displayName['displayname'];
+		$individualFeed = array (
+			'text' => $feed['text'],
+			'user_id' => $feed['user_id'],
+			'display_name' => $displayName
+			);
+		array_push ($feeds, $individualFeed);
+
 	}
 }
-die();
+echo json_encode($feeds);
