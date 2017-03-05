@@ -1,5 +1,4 @@
 <?php
-//TODO: Update to be much more secure when necessary.
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header('Access-Control-Allow-Methods: GET, POST, PUT');
@@ -22,9 +21,10 @@ $user = $connection->query($sql);
 $array = $user->fetch_array(MYSQLI_ASSOC);
 $correctPassword = $array['password'];
 
+
 if (password_verify($pass, $correctPassword)) {
     $sql = "SELECT * FROM users WHERE email = '$email'";
-    $fullUserInfo = $connection->query($sql);
+    $fullUserInfo = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
     var_dump($fullUserInfo);
     $encode = array();
     while($row = mysqli_fetch_assoc($fullUserInfo)) {
