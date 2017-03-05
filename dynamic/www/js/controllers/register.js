@@ -4,47 +4,22 @@ angular.module('register.controllers', [])
  // Form data for the login modal
   $scope.register = {};
 
-  noDetailsEntered = function() {
-  	var alertPopup 
-  }
-
-  passwordMissmatch = function() {
-    var alertPopup = $ionicPopup.alert({
-      title: 'Passwords do not match',
-      template: 'The confirmation password is not the same as the initial password you entered'
-    });
-    alertPopup.then(function(res) {
-    });
-  };
-
-  noType = function() {
+  popUp = function(title, message) {
   	var alertPopup = $ionicPopup.alert({
-  	  title: 'No User Type',
-  	  template: 'No user type has been selected.'
+  		title: title,
+  		template: message
   	});
   	alertPopup.then(function(res) {
   	});
-  };
-
-  invalidEmail = function() {
-  	var alertPopup = $ionicPopup.alert({
-      title: 'Invalid Email',
-      template: 'The email address is not valid.'
-    });
-    alertPopup.then(function(res) {
-    });
   }
 
-  alreadyUsedEmail = function() {
-  	var alertPopup = $ionicPopup.alert({
-      title: 'Email already registered',
-      template: 'This email has already been registered to create an account of this type.'
-    });
-    alertPopup.then(function(res) {
-    });
+  $scope.doValidation = function() {
+  	//TODO: Add proper validation here.
+
   }
 
   $scope.doRegistration = function() {
+  	//$scope.doValidation();
     if ($scope.register.password==$scope.register.cPassword) {
     	if($scope.register.userType=="Music Lover") {
     		var type = 1;
@@ -56,7 +31,7 @@ angular.module('register.controllers', [])
     		var type = 3;
     	}
     	else {
-    		noType();
+    		popUp('No User Type', 'No user type has been selected.' );
     	}
     	var api = "http://seananderson.co.uk/api/register.php";
     	var data = {
@@ -74,7 +49,11 @@ angular.module('register.controllers', [])
         })
     }
     else {
-    	passwordMissmatch();
+    	popUp('Passwords do not match', 'The confirmation password is not the same as the initial password you entered');
     }
+	}
+
+	$scope.returnToLogin = function() {
+		$state.go('login');
 	}
 })
