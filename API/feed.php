@@ -14,7 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 }
 
 $email = mysqli_real_escape_string($connection, $_POST['email']);
-$sql = SELECT "id from users WHERE email = '$email'";
+$sql = "SELECT id FROM users WHERE email = '$email'";
 $user = $connection->query($sql);
-var_dump($user);
+$array = $user->fetch_array(MYSQLI_ASSOC);
+$id = $array['id'];
+var_dump($id);
 die();
