@@ -1,10 +1,5 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers'])
+//Below code was initially generated when I created the project (when I ran ionic start sidemenu). I have added my own code to it.
+angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,37 +22,30 @@ angular.module('starter', ['ionic', 'login.controllers', 'register.controllers',
 
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html',
+    templateUrl: 'views/login.html',
     controller: 'LoginCtrl'
   })
 
   .state('register', {
     url: '/register',
-    templateUrl: 'templates/register.html',
+    templateUrl: 'views/register.html',
     controller: 'RegisterCtrl'
   })
 
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'views/menu.html',
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
 
   .state('app.home', {
       url: '/home',
       views: {
         'menuContent': {
-          templateUrl: 'templates/home.html'
+          templateUrl: 'views/home.html',
+          controller: 'HomeCtrl'
         }
       }
     })
@@ -65,7 +53,7 @@ angular.module('starter', ['ionic', 'login.controllers', 'register.controllers',
       url: '/artists',
       views: {
         'menuContent': {
-          templateUrl: 'templates/artists.html',
+          templateUrl: 'views/artists.html',
           controller: 'ArtistsCtrl'
         }
       }
@@ -75,8 +63,18 @@ angular.module('starter', ['ionic', 'login.controllers', 'register.controllers',
     url: '/events',
     views: {
       'menuContent': {
-        templateUrl: 'templates/events.html',
+        templateUrl: 'views/events.html',
         controller: 'EventsCtrl'
+      }
+    }
+  })
+
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/profile.html',
+        controller: 'myProfileCtrl'
       }
     }
   });
