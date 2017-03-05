@@ -19,3 +19,11 @@ $sql = "SELECT id FROM users WHERE email = '$email'";
 $user = $connection->query($sql);
 $array = $user->fetch_array(MYSQLI_ASSOC);
 $id = $array['id'];
+
+//Below code works out which users they are following.
+$sql = "SELECT following_id FROM following WHERE user_id = '$id'";
+$following = $connection->query($sql);
+while($row = mysqli_fetch_assoc($following)) {
+	
+}
+die();
