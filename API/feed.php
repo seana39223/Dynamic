@@ -23,7 +23,14 @@ $id = $array['id'];
 //Below code works out which users they are following.
 $sql = "SELECT following_id FROM following WHERE user_id = '$id'";
 $following = $connection->query($sql);
+//Below loops through all the users which are being followed by the initial user.
 while($row = mysqli_fetch_assoc($following)) {
-	
+	$followingId = $row['following_id'];
+	$sql = "SELECT * FROM feed WHERE user_id = '$followingId'";
+	$feed = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
+	$feed = mysqli_fetch_assoc($feed);
+	if ($feed!=NULL) {
+		var_dump("This feed has text.");
+	}
 }
 die();
