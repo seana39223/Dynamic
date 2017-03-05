@@ -16,14 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 //Below code gets the users id from the users email address.
 $email = mysqli_real_escape_string($connection, $_POST['email']);
 $sql = "SELECT id FROM users WHERE email = '$email'";
-$user = $connection->query($sql);
+$user = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $user->fetch_array(MYSQLI_ASSOC);
 $id = $array['id'];
 
 //Below code works out which users they are following.
 $feeds = array();
 $sql = "SELECT following_id FROM following WHERE user_id = '$id'";
-$following = $connection->query($sql);
+$following = $connection->query($sql or trigger_error($mysqli->error."[$sql]");
 //Below loops through all the users which are being followed by the initial user.
 while($row = mysqli_fetch_assoc($following)) {
 	$followingId = $row['following_id'];
@@ -32,7 +32,6 @@ while($row = mysqli_fetch_assoc($following)) {
 	$feed = mysqli_fetch_assoc($feed);
 	if ($feed!=NULL) {
 		$id = $feed['user_id'];
-		var_dump($id);
 		$sql = "SELECT displayname FROM users WHERE id = '$id'";
 		$displayName = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 		$displayName = mysqli_fetch_assoc($displayName);
