@@ -32,32 +32,32 @@ angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.
     controller: 'RegisterCtrl'
   })
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'views/menu.html',
     controller: 'AppCtrl'
   })
 
-
   .state('app.home', {
-      url: '/home',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/home.html',
-          controller: 'HomeCtrl'
-        }
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
       }
-    })
-    .state('app.artists', {
-      url: '/artists',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/artists.html',
-          controller: 'ArtistsCtrl'
-        }
+    }
+  })
+
+  .state('app.artists', {
+    url: '/artists',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/artists.html',
+        controller: 'ArtistsCtrl'
       }
-    })
+    }
+  })
 
   .state('app.events', {
     url: '/events',
