@@ -1,8 +1,19 @@
 <ion-view view-title="Home">
   <ion-content>
     <h1>Home</h1>
-    <form ng-submit="test()">
-	  <button class="button button-block button-positive" type="submit">Log in</button>
-	</button>
+    <div id="post status">
+      <ion-item>
+        <ion-label stacked>Message</ion-label>
+        <ion-textarea [(ngModel)]="msg">Type here to post a new status.</ion-textarea>
+      </ion-item>
+    </div>
+    <div id="feed">
+      <table id="feeds">
+        <tr>
+          <th>User</th>
+          <th>Post</th>
+        </tr>
+      </table>
+    </div>
   </ion-content>
 </ion-view>
