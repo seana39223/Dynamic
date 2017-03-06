@@ -26,9 +26,9 @@ angular.module('login.controllers', [])
   $scope.doLogin = function() {
     var api = "http://seananderson.co.uk/api/login.php";
     var data = { 
-         email: $scope.loginData.email,
-         pass: $scope.loginData.password
-       }
+      email: $scope.loginData.email,
+      pass: $scope.loginData.password
+    }
     $http.post(api, data).success(function(data){
       data = JSON.stringify(data);
       if (data.indexOf("not correct") >= 0) {
@@ -37,7 +37,7 @@ angular.module('login.controllers', [])
       else {
         localStorage.setItem('email', $scope.loginData.email);
         $state.go('app.home');
-     };
+      }
     });
   }
 
