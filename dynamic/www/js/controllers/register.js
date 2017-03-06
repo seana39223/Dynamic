@@ -15,7 +15,6 @@ angular.module('register.controllers', [])
 
   $scope.doValidation = function() {
   	//TODO: Add proper validation here.
-
   }
 
   $scope.doRegistration = function() {
@@ -42,11 +41,11 @@ angular.module('register.controllers', [])
     		password: $scope.register.password 
     	}
     	$http.post(api, data).then(function (res){
-          var res = JSON.stringify(res);
-          if (res.indexOf('New user added succesfully')>=0) {
+        var res = JSON.stringify(res);
+        if (res.indexOf('New user added succesfully')>=0) {
         	$state.go('app.home');
-          }
-        })
+        }
+      })
     }
     else {
     	popUp('Passwords do not match', 'The confirmation password is not the same as the initial password you entered');
