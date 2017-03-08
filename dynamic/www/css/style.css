@@ -35,3 +35,13 @@
 	font-size: 30px;
 	line-height:100%;
 }
+
+table, th, td  {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width:100%;
+}
+
+th {
+	width:30%;
+}
