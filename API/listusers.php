@@ -11,5 +11,8 @@ if ($connection->connect_error) {
 
 $sql = "SELECT * FROM users";
 $users = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
-$array = $users->fetch_array(MYSQLI_ASSOC);
-var_dump($array);
+$rows = array();
+while($user = mysqli_fetch_assoc($users)) {
+    $rows[] = $user;
+}
+print json_encode($rows);
