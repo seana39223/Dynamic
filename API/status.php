@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 
 //Below code gets the users id from the users email address.
 $email = mysqli_real_escape_string($connection, $_POST['email']);
-$text = mysqli_real_escape_string($connection, $_POST['email']);
+$text = mysqli_real_escape_string($connection, $_POST['text']);
 $sql = "SELECT id FROM users WHERE email = '$email'";
 $user = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $user->fetch_array(MYSQLI_ASSOC);
