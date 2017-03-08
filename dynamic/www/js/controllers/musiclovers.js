@@ -10,7 +10,6 @@ angular.module('musiclovers.controllers', [])
   $http.post(api, data).then(function(res){
   	console.log(res['data']);
   	res['data'].forEach(function(user) {
-  		console.log(user);
   	    feed.append('<tr>' + '<td>' + user['displayname'] + '</td><td><button id='+user['id'] + '>Follow User</button></td></tr>');
   	});
   });
