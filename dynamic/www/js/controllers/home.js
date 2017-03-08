@@ -24,6 +24,5 @@ angular.module('home.controllers', [])
 	  feed.append('<tr>' + '<td>' + text + '</td>' + '<td>' + user + '</td>' + '</tr>');
 	  feedData = feedData.split('},{').pop();
 	}
-
   });
 });
