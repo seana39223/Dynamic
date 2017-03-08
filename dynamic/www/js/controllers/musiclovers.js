@@ -2,7 +2,7 @@ angular.module('musiclovers.controllers', [])
 .controller('musicLoversCtrl', function($scope, $http) {
   var test;
   var api = "http://seananderson.co.uk/api/listusers.php";
-  var feed = angular.element(document.querySelector('#feed #feeds tbody'));
+  var feed = angular.element(document.querySelector('#users #usersinfo tbody'));
   console.log(feed);
   var data = { 
     email: localStorage.getItem('email')
@@ -11,6 +11,7 @@ angular.module('musiclovers.controllers', [])
   	console.log(res['data']);
   	res['data'].forEach(function(user) {
   		console.log(user);
+  	    feed.append('<tr>' + '<td>' + user['displayname'] + '</td><td><button id='+user['id'] + '>Follow User</button></td></tr>');
   	});
   });
 });
