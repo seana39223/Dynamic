@@ -1,5 +1,5 @@
 //Below code was initially generated when I created the project (when I ran ionic start sidemenu). I have added my own code to it.
-angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers'])
+angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers', 'musiclovers.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -77,7 +77,17 @@ angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.
         controller: 'myProfileCtrl'
       }
     }
-  });
+  })
+
+  .state('app.lovers', {
+    url: '/lovers',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/lovers.html',
+        controller: 'musicLoversCtrl'
+      }
+    }
+  })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
