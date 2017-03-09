@@ -1,7 +1,7 @@
 angular.module('home.controllers', [])
 .controller('HomeCtrl', function($scope, $http, $state) {
   $scope.status = {};
-  var test;
+  //Below code loads feeds in as soon as home controller is called i.e. when home page is clicked on by user.
   var api = "http://seananderson.co.uk/api/feed.php";
   var feed = angular.element(document.querySelector('#feed #feeds tbody'));
 
@@ -27,6 +27,7 @@ angular.module('home.controllers', [])
 	}
   });
 
+  //Below code is called when the user creates a post from the home page.
   $scope.postStatus = function() {
   	var api = "http://seananderson.co.uk/api/status.php";
   	var data = {
