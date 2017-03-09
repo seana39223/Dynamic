@@ -5,13 +5,13 @@ angular.module('login.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+/*  $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
   });
-
+*/
+  //Function for when the user enters the wrong details.
   loginFailed = function() {
     var alertPopup = $ionicPopup.alert({
       title: 'Invalid Credentials',
@@ -41,6 +41,7 @@ angular.module('login.controllers', [])
     });
   }
 
+  //When the user clicks the register button.
   $scope.register = function() {
     $state.go('register');
   }
