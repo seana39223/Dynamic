@@ -4,6 +4,7 @@ angular.module('register.controllers', [])
  // Form data for the login modal
   $scope.register = {};
 
+  //Generic popup as there may need to be multiple popups for this page. Code is based of ionic documentation for popup.
   popUp = function(title, message) {
   	var alertPopup = $ionicPopup.alert({
   		title: title,
@@ -13,12 +14,17 @@ angular.module('register.controllers', [])
   	});
   }
 
+  //Function which checks validation for 
   $scope.doValidation = function() {
-  	//TODO: Add proper validation here.
+    //Array which will has the type of everything the user should have entered.
+  	var check = ['name', 'email', 'type', 'password', 'cpassword'];
+    //TODO: Complete this code.
   }
 
+  //Function for when the user clicks the validation button.
   $scope.doRegistration = function() {
   	//$scope.doValidation();
+    //TODO: Change below code once validation function has been made properly.
     if ($scope.register.password==$scope.register.cPassword) {
     	if($scope.register.userType=="Music Lover") {
     		var type = 1;
@@ -52,6 +58,7 @@ angular.module('register.controllers', [])
     }
 	}
 
+  //Return to login page i.e user has decided they dont need to register.
 	$scope.returnToLogin = function() {
 		$state.go('login');
 	}
