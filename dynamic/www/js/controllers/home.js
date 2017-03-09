@@ -28,14 +28,13 @@ angular.module('home.controllers', [])
   });
 
   $scope.postStatus = function() {
-  	console.log($scope);
   	var api = "http://seananderson.co.uk/api/status.php";
   	var data = {
-  		email: localStorage.getItem('email'),
-  		text: $scope.status.text
+  	  email: localStorage.getItem('email'),
+  	  text: $scope.status.text
   	}
   	$http.post(api, data).then(function(res){
-  		$state.go('app.home');
+  	  $state.go('app.home');
   	})
   }
 });
