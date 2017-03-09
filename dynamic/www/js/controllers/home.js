@@ -1,12 +1,14 @@
 angular.module('home.controllers', [])
-.controller('HomeCtrl', function($scope, $http) {
+.controller('HomeCtrl', function($scope, $http, $state) {
+  $scope.status = {};
   var test;
   var api = "http://seananderson.co.uk/api/feed.php";
   var feed = angular.element(document.querySelector('#feed #feeds tbody'));
-  console.log(feed);
+
   var data = { 
     email: localStorage.getItem('email')
   }
+
   $http.post(api, data).then(function(res){
 	var res = JSON.stringify(res);
 	var feedData = res.replace('{"data":', '');
@@ -20,9 +22,20 @@ angular.module('home.controllers', [])
 	  text = text.replace('"text":', '');
 	  var user = feedData.substring(0, feedData.indexOf('}'));
 	  user = user.split('display_name":').pop(); 
-	  //feed.append('<td>' + user + '</td>' + '</tr>');
 	  feed.append('<tr>' + '<td>' + text + '</td>' + '<td>' + user + '</td>' + '</tr>');
 	  feedData = feedData.split('},{').pop();
 	}
   });
+
+  $scope.postStatus = function() {
+  	console.log($scope);
+  	var api = "http://seananderson.co.uk/api/status.php";
+  	var data = {
+  		email: localStorage.getItem('email'),
+  		text: $scope.status.text
+  	}
+  	$http.post(api, data).then(function(res){
+  		$state.go('app.home');
+  	})
+  }
 });
