@@ -1,6 +1,16 @@
 <ion-view view-title="Home">
   <ion-content>
     <h1>Home</h1>
+    <div id="post-status">
+      <form ng-submit ="postStatus()">
+        <label class="item item-input">
+          <span class="input-label">Text</span>
+          <input type="text" ng-model="status.text">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Post Status</button>
+        </label>
+      </form>
     <!--<div id="post status">
       <ion-item>
         <ion-label stacked>Message</ion-label>
