@@ -1,14 +1,17 @@
 angular.module('home.controllers', [])
 .controller('HomeCtrl', function($scope, $http, $state) {
   $scope.status = {};
+
   //Below code loads feeds in as soon as home controller is called i.e. when home page is clicked on by user.
   var api = "http://seananderson.co.uk/api/feed.php";
   var feed = angular.element(document.querySelector('#feed #feeds tbody'));
 
+  //Gets the email address from local storage which is then sent in the post.
   var data = { 
     email: localStorage.getItem('email')
   }
 
+  //Actually retrieves the data and then adds it to the appropriate div.
   $http.post(api, data).then(function(res){
 	var res = JSON.stringify(res);
 	var feedData = res.replace('{"data":', '');
