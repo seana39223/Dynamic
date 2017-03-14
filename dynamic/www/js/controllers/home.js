@@ -23,8 +23,12 @@ angular.module('home.controllers', [])
 	  var text = feedData.substring(0, feedData.indexOf(',"'));
 	  text = text.replace('{"text":', '');
 	  text = text.replace('"text":', '');
+    text = text.replace('"','');
+    text = text.replace('"','');
 	  var user = feedData.substring(0, feedData.indexOf('}'));
 	  user = user.split('display_name":').pop(); 
+    user = user.replace('"','');
+    user = user.replace('"','');
 	  feed.append('<tr>' + '<td>' + text + '</td>' + '<td>' + user + '</td>' + '</tr>');
 	  feedData = feedData.split('},{').pop();
 	}
