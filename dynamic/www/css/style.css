@@ -36,12 +36,19 @@
 	line-height:100%;
 }
 
+table{
+	width:100%;
+}
+
 table, th, td  {
     border-collapse: collapse;
     border: 1px solid black;
-    width:100%;
 }
 
-th {
+th .user {
 	width:30%;
+}
+
+th .post {
+	width:70%;
 }
