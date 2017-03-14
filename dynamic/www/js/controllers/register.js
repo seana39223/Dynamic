@@ -47,7 +47,6 @@ angular.module('register.controllers', [])
     		password: $scope.register.password 
     	}
     	$http.post(api, data).then(function (res){
-        var res = JSON.stringify(res);
         if (res.indexOf('New user added succesfully')>=0) {
         	$state.go('app.home');
         }
