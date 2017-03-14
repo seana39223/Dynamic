@@ -1,12 +1,17 @@
 <?php
-//TODO: Update and add password security.
-//Below code is based of code from https://www.w3schools.com/php/php_mysql_insert.asp
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Access-Control-Allow-Methods: GET, POST, PUT');
+
 include "config.php";
 $connection = new mysqli($server, $dbuser, $dbpass, $dbname);
 
 if ($connection->connect_error) {
     die ("Connection to the database failed." . $connection->connect_error);
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
+    $_POST = json_decode(file_get_contents('php://input'), true);
 
 $firstName = mysqli_real_escape_string($connection, $_POST['firstName']);
 $lastName = mysqli_real_escape_string($connection, $_POST['lastName']);
@@ -16,8 +21,8 @@ $password = mysqli_real_escape_String($connection, $_POST['password']);
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $sql = "INSERT into users (firstname, lastname, email, type, password) 
-    VALUES ('$firstName', '$lastName', '$email', $type, '$password')";
+    $sql = "INSERT into users (firstname, lastname, email, type, displayname, password)
+    VALUES ('$firstName', '$lastName', '$email', $type, '$firstName', '$password')";
 
     if ($connection->query($sql) === TRUE) {
         echo "New user added succesfully";
