@@ -35,7 +35,7 @@
     	    <div class="input-label">
             User Type
           </div>
-          <select ng-model="register.userType" multiple>
+          <select ng-model="register.userType">
             <option>Music Lover</option>
             <option selected>Artist</option>
             <option>Venue Owner</option>
@@ -43,9 +43,9 @@
         </label>  
         <label class="item item-input item-select">
           <div class="input-label">
-            Favoruite Genres (select up to 3)
+            Favoruite Genres
           </div>
-          <select id="genre" class="genre" ng-model="register.genre">
+          <select id="genre" class="genre" ng-model="register.genre" multiple>
           </select>
         </label>
 
