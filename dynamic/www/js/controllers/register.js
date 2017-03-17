@@ -1,5 +1,13 @@
 angular.module('register.controllers', [])
 .controller('RegisterCtrl', function($scope, $ionicModal, $http, $state, $ionicPopup) {
+  var api = "http://seananderson.co.uk/api/genre.php";
+  $http.get(api).then(function(res) {
+    var length = (res['data']).length;
+    var select = angular.element(document.querySelector('#genre'));
+    for (i=0;i<length;i++) {
+      select.append('<option>' + res['data'][i] + '</option>');
+    }
+  })
 
  // Form data for the login modal
   $scope.register = {};
