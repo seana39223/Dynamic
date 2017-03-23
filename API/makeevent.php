@@ -19,7 +19,17 @@ $event_name = mysqli_real_escape_string($connection, $_POST['eventname']);
 $postcode = mysqli_real_escape_string($connection, $_POST['postcode']);
 $genre = mysqli_real_escape_string($connection, $_POST['genre']);
 
+//Gets venue owner's id from the email.
 $sql = "SELECT id FROM users WHERE email = '$email'";
 $user = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $user->fetch_array(MYSQLI_ASSOC);
 $venue_owner_id = $array['id'];
+
+//Gets genre's id from the name.
+$sql = "SELECT id FROM genres WHERE name = '$genre'";
+$genre = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
+$array = $genre->fetch_array(MYSQLI_ASSOC);
+$genre_id = $array['id'];
+var_dump($genre_id);
+die();
+
