@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 
 //Below code gets the users id from the users email address.
 $email = mysqli_real_escape_string($connection, $_POST['email']);
-$event_name = mysqli_real_escape_string($connection, $_POST['eventname']);
+$event_name = mysqli_real_escape_string($connection, $_POST['event_name']);
 $postcode = mysqli_real_escape_string($connection, $_POST['postcode']);
 $genre = mysqli_real_escape_string($connection, $_POST['genre']);
 
@@ -30,6 +30,14 @@ $sql = "SELECT id FROM genres WHERE name = '$genre'";
 $genre = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $genre->fetch_array(MYSQLI_ASSOC);
 $genre_id = $array['id'];
-var_dump($genre_id);
-die();
 
+//Actually adds the event to the database.
+$sql = "INSERT into events (venue_owner_id, event_name, postcode, genre_id) 
+VALUES('$venue_owner_id', '$event_name', '$postcode', '$genre_id')";
+
+if ($connection->query($sql) === TRUE) {
+    echo "Event created succesfully";
+} 
+else {
+    echo "Error: " . $sql . "</br>" . $conn->error;
+}
