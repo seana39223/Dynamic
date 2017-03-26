@@ -1,6 +1,6 @@
 angular.module('register.controllers', [])
 .controller('RegisterCtrl', function($scope, $ionicModal, $http, $state, $ionicPopup) {
-  var api = "http://seananderson.co.uk/api/genre.php";
+  var api = "http://seananderson.co.uk/api/listgenre.php";
   $http.get(api).then(function(res) {
     var length = (res['data']).length;
     var select = angular.element(document.querySelector('#genre'));
@@ -52,11 +52,14 @@ angular.module('register.controllers', [])
     		lastName: $scope.register.lName,
     		email: $scope.register.email,
     		type: type,
-    		password: $scope.register.password 
+    		password: $scope.register.password,
     	}
     	$http.post(api, data).then(function (res){
-        if (res.indexOf('New user added succesfully')>=0) {
-        	$state.go('app.home');
+        var apiReturns = JSON.stringify(res);
+        console.log(apiReturns);
+        if (apiReturns.includes('New user added succesfully')>=0) {
+          $scope.registerGenre();
+          $state.go('app.home');
         }
       })
     }
@@ -64,6 +67,17 @@ angular.module('register.controllers', [])
     	popUp('Passwords do not match', 'The confirmation password is not the same as the initial password you entered');
     }
 	}
+
+  $scope.registerGenre = function() {
+    var api = "http://seananderson.co.uk/api/registergenre.php";
+    var data = {
+      email: $scope.register.email,
+      genre: $scope.register.genre
+    }
+    $http.post(api, data).then(function(res) {
+      console.log(res);
+    })
+  }
 
   //Return to login page i.e user has decided they dont need to register.
 	$scope.returnToLogin = function() {

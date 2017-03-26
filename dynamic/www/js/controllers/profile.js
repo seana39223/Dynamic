@@ -1,5 +1,5 @@
 angular.module('profile.controllers', ['ionic', 'ngCordova'])
-.controller('myProfileCtrl', function($scope, $cordovaCamera, $cordovaFile) {
+.controller('myProfileCtrl', function($scope, $cordovaCamera, $cordovaFile, $cordovaFileTransfer) {
 
 
   //Below code for taking picture based of https://devdactic.com/how-to-capture-and-store-images-with-ionic/
@@ -23,7 +23,24 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
 	}
 	
 	$cordovaCamera.getPicture(options).then(function(imageData) {
-	  alert(imageData);
+	  var url = "http:/seananderson.co.uk/api/imageupload.php";
+	  var file = imageData;
+	  var filename = imageData;
+	  var options = {
+        fileKey: "file",
+        fileName: filename,
+        chunkedMode: false,
+        mimeType: "multipart/form-data",
+        params : {'fileName': filename}
+      };
+$cordovaFileTransfer.upload(url, file, options).then(function (result) {
+     console.log("SUCCESS: " + JSON.stringify(result.response));
+ }, function (err) {
+     console.log("ERROR: " + JSON.stringify(err));
+ }, function (progress) {
+     // PROGRESS HANDLING GOES HERE
+ });
+
 	}, 
 	function(err) {
       console.log(err);
