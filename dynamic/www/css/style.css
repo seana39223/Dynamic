@@ -80,3 +80,19 @@ th .post {
 	background-color: #3b5998 !important; 
 }
 
+#novenue {
+	color: white;
+}
+
+#venue {
+	background-color: white;
+}
+
+
+.event-title {
+	color:white;
+}
+
+h1:first-child {
+	color:white;
+}
