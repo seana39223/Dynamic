@@ -1,0 +1,32 @@
+<ion-view view-title="Make Venue">
+  <ion-content>
+    <h1>Make Venue</h1>
+     <form ng-submit="venueRegister()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Venue Name</span>
+          <input type="text" ng-model="venue.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">1st Line of Address</span>
+          <input type="text" ng-model="venue.address1">
+        </label>
+	     <label class="item item-input">
+          <span class="input-label">2nd Line of Address (Optional)</span>
+          <input type="text" ng-model="venue.address2">
+        </label>
+         <label class="item item-input">
+          <span class="input-label">City/Town</span>
+          <input type="text" ng-model="venue.city">
+        </label>
+	      <label class="item item-input">
+          <span class="input-label">Postcode</span>
+          <input type="text" ng-model="venue.postcode">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Register Venue</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
