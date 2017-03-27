@@ -51,6 +51,7 @@ angular.module('makeEvent.controllers', [])
 
   //Function for when the user clicks the validation button.
   $scope.eventRegister = function() {
+    console.log($scope.event.genre.length);
     var api = "http://seananderson.co.uk/api/makeevent.php";
     var data = {
     	genre: $scope.event.genre,
@@ -65,6 +66,7 @@ angular.module('makeEvent.controllers', [])
       var apiReturns = JSON.stringify(res);
       if (apiReturns.includes('Event created successfully')>=0) {
         popUp("Event Created", "The event was created succesfully");
+        var length = $scope.event.genre.length;
       }
       else {
         popUp("error", apiReturns);
