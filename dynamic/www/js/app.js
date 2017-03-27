@@ -1,5 +1,5 @@
 //Below code was initially generated when I created the project (when I ran ionic start sidemenu). I have added my own code to it.
-angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers', 'musiclovers.controllers'])
+angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers', 'musiclovers.controllers', 'venue.controllers', 'makeEvent.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -85,6 +85,26 @@ angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.
       'menuContent': {
         templateUrl: 'views/lovers.html',
         controller: 'musicLoversCtrl'
+      }
+    }
+  })
+
+  .state('app.venue', {
+    url: '/makevenue',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/makevenue.html',
+        controller: 'VenueCtrl'
+      }
+    }
+  })
+
+  .state('app.makeEvent', {
+    url: '/makeevent',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/makeevent.html',
+        controller: 'MakeEventCtrl'
       }
     }
   })
