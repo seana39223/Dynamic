@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 
 //Below code gets the users id from the users email address.
 $email = mysqli_real_escape_string($connection, $_POST['email']);
-$venue_name = mysqli_real_escape_string($connection, $_POST['venue_name']);
 $postcode = mysqli_real_escape_string($connection, $_POST['postcode']);
 $name = mysqli_real_escape_string($connection, $_POST['name']);
 $first_line = mysqli_real_escape_string($connection, $_POST['first_line']);
