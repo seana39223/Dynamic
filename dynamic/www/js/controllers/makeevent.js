@@ -15,10 +15,25 @@ angular.module('makeEvent.controllers', [])
   }
   $http.post(api, data).then(function(res) {
     var length = (res['data']).length;
-    var select = angular.element(document.querySelector('#venue'));
-    for (i=0;i<length;i++) {
-      select.append('<option>' + res['data'][i] + '</option>');
+    if (length == 0) {
+      var div = angular.element(document.querySelector('#makeevent'));
+      div.html("<div id='novenue'><p>You do not have any venues set up please create a venue first.</div>");
     }
+    else {
+      var select = angular.element(document.querySelector('#venue'));
+      for (i=0;i<length;i++) {
+        select.append('<option>' + res['data'][i] + '</option>');
+      }
+    }
+
+    api = "http://seananderson.co.uk/api/listartists.php";
+    $http.get(api).then(function(res) {
+      var length = (res['data']).length;
+      var select = angular.element(document.querySelector('#artists'));
+      for (i=0;i<length;i++) {
+        select.append('<option>' + res['data'][i] + '</option>');
+      }
+    })
   })
 
  // Form data for the login modal
