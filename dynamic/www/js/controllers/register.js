@@ -58,6 +58,7 @@ angular.module('register.controllers', [])
         var apiReturns = JSON.stringify(res);
         console.log(apiReturns);
         if (apiReturns.includes('New user added succesfully')>=0) {
+          localStorage.setItem('email', $scope.register.email);
           $scope.registerGenre();
           $state.go('app.home');
         }
