@@ -1,27 +1,26 @@
 %\addcontentsline{toc}{chapter}{Development Process}
 \chapter{Design}
+The ionic framework for developing mobile hybrid applications encourages the use of the MVC compound design pattern. MVC is something which is generally considered good practise within the software engineering industry and therefore the app was designed keeping that in mind.
 
-You should concentrate on the more important aspects of the design. It is essential that an overview is presented before going into detail. As well as describing the design adopted it must also explain what other designs were considered and why they were rejected.
+The model of the app would be the database which is stored on the backend of the system. The view is the html files and the controllers are both the angular JS controllers and the RESTful PHP api which I created.
 
-The design should describe what you expected to do, and might also explain areas that you had to revise after some investigation.
 
-Typically, for an object-oriented design, the discussion will focus on the choice of objects and classes and the allocation of methods to classes. The use made of reusable components should be described and their source referenced. Particularly important decisions concerning data structures usually affect the architecture of a system and so should be described here.
 
-How much material you include on detailed design and implementation will depend very much on the nature of the project. It should not be padded out. Think about the significant aspects of your system. For example, describe the design of the user interface if it is a critical aspect of your system, or provide detail about methods and data structures that are not trivial. Do not spend time on long lists of trivial items and repetitive descriptions. If in doubt about what is appropriate, speak to your supervisor.
- 
-You should also identify any support tools that you used. You should discuss your choice of implementation tools - programming language, compilers, database management system, program development environment, etc.
-
-Some example sub-sections may be as follows, but the specific sections are for you to define. 
-
-\begin{figure}
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/events}
-\caption{UML diagram which illustrates the appropriate relationships between the different tables in the database in relation to an event. Created using https://www.lucidchart.com/}
-\end{figure}
 
 \section{Overall Architecture}
+The following figures show the architecture as separate model, views and controller along with the architecture as a whole. 
+\begin{figure}[H]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/va}
+\caption{This UML diagram shows that once a user has logged in they can access multiple different pages through the menu bar (menu.html). The only page which is restricted is the events.html page as only venue owners can access this page to create events. The register.html page can only be accessed through the login page as it is accessed when a user needs to create a new account to login. UML diagram created using https://www.lucidchart.com/}
+\end{figure}
 
 \section{Some detailed design}
+The following figure highlights the different relationships between the tables (model) for events.
+\begin{figure}[H]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/events}
+\caption{UML diagram which illustrates the appropriate relationships between the different tables in the database in relation to an event. Created using https://www.lucidchart.com/}
 
+\end{figure}
 \subsection{Even more detail}
 
 \section{User Interface}
