@@ -1,5 +1,21 @@
 <ion-view view-title="Events">
   <ion-content>
     <h1>Events</h1>
+    <form ng-submit="searchEvents()">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Sort By
+        </div>
+        <select id="search" class="search" ng-model="events.search">
+          <option>Recommended Events</option>
+          <option>Nearby Events</option>
+          <option>Near Your Home</option> 
+          <option>Date of Events</option>
+        </select>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" type="submit">Sort</button>
+      </label>
+
   </ion-content>
 </ion-view>

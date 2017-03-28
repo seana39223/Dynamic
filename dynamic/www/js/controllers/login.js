@@ -1,9 +1,6 @@
 angular.module('login.controllers', [])
 .controller('LoginCtrl', function($scope, $ionicModal, $http, $state, $ionicPopup) {
   localStorage.removeItem('email');
-  console.log(localStorage.getItem('email'));
-
-
   // Form data for the login modal
   $scope.loginData = {};
 

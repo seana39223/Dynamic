@@ -36,8 +36,6 @@ angular.module('makeEvent.controllers', [])
     })
   })
 
- // Form data for the login modal
-  $scope.event = {};
 
   //Generic popup as there may need to be multiple popups for this page. Code is based of ionic documentation for popup.
   popUp = function(title, message) {

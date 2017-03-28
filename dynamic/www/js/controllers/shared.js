@@ -4,5 +4,9 @@ angular.module('shared.controllers', [])
   $scope.logOut = function() {
   	localStorage.removeItem('email');
     $state.go('login');
+    window.localStorage.clear();
+    $ionicHistory.clearCache();
+    $ionicHistory.nextViewOptions({ disableBack: true, historyRoot: true });
+    $window.location.reload();
   }
 });
