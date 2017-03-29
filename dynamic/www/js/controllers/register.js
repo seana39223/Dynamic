@@ -71,12 +71,14 @@ angular.module('register.controllers', [])
 
   $scope.registerGenre = function() {
     var api = "http://seananderson.co.uk/api/registergenre.php";
-    var data = {
-      email: $scope.register.email,
-      genre: $scope.register.genre
-    }
-    $http.post(api, data).then(function(res) {
-      console.log(res);
+    $scope.register.genre.forEach(function(genre) {
+      var data = {
+        email: $scope.register.email,
+        genre: genre
+      }
+      $http.post(api, data).then(function(res) {
+        console.log(res);
+      })
     })
   }
 
