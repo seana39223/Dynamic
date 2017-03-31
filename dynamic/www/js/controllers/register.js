@@ -1,5 +1,6 @@
 angular.module('register.controllers', [])
 .controller('RegisterCtrl', function($scope, $ionicModal, $http, $state, $ionicPopup) {
+  var apiReturns;
   var api = "http://seananderson.co.uk/api/listgenre.php";
   $http.get(api).then(function(res) {
     var length = (res['data']).length;
@@ -22,59 +23,67 @@ angular.module('register.controllers', [])
   	});
   }
 
-  //Function which checks validation for 
-  $scope.doValidation = function() {
-    //Array which will has the type of everything the user should have entered.
-  	var check = ['name', 'email', 'type', 'password', 'cpassword'];
-    //TODO: Complete this code.
+  //Return to login page i.e user has decided they dont need to register.
+  $scope.returnToLogin = function() {
+    $state.go('login');
   }
 
-  //Function for when the user clicks the validation button.
-  $scope.doRegistration = function() {
-  	//$scope.doValidation();
-    //TODO: Change below code once validation function has been made properly.
-    if ($scope.register.password==$scope.register.cPassword) {
-    	if($scope.register.userType=="Music Lover") {
-    		var type = 1;
-    	}
-    	else if ($scope.register.userType=="Artist") {
-    		var type = 2;
-    	}
-    	else if ($scope.register.userType=="Venue Owner") {
-    		var type = 3;
-    	}
-    	else {
-    		popUp('No User Type', 'No user type has been selected.' );
-    	}
-    	var api = "http://seananderson.co.uk/api/register.php";
-    	var data = {
-    		firstName: $scope.register.fName,
-    		lastName: $scope.register.lName,
-    		email: $scope.register.email,
-    		type: type,
-    		password: $scope.register.password,
-    	}
-    	$http.post(api, data).then(function (res){
-        var apiReturns = JSON.stringify(res);
-        console.log(apiReturns);
-        if (apiReturns.includes('New user added succesfully')>=0) {
-          localStorage.setItem('email', $scope.register.email);
-          $scope.registerGenre();
-          $state.go('app.home');
-        }
-      })
+  $scope.checkFields = function() {
+    if ($scope.register.fName==undefined){
+      popUp("Field Missing", "First Name Field Was Not Entered");
+      return false;
+    }
+
+    if ($scope.register.lName==undefined) {
+      popUp("Field Missing", "Last Name Field Was Not Entered.");
+      return false;
+    }
+
+    if ($scope.register.email==undefined) {
+      popUp("Field Missing", "Email address as not entered.");
+      return false;
+    }
+
+    if ($scope.register.password==undefined) {
+      popUp("Field Missing", "Password was not entered");
+      return false
+    }
+
+    if ($scope.register.cPassword==undefined) {
+      popUp("Field Missing", "Confirmation password was not entered");
+      return false;
+    }
+
+    if ($scope.register.pCode==undefined) {
+      popUp("Field Missing", "Postcode was not entered");
+      return false;
+    }
+
+    if ($scope.register.dName==undefined) {
+      popUp("Field Missing", "Display Name was not entered");
+      return false;
+    }
+
+    if ($scope.register.userType==undefined) {
+      popUp("Field Missing", "User Type was not selected.");
+      return false;
+    }
+
+    if ($scope.register.genre===undefined) {
+      popUp("Field Missing", "You haven't selected your favoruite genre of music.");
+      return false;
     }
     else {
-    	popUp('Passwords do not match', 'The confirmation password is not the same as the initial password you entered');
+      return true;
     }
-	}
+  }
 
   $scope.registerGenre = function() {
     var api = "http://seananderson.co.uk/api/registergenre.php";
     $scope.register.genre.forEach(function(genre) {
-      var data = {
-        email: $scope.register.email,
-        genre: genre
+    var data = {
+      email: $scope.register.email,
+      genre: genre
       }
       $http.post(api, data).then(function(res) {
         console.log(res);
@@ -82,8 +91,93 @@ angular.module('register.controllers', [])
     })
   }
 
-  //Return to login page i.e user has decided they dont need to register.
-	$scope.returnToLogin = function() {
-		$state.go('login');
-	}
+  $scope.checkPostcode = function() {
+    var postcode = $scope.register.pCode;
+    $scope.register.pCode = postcode.replace(/[\s]/g, '');
+    if ($scope.register.pCode.length!=6) {
+      if ($scope.register.pCode.length!=7) {
+        if ($scope.register.pCode.length!=8) {
+          popUp("Postcode is incorrect length must be 6,7 or 8 characters.")
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+
+  //Function for when the user clicks the validation button.
+  $scope.doRegistration = function() {
+    //Checks all necessary fields have values.
+    if ($scope.checkFields()==false){
+      return;
+    }
+    if($scope.checkPostcode()==false) {
+      return;
+    }
+    var api= "http://seananderson.co.uk/api/checkemail.php";
+    var data = {
+      email: $scope.register.email
+    }
+    $http.post(api,data).then(function(res) {
+      var apiResponse = JSON.stringify(res);
+      console.log(apiResponse);
+      var correct = "This email is fine"
+      if (apiResponse.includes(correct)) {
+        if ($scope.register.password==$scope.register.cPassword) {
+    	    if($scope.register.userType=="Music Lover") {
+    		    var type = 1;
+    	    }
+    	    else if ($scope.register.userType=="Artist") {
+    		    var type = 2;
+    	    }
+    	    else if ($scope.register.userType=="Venue Owner") {
+    		    var type = 3;
+    	    }
+    	    else {
+    		    popUp('No User Type', 'No user type has been selected.' );
+    	    }
+          var api = "http://seananderson.co.uk/api/displayname.php";
+          var data = {
+            dName: $scope.register.dName
+          }
+          $http.post(api, data).then(function(res) {
+            apiReturns = JSON.stringify(res);
+            var incorrect = "This user name has already been used";
+            if (apiReturns.includes(incorrect)) {
+              popUp('This display name has already been used please choose another display name.');
+            }
+    	      else {
+              var api = "http://seananderson.co.uk/api/register.php";
+    	        var data = {
+    		        firstName: $scope.register.fName,
+    		        lastName: $scope.register.lName,
+    		        email: $scope.register.email,
+    		        type: type,
+    		        password: $scope.register.password,
+                postcode: $scope.register.pCode,
+                dName: $scope.register.dName
+    	        }
+    	        $http.post(api, data).then(function(res){
+                apiReturns = JSON.stringify(res);
+                if (apiReturns.includes('New user added succesfully')>=0) {
+                  localStorage.setItem('email', $scope.register.email);
+                  if ($scope.registerGenre!=undefined) {
+                    $scope.registerGenre();
+                  }
+                  $state.go('app.home');
+                }
+              })
+            }
+          })
+        }
+        else {
+    	    popUp('Passwords do not match', 'The confirmation password is not the same as the initial password you entered');
+        }
+      }
+      else {
+        popUp("Email is not valid", "Please use a valid email address which hasn't already been used");
+      }
+    })
+  }
 })
