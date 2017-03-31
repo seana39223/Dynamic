@@ -28,6 +28,7 @@ angular.module('register.controllers', [])
     $state.go('login');
   }
 
+  //Function which checks to make sure all fields on the form have been filled in.
   $scope.checkFields = function() {
     if ($scope.register.fName==undefined){
       popUp("Field Missing", "First Name Field Was Not Entered");
@@ -78,6 +79,7 @@ angular.module('register.controllers', [])
     }
   }
 
+  //Function for regsitering genre of music which user likes.
   $scope.registerGenre = function() {
     var api = "http://seananderson.co.uk/api/registergenre.php";
     $scope.register.genre.forEach(function(genre) {
@@ -91,6 +93,7 @@ angular.module('register.controllers', [])
     })
   }
 
+  //Function which valides that the users postcode they have entered is correct.
   $scope.checkPostcode = function() {
     var postcode = $scope.register.pCode;
     $scope.register.pCode = postcode.replace(/[\s]/g, '');
@@ -105,6 +108,14 @@ angular.module('register.controllers', [])
     return true;
   }
 
+  $scope.checkPassword = function() {
+    if ($scope.register.password.length>6) {
+      popUp("Password Invalid", "Password length must be 6 or greater.");
+      return false;
+    }
+    return true;
+  }
+
 
   //Function for when the user clicks the validation button.
   $scope.doRegistration = function() {
@@ -115,6 +126,12 @@ angular.module('register.controllers', [])
     if($scope.checkPostcode()==false) {
       return;
     }
+
+    if ($scope.checkPassword()==false) {
+      return;
+    }
+
+    //Validates email address is a new email.
     var api= "http://seananderson.co.uk/api/checkemail.php";
     var data = {
       email: $scope.register.email
@@ -141,6 +158,8 @@ angular.module('register.controllers', [])
           var data = {
             dName: $scope.register.dName
           }
+
+          //Checks Display Name isn't already being used.
           $http.post(api, data).then(function(res) {
             apiReturns = JSON.stringify(res);
             var incorrect = "This user name has already been used";
