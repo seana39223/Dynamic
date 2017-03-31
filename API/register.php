@@ -17,12 +17,14 @@ $firstName = mysqli_real_escape_string($connection, $_POST['firstName']);
 $lastName = mysqli_real_escape_string($connection, $_POST['lastName']);
 $email = mysqli_real_escape_String($connection, $_POST['email']);
 $type = mysqli_real_escape_String($connection, $_POST['type']);
+$dName = mysqli_real_escape_String($connection, $_POST['dName']);
 $password = mysqli_real_escape_String($connection, $_POST['password']);
 $password = password_hash($password, PASSWORD_DEFAULT);
+$postcode = mysqli_real_escape_String($connection, $postcode);
 
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $sql = "INSERT into users (firstname, lastname, email, type, displayname, password)
-    VALUES ('$firstName', '$lastName', '$email', $type, '$firstName', '$password')";
+    $sql = "INSERT into users (firstname, lastname, email, type, displayname, password, postcode)
+    VALUES ('$firstName', '$lastName', '$email', $type, '$dName', '$password', '$postcode')";
 
     if ($connection->query($sql) === TRUE) {
         echo "New user added succesfully";
