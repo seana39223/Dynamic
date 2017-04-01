@@ -109,7 +109,7 @@ angular.module('register.controllers', [])
   }
 
   $scope.checkPassword = function() {
-    if ($scope.register.password.length>6) {
+    if ($scope.register.password.length<6) {
       popUp("Password Invalid", "Password length must be 6 or greater.");
       return false;
     }
