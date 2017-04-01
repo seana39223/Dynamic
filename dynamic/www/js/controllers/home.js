@@ -2,7 +2,6 @@ angular.module('home.controllers', [])
 .controller('HomeCtrl', function($scope, $http, $state) {
 
   $scope.$on('$ionicView.beforeEnter', function () {
-    $scope.doRefresh();
   });
   $scope.status = {};
   $scope.$on("$ionicView.beforeEnter", function() {
