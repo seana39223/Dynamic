@@ -1,7 +1,8 @@
 angular.module('events.controllers', [])
-.controller('EventsCtrl', function($scope, $cordovaGeolocation, $http) {
+.controller('EventsCtrl', function($scope, $cordovaGeolocation, $http, $compile, $state) {
 	$scope.events = {};
 	$scope.eventsList = [];
+
     $scope.searchEvents = function() {
     	var api = "http://seananderson.co.uk/api/listevents.php";
     	$http.get(api).then(function(res){
@@ -52,6 +53,7 @@ angular.module('events.controllers', [])
                 });
             })
             console.log(eventsArray);
+            console.log(eventsArray.length);
 
         }, function(err) {
           alert("Error: Please make sure you have GPS enabled");
@@ -59,6 +61,8 @@ angular.module('events.controllers', [])
     	}
 
     	else if ($scope.events.search == "Near Your Home") {
+            var eventDiv = angular.element(document.querySelector('#events'));
+            eventDiv.html('<div id="events"></div>');
             var eventsArray = new Array();
             var api = "http://seananderson.co.uk/api/getpostcode.php";
             var data = {
@@ -108,7 +112,16 @@ angular.module('events.controllers', [])
     	}
 
     	else if ($scope.events.search == "Date of Events") {
-    		console.log($scope.eventsList);
+            var eventDiv = angular.element(document.querySelector('#events'));
+            $scope.eventsList.forEach(function(event) {
+                eventDiv.append('<div id= " ' + event['event_id'] + '" class="test"> <div class="list"><h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
+                $state.reload() 
+            })
+            if(!$scope.$$phase) {
+               $scope.$digest();
+            }
     	}
     }
+
+
 });
