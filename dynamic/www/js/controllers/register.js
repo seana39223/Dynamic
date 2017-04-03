@@ -138,7 +138,6 @@ angular.module('register.controllers', [])
     }
     $http.post(api,data).then(function(res) {
       var apiResponse = JSON.stringify(res);
-      console.log(apiResponse);
       var correct = "This email is fine"
       if (apiResponse.includes(correct)) {
         if ($scope.register.password==$scope.register.cPassword) {
