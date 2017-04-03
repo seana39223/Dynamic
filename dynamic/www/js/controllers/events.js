@@ -52,8 +52,6 @@ angular.module('events.controllers', [])
                   })
                 });
             })
-            console.log(eventsArray);
-            console.log(eventsArray.length);
 
         }, function(err) {
           alert("Error: Please make sure you have GPS enabled");
@@ -114,12 +112,8 @@ angular.module('events.controllers', [])
     	else if ($scope.events.search == "Date of Events") {
             var eventDiv = angular.element(document.querySelector('#events'));
             $scope.eventsList.forEach(function(event) {
-                eventDiv.append('<div id= " ' + event['event_id'] + '" class="test"> <div class="list"><h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
-                $state.reload() 
+                eventDiv.append('<div id= " ' + event['event_id'] + '" class="events"> <div class="list"><h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
             })
-            if(!$scope.$$phase) {
-               $scope.$digest();
-            }
     	}
     }
 
