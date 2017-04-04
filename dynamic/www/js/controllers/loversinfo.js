@@ -33,15 +33,16 @@ angular.module('loversInfo.controllers', [])
 		var apiResponse = (res['data']);
 		console.log(apiResponse);
 		if(apiResponse.indexOf("This user does not follow the current user")>=0){
-			postDiv.append('<button ng-click="test()">Follow</button>');
+			postDiv.append('<a href="#/app/followuser?id=' + id + '">Follow</button>');
+			//postDiv.append('<button ng-click="test()">Follow</button>');
 		}
 		if(apiResponse.indexOf("The user does indeed follow already")>=0){
-			postDiv.append('<button ng-click="test()">Un Follow</button');
+			postDiv.append('<a href="#/app/unfollowuser?id=' + id + '">Un Follow</button>');
 		}
 	})
   })
 
-  test = function(){
+  doRegistration = function(){
   	console.log("test");
   }
 
