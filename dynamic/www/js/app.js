@@ -1,5 +1,5 @@
 //Below code was initially generated when I created the project (when I ran ionic start sidemenu). I have added my own code to it.
-angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers', 'musiclovers.controllers', 'venue.controllers', 'makeEvent.controllers', 'eventInfo.controllers', 'loversInfo.controllers', 'followUser.controllers', 'unFollowUser.controllers'])
+angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers', 'musiclovers.controllers', 'venue.controllers', 'makeEvent.controllers', 'eventInfo.controllers', 'loversInfo.controllers', 'followUser.controllers', 'unFollowUser.controllers', 'eventFav.controllers', 'eventUnFav.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -145,6 +145,26 @@ angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.
       'menuContent': {
         templateUrl: 'views/unfollowuser.html',
         controller: 'UnFollowUserCtrl'
+      }
+    }
+  })
+
+  .state('app.eventFav', {
+    url: '/eventfav',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/eventfav.html',
+        controller: 'EventFavCtrl'
+      }
+    }
+  })
+
+    .state('app.eventUnFav', {
+    url: '/eventunfav',
+    views: {
+      'menuContent': {
+        templateUrl: 'views/eventunfav.html',
+        controller: 'EventUnFavCtrl'
       }
     }
   })
