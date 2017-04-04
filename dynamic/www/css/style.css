@@ -93,6 +93,43 @@ th .post {
 	color:white;
 }
 
+#event-title{
+	color:white;
+}
+
 h1:first-child {
 	color:white;
+}
+
+#events {
+	background-color: #3b5998;
+}
+
+.test {
+	background-color:white;
+}
+
+#event-description {
+	background-color: white;
+}
+
+#event-information{
+	background-color: white;
+}
+
+#artists-performing {
+	background-color: white;
+}
+
+.users {
+	background-color: white;
+}
+
+#image {
+	max-height:20%;
+	left: 40%;
+}
+
+.music-lovers {
+	background-color: #3b5998;
 }
