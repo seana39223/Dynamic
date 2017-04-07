@@ -41,7 +41,7 @@ angular.module('register.controllers', [])
     }
 
     if ($scope.register.email==undefined) {
-      popUp("Field Missing", "Email address as not entered.");
+      popUp("Field Missing", "Email address was not entered.");
       return false;
     }
 
