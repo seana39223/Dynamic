@@ -3,11 +3,11 @@
 The purpose of this project is to establish whether hybrid mobile applications are a feasible alternative to native development. This will involve exploring, examining and developing apps in a hybrid manner. For this project a music social media app will be developed. The app will have various features e.g. looking up events which take place in  venues. A hybrid mobile application framework will be selected which will form the front end of this project. The back end of this project which will be in PHP.
 
 \section{Background}
-There are three different types of mobile applications: a native app, a web app and a hybrid app. A native app is an app which is developed in a platform specific language and is usually downloaded from a device's app store e.g. Google Play Store for Android and the App Store for iOS devices. As  native apps are developed in a platform specific language e.g Android apps are developed in Java and iOS apps are developed in Swift (formerly Objective C) this means that  code has to be written in multiple languages to develop the app for different platforms. Native apps allow for platform Application Programming Inteface (APIs) to be used and therefore the developer has access to resources such as the device's camera or contact book. 
+There are three different types of mobile applications: a native app, a web app and a hybrid app \cite{BAB} \cite{IIA} \cite{PTA}. A native app is an app which is developed in a platform specific language and is usually downloaded from a device's app store e.g. Google Play Store for Android and the App Store for iOS devices. As  native apps are developed in a platform specific language e.g Android apps are developed in Java \cite{AD} and iOS apps are developed in Swift (formerly Objective C) \cite{ID} this means that  code has to be written in multiple languages to develop the app for different platforms. Native apps allow for platform Application Programming Inteface (APIs) to be used and therefore the developer has access to resources such as the device's camera or contact book \cite{MAC} \cite{MF}.
 
-Web apps are essentially just web pages which are mobile responsive and therefore display well on mobile devices. They are accessed via a device's browser where the user either inputs the uniform resource locator (url) or clicks a link which takes them to the web app. Web apps do not (easily) have access to the platforms' API therefore it is very challenging for a developer to use native resources such as a device's camera. 
+Web apps are essentially just web pages which are mobile responsive and therefore display well on mobile devices. They are accessed via a device's browser where the user either inputs the uniform resource locator (url) or clicks a link which takes them to the web app. Web apps do not (easily) have access to the platforms' API therefore it is very challenging for a developer to use native resources such as a device's camera \cite{MAC} \cite{BAB} .
 
-Hybrid apps are apps which are written in web technologies (usually HTML5, CSS and JS.) They are usually downloaded through an app store and a piece of middleware enables hybrid apps to have access to native APIs, allowing hybrid apps to access resources such as a device's camera. Unlike native apps, hybrid apps only require one code base for multiple platforms.
+Hybrid apps are apps which are written in web technologies (usually HTML5, CSS and JS.) They are usually downloaded through an app store and a piece of middleware enables hybrid apps to have access to native APIs, allowing hybrid apps to access resources such as a device's camera. Unlike native apps, hybrid apps only require one code base for multiple platforms\cite{MAC} \cite{SF}.
 
 \section{Analysis}
 It is important to consider the advantages and disadvantages of the different types of mobile app development as this will allow for a reasonable judgement to be made as to whether hybrid apps are feasible alternatives to native apps.
@@ -20,9 +20,11 @@ It is commonly thought that the performance of hybrid apps' is poor and that the
 
 
 \section{Process}
-There is a common debate within software engineering about whether to use a plan driven methodology or an agile methodology. Plan driven methodologies rely on the requirements for the project not changing whereas agile methodologies try and embrace changing requirements.
+There is a common debate within software engineering about whether to use a plan driven methodology or an agile methodology. Plan driven methodologies rely on the requirements for the project not changing whereas agile methodologies try and embrace changing requirements \cite{Agile}.
 
 As this project is an investigation, the requirements of the app may change it may be worth spending more time than initially planned building specific features as building those features will help make a judgement as to whether hybrid apps are feasible alternatives to native apps. This is why an agile approach was used for this project.
+
+//TODO: Explain multiple different agile approaches here.
 
 Scrum was the agile methodology I felt was most appropriate for this project. Scrum (as with most other agile methodologies) splits the requirements for the app into multiple stories. These stories then form the basis of each sprint (a work iteration.) Whilst Scrum was the methodology chosen the project didn't strictly use Scrum as Scrum requires multiple different people in a group to do multiple different roles such as a Scrum Master. 
 
@@ -54,4 +56,13 @@ As Scrum is an agile methodology the project was split into multiple different s
 \end{itemize}
 
 \subsection{Framework}
-TODO: This section.
+There are multiple different frameworks for developing apps using hybrid technologies. These frameworks all use web technologies however it differs from framework to framework as to what specific web technology is used. For example apps made using the JQuery Mobile Framework are wrote in JQuery and apps made using the ionic framework are written in AngularJS.
+
+As well as considering the language of the framework it was also important to consider other factors before deciding which framework would be most appropriate. These factors include things such as page change speed, access to native APIs and external documentation and community available for support.
+
+The below table summarises information about multiple different hybrid app frameworks.
+
+//TODO make table here.
+
+Despite Ionic having a steep learning curve due to it using AngularJS as opposed to JQuery it seemed like the most appropriate framework to use. This is because not only does Ionic have a fairly substantial amount of middleware plugins which will allow for platform specific APIs to be accessed but it is also considered one of the fastest frameworks, so this will aid the project aim of discovering whether hybrid apps are feasible alternatives to native apps. 
+
