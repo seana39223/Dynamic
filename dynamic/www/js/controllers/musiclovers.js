@@ -1,6 +1,5 @@
 angular.module('musiclovers.controllers', ['ionic'])
 .controller('musicLoversCtrl', function($scope, $http) {
-  var test;
   var api = "http://seananderson.co.uk/api/listusers.php";
   var feed = angular.element(document.querySelector('#lovers'));
   var data = { 
