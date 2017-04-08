@@ -43,7 +43,6 @@ angular.module('home.controllers', [])
   	  text: $scope.status.text
   	}
   	$http.post(api, data).then(function(res){
-      console.log("BLAHHAHHA");
   	  popUp("Post posted", "Post has been posted.");
       $state.go('app.events');
   	})
