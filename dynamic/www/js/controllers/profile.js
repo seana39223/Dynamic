@@ -1,5 +1,5 @@
 angular.module('profile.controllers', ['ionic', 'ngCordova'])
-.controller('myProfileCtrl', function($scope, $cordovaCamera, $cordovaFile, $cordovaFileTransfer) {
+.controller('myProfileCtrl', function($scope, $cordovaCamera, $cordovaFile, $cordovaFileTransfer, $ionicLoading, $http) {
 
 
   //Below code for taking picture based of https://devdactic.com/how-to-capture-and-store-images-with-ionic/
@@ -9,7 +9,7 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
     if (photo=='new') {
 	  var options = {
 		quality:80,
-		sourceType : Camera.PictureSourceType.CAMERA, // Camera.PictureSourceType.PHOTOLIBRARY
+		sourceType : Camera.PictureSourceType.CAMERA,
 		encodingType: Camera.EncodingType.PNG,
 	  };
 	}
@@ -23,9 +23,10 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
 	}
 	
 	$cordovaCamera.getPicture(options).then(function(imageData) {
-	  var url = "http:/seananderson.co.uk/api/imageupload.php";
+	  $ionicLoading.show();
+	  var url = "http://seananderson.co.uk/api/imageupload.php";
 	  var file = imageData;
-	  var filename = imageData;
+	  var filename = localStorage.getItem('dName') + '.png';
 	  var options = {
         fileKey: "file",
         fileName: filename,
@@ -34,11 +35,18 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
         params : {'fileName': filename}
       };
 $cordovaFileTransfer.upload(url, file, options).then(function (result) {
-     console.log("SUCCESS: " + JSON.stringify(result.response));
+	var api = "http://seananderson.co.uk/api/imageprofile.php";
+	var data = {
+		dName : localStorage.getItem('dName')
+	}
+	$http.post(api,data).then(function(res){
+	    $ionicLoading.hide();
+	    popUp('Photo added succesfully');
+	})
  }, function (err) {
+ 	 $ionicLoading.hide()
      console.log("ERROR: " + JSON.stringify(err));
  }, function (progress) {
-     // PROGRESS HANDLING GOES HERE
  });
 
 	}, 
