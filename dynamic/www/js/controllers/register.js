@@ -180,10 +180,12 @@ angular.module('register.controllers', [])
                 apiReturns = JSON.stringify(res);
                 if (apiReturns.includes('New user added succesfully')>=0) {
                   localStorage.setItem('email', $scope.register.email);
+                  localStorage.setItem('dName', $scope.register.dName);
                   if ($scope.registerGenre!=undefined) {
                     $scope.registerGenre();
                   }
-                  $state.go('app.home');
+                  $state.go('app.profile');
+                  popUp('Welcome', 'Welcome to Dynamic please fill in your profile page and then follow some users');
                 }
               })
             }
