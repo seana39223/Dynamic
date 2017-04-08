@@ -35,6 +35,13 @@ angular.module('login.controllers', [])
       }
       else {
         localStorage.setItem('email', $scope.loginData.email);
+        var api = "http://seananderson.co.uk/api/getdisplayname.php";
+        data = {
+          email: $scope.loginData.email
+        }
+        $http.post(api, data).then(function(res) {
+        localStorage.setItem('dName', (res['data']['displayname']));
+        })
         $state.go('app.home');
       }
     });
