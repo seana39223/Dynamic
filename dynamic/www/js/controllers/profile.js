@@ -1,5 +1,5 @@
 angular.module('profile.controllers', ['ionic', 'ngCordova'])
-.controller('myProfileCtrl', function($scope, $cordovaCamera, $cordovaFile, $cordovaFileTransfer, $ionicLoading, $http) {
+.controller('myProfileCtrl', function($scope, $cordovaCamera, $cordovaFile, $cordovaFileTransfer, $ionicLoading, $http, $ionicActionSheet) {
 
 
   //Below code for taking picture based of https://devdactic.com/how-to-capture-and-store-images-with-ionic/
