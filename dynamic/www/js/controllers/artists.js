@@ -6,7 +6,6 @@ angular.module('artists.controllers', [])
     email: localStorage.getItem('email')
   }
   $http.post(api, data).then(function(res){
-  	console.log(data);
   	res['data'].forEach(function(user) {
         var userNumber = user['id'];
         feed.append('<div id = " ' + userNumber + '" class="users">' + '<h2>' + user['displayname'] + '</h2> </br> <a href="#/app/loversinfo?lover=' + userNumber + '">More Info</a></div></br>');
