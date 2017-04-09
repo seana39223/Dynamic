@@ -1,5 +1,5 @@
 angular.module('loversInfo.controllers', [])
-.controller('LoversInfoCtrl', function($scope, $http) {
+.controller('LoversInfoCtrl', function($scope, $http, $ionicLoading) {
   $scope.$on("$ionicView.beforeEnter", function() {
   var url = window.location.href;
   var id = url.substring(url.indexOf("=") + 1);
@@ -8,6 +8,7 @@ angular.module('loversInfo.controllers', [])
     id : id
   }
   $http.post(api, data).then(function(res){
+  	$ionicLoading.show();
 	var result = res
 	var api = "http://seananderson.co.uk/api/getgenre.php "
 	$http.post(api, data).then(function(res){
@@ -24,6 +25,7 @@ angular.module('loversInfo.controllers', [])
 	    bioDiv.append('<p>This user has not entered a bio </p>');
 	  }
 	})
+	$ionicLoading.hide();
    })
 
    var api = "http://seananderson.co.uk/api/getusersposts.php";
@@ -31,11 +33,11 @@ angular.module('loversInfo.controllers', [])
 	$http.post(api, data).then(function(res) {
 		console.log(res['data'].length);
 		if (res['data'].length==0) {
-			postDiv.append('<p>This user has not posted yet.</p>')
+			postDiv.append('<div class="post><p>This user has not posted yet.</p></div>')
 		}
 		else {
 		  res['data'].forEach(function(post) {
-            postDiv.append('<p>'+ post['text'] + '</p>');
+            postDiv.append('<div class="post"> <p>'+ post['text'] + '</p></div>');
           })
         }
 	})
@@ -56,10 +58,8 @@ angular.module('loversInfo.controllers', [])
 			followingDiv.append('<a class="button button-block button-royal" href="#/app/unfollowuser?id=' + id + '">Un Follow</button>');
 		}
 	})
+	$ionicLoading.hide();
   })
 
-  doRegistration = function(){
-  	console.log("test");
-  }
 
 });
