@@ -8,7 +8,7 @@ angular.module('musiclovers.controllers', ['ionic'])
   $http.post(api, data).then(function(res){
   	res['data'].forEach(function(user) {
         var userNumber = user['id'];
-        feed.append('<div id = " ' + userNumber + '" class="users">' + '<h2>' + user['displayname'] + '</h2> </br> <a href="#/app/loversinfo?lover=' + userNumber + '">More Info</a></div></br>');
+        feed.append('<div id = " ' + userNumber + '" class="users">' + '<h2>' + user['displayname'] + '</h2> <a href="#/app/loversinfo?lover=' + userNumber + '">More Info</a></div></br>');
   	});
   });
 });
