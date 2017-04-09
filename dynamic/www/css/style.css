@@ -141,3 +141,38 @@ event
 .events {
 	background-color: white;
 }
+
+h1 {
+	text-align:center;
+}
+
+.lovers p {
+	text-align:center;
+}
+
+#lovers-image {
+    position:fixed;
+    left:36.5%;
+}
+
+#lovers-biotitle {
+	background-color: white;
+	margin-top: 150px;
+	position:relative;
+}
+
+#lovers-posts {
+	position: relative;
+}
+
+#lovers-following {
+	padding-top: -1%;
+	padding-left:2.5%;
+	width:95%;
+	text-align:center;
+}
+#lovers-posts h2 {
+	color:white;
+	text-align:center;
+}
+
