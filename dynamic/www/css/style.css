@@ -54,7 +54,7 @@ th .post {
 }
 
 .home {
-	background-color: #3b5998 !important; 
+	background-color: #3b5998; 
 	height:100%;
 }
 
@@ -155,7 +155,7 @@ h1 {
     left:36.5%;
 }
 
-#lovers-biotitle {
+#lovers-bio {
 	background-color: white;
 	margin-top: 150px;
 	position:relative;
@@ -167,12 +167,21 @@ h1 {
 
 #lovers-following {
 	padding-top: -1%;
-	padding-left:2.5%;
-	width:95%;
+	padding-left:1.2%;
+	width:98%;
 	text-align:center;
 }
 #lovers-posts h2 {
 	color:white;
 	text-align:center;
+}
+
+.post {
+	background-color: white;
+	text-align: center;
+}
+
+.lovers {
+	background-color: #3b5998;
 }
 
