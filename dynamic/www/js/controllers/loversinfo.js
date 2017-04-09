@@ -13,15 +13,31 @@ angular.module('loversInfo.controllers', [])
 	$http.post(api, data).then(function(res){
 	  var loversTitle = angular.element(document.querySelector('#lovers-title'));
 	  loversTitle.append('<h1>'+result['data']['displayname'] + '</h1>' );
-	  })
+	  var photoDiv = angular.element(document.querySelector('#lovers-image'));
+	  photoDiv.append('<img  height="110 px" width="100 px" src="' + result['data']['picture'] + '"</img>');
+	  console.log(result['data']['bio']);
+	  var bioDiv = angular.element(document.querySelector('#lovers-bio'));
+	  if (result['data']['bio']) {
+	  	bioDiv.append('<p>Users Bio: ' + result['data']['bio'] + '</p>');
+	  }
+	  else {
+	    bioDiv.append('<p>This user has not entered a bio </p>');
+	  }
 	})
+   })
 
    var api = "http://seananderson.co.uk/api/getusersposts.php";
    var postDiv = angular.element(document.querySelector('#lovers-posts'));
 	$http.post(api, data).then(function(res) {
-		res['data'].forEach(function(post) {
+		console.log(res['data'].length);
+		if (res['data'].length==0) {
+			postDiv.append('<p>This user has not posted yet.</p>')
+		}
+		else {
+		  res['data'].forEach(function(post) {
             postDiv.append('<p>'+ post['text'] + '</p>');
-        })
+          })
+        }
 	})
 
 	var api = "http://seananderson.co.uk/api/checkfollowing.php";
@@ -32,12 +48,12 @@ angular.module('loversInfo.controllers', [])
 	$http.post(api, data).then(function(res) {
 		var apiResponse = (res['data']);
 		console.log(apiResponse);
+		var followingDiv = angular.element(document.querySelector('#lovers-following'));
 		if(apiResponse.indexOf("This user does not follow the current user")>=0){
-			postDiv.append('<a href="#/app/followuser?id=' + id + '">Follow</button>');
-			//postDiv.append('<button ng-click="test()">Follow</button>');
+			followingDiv.append('<a class="button button-block button-royal" href="#/app/followuser?id=' + id + '">Follow</button>');
 		}
 		if(apiResponse.indexOf("The user does indeed follow already")>=0){
-			postDiv.append('<a href="#/app/unfollowuser?id=' + id + '">Un Follow</button>');
+			followingDiv.append('<a class="button button-block button-royal" href="#/app/unfollowuser?id=' + id + '">Un Follow</button>');
 		}
 	})
   })
