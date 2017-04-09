@@ -47,4 +47,5 @@ angular.module('home.controllers', [])
       $state.go('app.events');
   	})
   }
+  
 });

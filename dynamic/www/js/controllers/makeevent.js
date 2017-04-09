@@ -9,6 +9,7 @@ angular.module('makeEvent.controllers', [])
     }
   })
 
+  //Lists all venues associated with the user.
   api = "http://seananderson.co.uk/api/listvenue.php";
   var data = {
     email: localStorage.getItem('email')
@@ -25,7 +26,7 @@ angular.module('makeEvent.controllers', [])
         select.append('<option>' + res['data'][i] + '</option>');
       }
     }
-
+    //Lists all artists.
     api = "http://seananderson.co.uk/api/listartists.php";
     $http.get(api).then(function(res) {
       var length = (res['data']).length;
@@ -35,7 +36,6 @@ angular.module('makeEvent.controllers', [])
       }
     })
   })
-
 
   //Generic popup as there may need to be multiple popups for this page. Code is based of ionic documentation for popup.
   popUp = function(title, message) {
@@ -71,5 +71,4 @@ angular.module('makeEvent.controllers', [])
       }
     })
   }
-
 })

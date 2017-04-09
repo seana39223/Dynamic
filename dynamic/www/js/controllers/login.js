@@ -4,12 +4,6 @@ angular.module('login.controllers', [])
   // Form data for the login modal
   $scope.loginData = {};
 
-/*  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-*/
   //Function for when the user enters the wrong details.
   loginFailed = function() {
     var alertPopup = $ionicPopup.alert({
