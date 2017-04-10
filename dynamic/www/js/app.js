@@ -71,6 +71,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.
 
   .state('app.profile', {
     url: '/profile',
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: 'views/profile.html',
