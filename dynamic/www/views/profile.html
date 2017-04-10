@@ -1,21 +1,36 @@
-<ion-view view-title="My Profile">
+<ion-view view-title="My Profile" class="my-profile" cache-view="false">
   <ion-content>
     <h1>My Profile</h1>
-    <div id="photo">
-      <img>Photo will go here.</img>
+    <div id="profile-photo">
     </div>
-    <div id="displayName">
-      <p></p>
+    <div id="changepictext">
+    <p>Please click one of the buttons below to update your profile picture </p>
     </div>
-    <div id="recentPosts">
-      <p>Users 3 most recent posts go here with a link to view more</p>
-    <div id="following">
-    <p>Inject list of 5 artists they are following here link to display all they are following.</p>
-    <button class="button button-energized" ng-click="takePhoto('new')">
+    <div id ="change-profile-pic">
+    <button class="button button-energized" id="takeaphoto" ng-click="takePhoto('new')">
     Take a Photo
     </button>
-    <button class="button button-energized" ng-click="takePhoto('old')">
+    </br>
+    <button class="button button-energized" id="uselibrary" ng-click="takePhoto('old')">
     Use a photo already stored on device
     </button>
+    </div>
+    <div id="bio">
+    <p></p>
+    </div>
+    <div id="newbiotext">
+    <p> Please type in the box below to create a new bio and then click submit new bio. </p>
+    <div>
+    <div id ="newbio">
+    <form ng-submit="newBio()">
+      <label class="item item-input">
+        <span class="input-label">Bio</span>
+        <input type="text" ng-model="bio.text">
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" type="submit">Submit new Bio</button>
+      </label>
+    </form>
+    </div>
   </ion-content>
 </ion-view>
