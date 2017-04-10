@@ -1,6 +1,24 @@
 angular.module('profile.controllers', ['ionic', 'ngCordova'])
-.controller('myProfileCtrl', function($scope, $cordovaCamera, $cordovaFile, $cordovaFileTransfer, $ionicLoading, $http, $ionicActionSheet) {
-  //Below code for taking picture based of https://devdactic.com/how-to-capture-and-store-images-with-ionic/
+.controller('myProfileCtrl', function($scope, $ionicHistory, $templateCache, $cordovaCamera, $cordovaFile, $cordovaFileTransfer, $ionicLoading, $http, $ionicActionSheet) {
+    $scope.$parent.$on('$ionicView.beforeEnter', function () {
+      $ionicHistory.clearCache();
+      var api = "http://seananderson.co.uk/api/getprofileinfo.php";
+      var data = {
+        email: localStorage.getItem('email')
+       }
+        $http.post(api, data).then(function(res){
+        //Below line is a hack justified in report.
+    	var image = (res['data']['picture']) + '?random=' + Math.random();
+    	var photoDiv = angular.element(document.querySelector('#profile-photo'));
+    	photoDiv.html('<div id ="profile-photo"><img  height="110 px" width="100 px" src="' + image + '"</img></div>');
+    	var bioDiv =  angular.element(document.querySelector('#bio'));
+    	bioDiv.html('<div id = "bio"><p>' + res['data']['bio'] + '<p> </div>')
+       })
+      }); 
+
+  $scope.bio = {};
+
+  //code for taking picture based of https://devdactic.com/how-to-capture-and-store-images-with-ionic/
   $scope.images = [];
   //Runs when user clicks to change profile photo.
   $scope.takePhoto = function(photo) {
@@ -8,16 +26,22 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
     if (photo=='new') {
 	  var options = {
 		quality:80,
+		targetWidth:500,
+	    targetHeight:750,
 		sourceType : Camera.PictureSourceType.CAMERA,
 		encodingType: Camera.EncodingType.PNG,
+		correctOrientation: true
 	  };
 	}
     //If user wants to use a photo from device's library.
 	if (photo=='old') {
       var options = {
 	    quality:80,
+	    targetWidth:500,
+	    targetHeight:750,
 		sourceType :  Camera.PictureSourceType.PHOTOLIBRARY, 
 		encodingType: Camera.EncodingType.PNG,
+		correctOrientation: true
 	  }
 	}
 	
@@ -39,8 +63,20 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
 		  dName : localStorage.getItem('dName')
 	    }
 	    $http.post(api,data).then(function(res){
-	      $ionicLoading.hide();
+	      $ionicLoading.hide();;
 	      popUp('Photo added succesfully');
+	      var api = "http://seananderson.co.uk/api/getprofileinfo.php";
+          var data = {
+            email: localStorage.getItem('email')
+          } 
+	      $http.post(api, data, { cache: false }).then(function(res){
+    	    console.log(res['data']['picture']);
+    	    //Below line is a hack, justified in report.
+    	    var image = (res['data']['picture']) + '?random=' + Math.random();
+    	    var photoDiv = angular.element(document.querySelector('#profile-photo'));
+    	    photoDiv.html('<div id ="profile-photo"><img  height="110 px" width="100 px" src="' + image + '"</img></div>');
+          })
+
 	    })
       }, function (err) {
  	   $ionicLoading.hide()
@@ -51,5 +87,25 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
 	function(err) {
       console.log(err);
 	});
+  }
+
+  $scope.newBio = function() {
+  	var api = "http://seananderson.co.uk/api/updatebio.php"
+  	var bio = $scope.bio.text
+  	data = {
+  		bio: bio,
+  		dName: localStorage.getItem('dName')
+  	}
+    $http.post(api,data).then(function(res) {
+    	popUp("Bio Updated");
+    	var api = "http://seananderson.co.uk/api/getprofileinfo.php";
+        var data = {
+          email: localStorage.getItem('email')
+        }
+        $http.post(api,data).then(function(res) {
+          var bioDiv =  angular.element(document.querySelector('#bio'));
+    	  bioDiv.html('<div id = "bio"><p>' + res['data']['bio'] + '<p> </div>')
+        })
+    })
   }
 });
