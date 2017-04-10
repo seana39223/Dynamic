@@ -10,7 +10,7 @@ angular.module('register.controllers', [])
     }
   })
 
- // Form data for the login modal
+   // Form data for the login modal
   $scope.register = {};
 
   //Generic popup as there may need to be multiple popups for this page. Code is based of ionic documentation for popup.
