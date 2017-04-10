@@ -185,3 +185,47 @@ h1 {
 	background-color: #3b5998;
 }
 
+.my-profile {
+	background-color: #3b5998;
+}
+
+#profile-photo {
+	position:fixed;
+    left:36.5%;
+}
+
+.my-profile p {
+	text-align:center;
+}
+
+#bio {
+	margin-top:10px;
+	position: relative;
+	background-color: white;
+}
+
+#changepictext {
+	margin-top:150px;
+	background-color: white;
+}
+
+#change-profile-pic {
+	position:relative;
+	text-align:center;
+	margin-top:10px;
+}
+
+#takeaphoto{
+	width:90%;
+}
+
+#newbiotext {
+	background-color: white;
+}
+
+#uselibrary{
+	margin-top: 10px;
+	width:90%;
+}
+
+
