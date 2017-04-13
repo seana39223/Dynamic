@@ -2,7 +2,15 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces The Sprint planning template\relax }}{3}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces The Sprint review template\relax }}{4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces UML diagram which illustrates the appropriate relationships between the different tables in the database in relation to an event.\relax }}{7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces UML Diagram which illustrates the view\relax }}{8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces UML Diagram for the model in relation to events.\relax }}{9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces User interface mock up\relax }}{10}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Postman testing register.php\relax }}{12}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces User added to the database\relax }}{12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Screenshots of registration system.\relax }}{14}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Validation Screenshots\relax }}{15}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Screen shot of camera functionality.\relax }}{16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
