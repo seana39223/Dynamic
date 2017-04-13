@@ -9,7 +9,7 @@ if ($connection->connect_error) {
     die ("Connection to the database failed." . $connection->connect_error);
 }
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users where type = 1";
 $users = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $rows = array();
 while($user = mysqli_fetch_assoc($users)) {
