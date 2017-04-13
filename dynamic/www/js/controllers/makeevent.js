@@ -1,5 +1,6 @@
 angular.module('makeEvent.controllers', [])
 .controller('MakeEventCtrl', function($scope, $ionicModal, $http, $state, $ionicPopup) {
+  
   var api = "http://seananderson.co.uk/api/listgenre.php";
   $http.get(api).then(function(res) {
     var length = (res['data']).length;
