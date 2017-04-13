@@ -4,9 +4,8 @@ node_modules
 <%= appPath %>/bower_components
 coverage
 platforms
+lib
 plugins
 *.swp
 *.swo
 *.log
-*.DS_Store
-*.lib
