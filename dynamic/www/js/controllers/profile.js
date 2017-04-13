@@ -12,7 +12,7 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
     	var photoDiv = angular.element(document.querySelector('#profile-photo'));
     	photoDiv.html('<div id ="profile-photo"><img  height="110 px" width="100 px" src="' + image + '"</img></div>');
     	var bioDiv =  angular.element(document.querySelector('#bio'));
-    	bioDiv.html('<div id = "bio"><p>' + res['data']['bio'] + '<p> </div>')
+    	bioDiv.html('<div id = "bio"><p>' + res['data']['bio'] + '<p> </div>');
        })
       }); 
 
@@ -25,23 +25,23 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
   	//If user wants to take a new photo.
     if (photo=='new') {
 	  var options = {
-		quality:80,
-		targetWidth:500,
+		  quality:80,
+		  targetWidth:500,
 	    targetHeight:750,
-		sourceType : Camera.PictureSourceType.CAMERA,
-		encodingType: Camera.EncodingType.PNG,
-		correctOrientation: true
+		  sourceType : Camera.PictureSourceType.CAMERA,
+		  encodingType: Camera.EncodingType.PNG,
+		  correctOrientation: true
 	  };
 	}
     //If user wants to use a photo from device's library.
 	if (photo=='old') {
-      var options = {
+    var options = {
 	    quality:80,
 	    targetWidth:500,
 	    targetHeight:750,
-		sourceType :  Camera.PictureSourceType.PHOTOLIBRARY, 
-		encodingType: Camera.EncodingType.PNG,
-		correctOrientation: true
+		  sourceType :  Camera.PictureSourceType.PHOTOLIBRARY, 
+		  encodingType: Camera.EncodingType.PNG,
+		  correctOrientation: true
 	  }
 	}
 	
@@ -70,12 +70,11 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
             email: localStorage.getItem('email')
           } 
 	      $http.post(api, data, { cache: false }).then(function(res){
-    	    console.log(res['data']['picture']);
     	    //Below line is a hack, justified in report.
     	    var image = (res['data']['picture']) + '?random=' + Math.random();
     	    var photoDiv = angular.element(document.querySelector('#profile-photo'));
-    	    photoDiv.html('<div id ="profile-photo"><img  height="110 px" width="100 px" src="' + image + '"</img></div>');
-          })
+    	    photoDiv.html('<div id ="profile-photo"><img  height="60 px" width="60 px" src="' + image + '"</img></div>');
+        })
 
 	    })
       }, function (err) {
@@ -104,7 +103,7 @@ angular.module('profile.controllers', ['ionic', 'ngCordova'])
         }
         $http.post(api,data).then(function(res) {
           var bioDiv =  angular.element(document.querySelector('#bio'));
-    	  bioDiv.html('<div id = "bio"><p>' + res['data']['bio'] + '<p> </div>')
+    	  bioDiv.html('<div id = "bio"><p>Bio: ' + res['data']['bio'] + '<p> </div>')
         })
     })
   }
