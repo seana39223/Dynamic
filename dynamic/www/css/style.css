@@ -122,7 +122,10 @@ h1:first-child {
 }
 
 .users {
+	margin-left:10%;
 	background-color: white;
+	text-align:center;
+	width:80%;
 }
 
 #image {
@@ -133,7 +136,6 @@ h1:first-child {
 .music-lovers {
 	background-color: #3b5998;
 }
-event
 .event {
 	background-color: #3b5998;
 }
