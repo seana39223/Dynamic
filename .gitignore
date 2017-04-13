@@ -9,3 +9,4 @@ plugins
 *.swp
 *.swo
 *.log
+*.bbl
