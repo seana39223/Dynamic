@@ -10,3 +10,6 @@ plugins
 *.swo
 *.log
 *.bbl
+*.aux
+*.blg
+config.php
