@@ -1,4 +1,4 @@
-\chapter{Testing and Experimenting}
+\chapter{Testing and experimenting}
 
 Detailed descriptions of every test case are definitely not what is required here. What is important is to show that you adopted a sensible strategy that was, in principle, capable of testing the system adequately even if you did not have the time to test the system fully.
 
@@ -8,17 +8,58 @@ The following sections indicate some areas you might include. Other sections may
 
 \section{Overall Approach to Testing and Experiments}
 
-\section{Automated Testing}
+\section{Acceptance Testing}
+A table was derived which broke down all of the stories into multiple different features. These features were then tested, and a comment was left if the test did not pass.
 
-\subsection{Unit Tests}
+\begin{center} 
+ \begin{tabular}{||c c c c||}  
+ \hline
+ Story & Feature Name & Pass/Fail & Comment \\
+ \hline\hline
+ Registration and Login & Register User Details &  Fail &  \begin{tabular}{@{}c@{}} Users postcode \\ does not get\\ added properly \end{tabular} \\
+ \hline
+ Registration and Login & \begin{tabular}{@{}c@{}}Login with \\ previously created \\ account \end{tabular} & Pass &  Works as expected \\
+ \hline
+ Registration and Login & Logout & Fail & \begin{tabular}{@{}c@{}} System appears to \\ logout okay however \\ it loads previous \\ users feed. \end{tabular} \\
+ \hline
+ Profile Page & \begin{tabular}{@{}c@{}} Upload picture \\ from library \end{tabular}  &  Pass  & Works as expected  \\ 
+ \hline
+Profile Page & \begin{tabular}{@{}c@{}}Take picture \\using device's camera \\ and upload.\end{tabular} & Pass &  Works as expected  \\ 
+\hline
+Profile Page & Update bio & Pass & Works as expected \\
+\hline 
+Post System & User Posts & Pass &  \begin{tabular}{@{}c@{}} User posts get \\ added to feed table \\ as expected. \end{tabular} \\
+\hline
+Follow System & \begin{tabular}{@{}c@{}} User can follow \\ other users \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} adds data to \\ the correct table \\ and shows as followed \\ on the app \end{tabular} \\
+\hline
+Follow system &  \begin{tabular}{@{}c@{}} User can unfollow \\ other users \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} Can successfully unfollow other users \end{tabular} \\
+\hline
+ \begin{tabular}{@{}c@{}} Post System \\ and Follow System \end{tabular} &  \begin{tabular}{@{}c@{}} Correct posts \\ display on users \\ home page \end{tabular} & Pass & The correct posts display \\
+ \hline
+ Create Events System & Create a Venue & Pass &  \begin{tabular}{@{}c@{}} All necessary details \\ are stored in the \\ back end appropriately \end{tabular} \\
+\hline
+ Create Events System & Create Events Themselves & Pass & \begin{tabular}{@{}c@{}} Events are \\ properly created \\ and have a correct \\ link to the appropriate \\ venue id. \end{tabular} \\
+ \hline
+ Search &  \begin{tabular}{@{}c@{}} User can search \\ for nearby events \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} Uses device's GPS \\ correctly and compares \\ with events location \end{tabular} \\
+ \hline
+  Search &  \begin{tabular}{@{}c@{}} User can search \\ for nearby music \\ lovers and artists \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} Uses device's GPS \\ correctly and compares \\ with events location \end{tabular} \\
+  \hline
+   Search &  \begin{tabular}{@{}c@{}} User can search \\ for events \\ which are happening \\ soon \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} Correctly sorts \\ events by dates  \end{tabular} \\
+  \hline
+\end{tabular}
+\end{center}
+ \captionof{table}{User Acceptance Testing Table}
+\vspace{5mm}
+
+It is clear from Table 4.1 that in terms of acceptance testing some of the code contained bugs for example the logout system was not working properly. Once all of the issues in Table X had been addressed another table; Table Y was created, this goes through the tests which failed in Table X and evaluates whether they now pass.
+
+\section{Unit tests}
 It is important to unit test each of the functions within the controllers to make sure that the user of the app wont encounter any weird behaviour. The Jasmine and Karma frameworks were used for unit testing the app.  
 
-\subsection{User Interface Testing}
+\section{User Interface testing}
+For a mobile app user interface testing is very important. As the user interface is essentially how the user natvigates around the front end and how they submit data to the back end. 
 
-\subsection{Stress Testing}
+\section{}
 
-\subsection{Other types of testing}
-
-\section{Integration Testing}
-
-\section{User Testing}
+\section{User testing}
+In establishing whether hybrid apps are feasible alternatives to native apps it was important to get general users say about whether the apps 
