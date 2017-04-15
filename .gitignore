@@ -13,5 +13,4 @@ plugins
 *.aux
 *.blg
 config.php
-package.json
-bower.json
+*.json
