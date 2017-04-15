@@ -1,6 +1,5 @@
 angular.module('home.controllers', [])
 .controller('HomeCtrl', function($scope, $http, $state) {
-
   $scope.status = {};
   $scope.$on("$ionicView.beforeEnter", function() {
     //Below code loads feeds in as soon as home controller is called i.e. when home page is clicked on by user.
@@ -35,8 +34,8 @@ angular.module('home.controllers', [])
 
   //Below code is called when the user creates a post from the home page.
   $scope.postStatus = function() {
+    console.log(emojiText.convert($scope.status.text));
     var email = localStorage.getItem('email');
-    console.log(email);
   	var api = "http://seananderson.co.uk/api/status.php";
   	var data = {
   	  email: localStorage.getItem('email'),
@@ -44,7 +43,7 @@ angular.module('home.controllers', [])
   	}
   	$http.post(api, data).then(function(res){
   	  popUp("Post posted", "Post has been posted.");
-      $state.go('app.events');
+      $state.go('app.home');
   	})
   }
   

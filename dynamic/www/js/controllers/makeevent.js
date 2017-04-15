@@ -10,6 +10,8 @@ angular.module('makeEvent.controllers', [])
     }
   })
 
+  $scope.event = {};
+
   //Lists all venues associated with the user.
   api = "http://seananderson.co.uk/api/listvenue.php";
   var data = {
@@ -33,7 +35,7 @@ angular.module('makeEvent.controllers', [])
       var length = (res['data']).length;
       var select = angular.element(document.querySelector('#artists'));
       for (i=0;i<length;i++) {
-        select.append('<option>' + res['data'][i] + '</option>');
+        select.append('<option>' + res['data'][i]['displayname'] + '</option>');
       }
     })
   })
@@ -50,7 +52,6 @@ angular.module('makeEvent.controllers', [])
 
   //Function for when the user clicks the validation button.
   $scope.eventRegister = function() {
-    console.log($scope.event.genre.length);
     var api = "http://seananderson.co.uk/api/makeevent.php";
     var data = {
     	genre: $scope.event.genre,
@@ -61,11 +62,19 @@ angular.module('makeEvent.controllers', [])
       end_time: $scope.event.endTime
     }
     $http.post(api, data).then(function (res){
-      console.log(res);
       var apiReturns = JSON.stringify(res);
       if (apiReturns.includes('Event created successfully')>=0) {
+        $scope.event.artists.forEach(function(artist) {
+          var api = "http://seananderson.co.uk/api/artistevents.php";
+          var data = {
+            artist: artist,
+            event_name: $scope.event.name
+          }
+          $http.post(api, data).then(function(res){
+            console.log("Woop woop this worked properly");
+          })
+        })
         popUp("Event Created", "The event was created succesfully");
-        var length = $scope.event.genre.length;
       }
       else {
         popUp("error", apiReturns);

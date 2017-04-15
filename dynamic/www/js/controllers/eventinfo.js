@@ -44,5 +44,13 @@ angular.module('eventInfo.controllers', [])
 	    eventDetails.append('<a href="#/app/eventunfav?event=' + id + '">Remove event from favoruites</a>');
 	  }
 	})
+
+	var api = "http://seananderson.co.uk/artistsperforming.php";
+	var data = {
+		event_id: id
+	}
+	$http.post(api,data).then(function(res){
+		console.log(JSON.stringify(data));
+	})
   })
 });

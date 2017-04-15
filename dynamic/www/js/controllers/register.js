@@ -9,8 +9,7 @@ angular.module('register.controllers', [])
       select.append('<option>' + res['data'][i] + '</option>');
     }
   })
-
-   // Form data for the login modal
+  
   $scope.register = {};
 
   //Generic popup as there may need to be multiple popups for this page. Code is based of ionic documentation for popup.
