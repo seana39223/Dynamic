@@ -57,7 +57,60 @@ It is clear from Table 4.1 that in terms of acceptance testing some of the code 
 It is important to unit test each of the functions within the controllers to make sure that the user of the app wont encounter any weird behaviour. The Jasmine and Karma frameworks were used for unit testing the app.  
 
 \section{User Interface testing}
-For a mobile app user interface testing is very important. As the user interface is essentially how the user natvigates around the front end and how they submit data to the back end. 
+For a mobile app user interface testing is very important. As the user interface is essentially how the user natvigates around the front end and how they submit data to the back end. Whilst there is no simple automatic way to test the UI on a ionic application, a table was derived which shows all of the different buttons and navigation options to ensure that the UI worked as expected.
+
+\begin{center} 
+ \begin{tabular}{||c c c c||}  
+ \hline
+ Location & Button/Navigation & Pass/Fail & Comment \\
+ \hline
+ Login Screen & Register Button & Pass & \begin{tabular}{@{}c@{}} Takes to registration \\ screen as expected. \end{tabular} \\
+ \hline
+ Login Screen & Login Button & Pass & \begin{tabular}{@{}c@{}} Logs the user \\ in if credentials are \\ correct if not it \\ displays an error message. \end{tabular} \\
+ \hline
+ Registration Screen & Return to Login Button & Pass & \begin{tabular}{@{}c@{}} App returns to \\ login screen on button \\ click. \end{tabular} \\
+ \hline
+ Registration Screen & Register Button & Pass & \begin{tabular}{@{}c@{}} Creates an account \\ if user has entered \\ correct information or \\ displays an error if \\ invalid info entered. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (Shared across \\ multiple pages once \\ user is logged \\ in.) \end{tabular} & 'Home' link & Pass & \begin{tabular}{@{}c@{}} Take user to \\ the home page. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (Shared across \\ multiple pages once \\ user is logged \\ in.) \end{tabular} & 'Artists' link & Pass & \begin{tabular}{@{}c@{}} Takes user to \\ artists page. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (Shared across \\ multiple pages once \\ user is logged \\ in.) \end{tabular} & 'Events' link & Pass & \begin{tabular}{@{}c@{}} Takes user to \\ events page. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (Shared across \\ multiple pages once \\ user is logged \\ in.) \end{tabular} & 'Music Lovers' link & Pass & \begin{tabular}{@{}c@{}} Takes user to \\ music lovers page. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (Shared across \\ multiple pages once \\ user is logged \\ in.) \end{tabular} & 'My Profile' link & Pass & \begin{tabular}{@{}c@{}} Takes user to \\ my profile page. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (Shared across \\ multiple pages once \\ user is logged \\ in.) \end{tabular} & 'Logout' link & Pass & \begin{tabular}{@{}c@{}} Logs user out \\ and returns them \\ to login page. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (extras only \\ for venue owners.) \end{tabular}& 'Add a venue' link & Pass & \begin{tabular}{@{}c@{}} Takes venue owner \\ to add a \\ venue page. \end{tabular} \\
+ \hline
+ \begin{tabular}{@{}c@{}} Menu (extras only \\ for venue owners.) \end{tabular}& 'Make event' link & Pass & \begin{tabular}{@{}c@{}} Takes venue owner \\ to add an \\ event page. \end{tabular} \\
+ \hline
+Home Page & Submit post button & Pass & \begin{tabular}{@{}c@{}} Button posts the \\ data as expected.\end{tabular} \\
+ \hline
+ \hline
+  \end{tabular}
+   \end{center}
+   \begin{tabular}{||c c c c||}  
+    \hline
+ Location & Button/Navigation & Pass/Fail & Comment \\
+ \hline
+ Artists & \begin{tabular}{@{}c@{}} Sort by 'Recommended \\ Music Lovers' \end{tabular} & Pass & Displays correct results \\
+ \hline
+
+Artists & \begin{tabular}{@{}c@{}} Sort by 'Nearby \\ Music Lovers' \end{tabular} & Pass & Displays correct results \\
+ \hline
+Artists & \begin{tabular}{@{}c@{}} Sort by 'Newly \\ Joined Music Lovers' \end{tabular} & Pass & Displays correct results \\
+Artists & \begin{tabular}{@{}c@{}} Click 'more info' \\ link on a \\ artist. \end{tabular} & Pass & Correctly navigates to \\ the individual artists \\ page. \\
+ \hline
+Artist Individual Page & \begin{tabular}{@{}c@{}} 'Follow' button \end{tabular} & Pass & Correctly follows artist. \\
+ \hline
+Artist Individual Page & \begin{tabular}{@{}c@{}} 'Un Follow' button \end{tabular} & Pass & Correctly unfollows artist. \\
+  \hline
+
+ \end{tabular}
 
 \section{}
 
