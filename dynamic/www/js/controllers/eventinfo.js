@@ -44,13 +44,28 @@ angular.module('eventInfo.controllers', [])
 	    eventDetails.append('<a href="#/app/eventunfav?event=' + id + '">Remove event from favoruites</a>');
 	  }
 	})
+	console.log(id);
 
-	var api = "http://seananderson.co.uk/artistsperforming.php";
+	var api = "http://seananderson.co.uk/api/artistsperforming.php";
 	var data = {
-		event_id: id
+		id: id
 	}
+	var aristsPerforming = angular.element(document.querySelector('#artists-performing'));
 	$http.post(api,data).then(function(res){
-		console.log(JSON.stringify(data));
+	  if (res['data'].length>0) {
+	    res['data'].forEach(function(artist) {
+	      var api = "http://seananderson.co.uk/api/getloversinfo.php"
+		  data = {
+		    id: artist['artist_id']
+		  }
+          $http.post(api, data).then(function(res){
+          aristsPerforming.append('<p>' + res['data']['displayname'] + '</p>');
+	      });
+	    });
+	  }
+	  else {
+	  	aristsPerforming.append('<p>There are no artists who are in this app who are scheduled to play at the event </p>');
+	  }
 	})
   })
 });
