@@ -2,7 +2,7 @@ angular.module('events.controllers', [])
 .controller('EventsCtrl', function($scope, $cordovaGeolocation, $http, $compile, $state, $ionicLoading) {
   $scope.events = {};
   $scope.eventsList = [];
-  var api = "http://seananderson.co.uk/api/listevents.php";
+  var api = "http://seananderson.co.uk/api/listevents.php?random=" + Math.random();
   $http.get(api).then(function(res){
     $scope.listData=[];
     res['data'].forEach(function(event2) {
