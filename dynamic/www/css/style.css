@@ -90,6 +90,7 @@ th .post {
 
 
 .event-title {
+	text-align: center;
 	color:white;
 }
 
@@ -138,6 +139,11 @@ h1:first-child {
 }
 .event {
 	background-color: #3b5998;
+}
+
+.Event {
+	background-color: #3b5998;
+	text-align:center;
 }
 
 .events {
@@ -230,4 +236,13 @@ h1 {
 	width:90%;
 }
 
+#artists-performing{
+	background-color: white;
+	text-align:center;
+}
+
+#artists-performing-title{
+	color:white;
+	text-align:center;
+}
 
