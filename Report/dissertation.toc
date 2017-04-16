@@ -28,21 +28,22 @@
 \contentsline {subsubsection}{\numberline {3.4.1.1}Caching issue}{19}
 \contentsline {subsubsection}{\numberline {3.4.1.2}Problem with Different Devices}{20}
 \contentsline {section}{\numberline {3.5}Styling}{20}
-\contentsline {section}{\numberline {3.6}PHP files}{21}
-\contentsline {section}{\numberline {3.7}Technical challenges}{21}
-\contentsline {section}{\numberline {3.8}Actual implementation vs plan}{21}
+\contentsline {section}{\numberline {3.6}Porting over to iOS}{21}
+\contentsline {section}{\numberline {3.7}PHP files}{21}
+\contentsline {section}{\numberline {3.8}Technical challenges}{21}
+\contentsline {section}{\numberline {3.9}Actual implementation vs plan}{21}
 \contentsline {chapter}{\numberline {4}Testing and experimenting}{22}
 \contentsline {section}{\numberline {4.1}Overall Approach to Testing and Experiments}{22}
 \contentsline {section}{\numberline {4.2}Acceptance Testing}{22}
 \contentsline {section}{\numberline {4.3}Unit tests}{24}
 \contentsline {section}{\numberline {4.4}User Interface testing}{24}
-\contentsline {section}{\numberline {4.5}}{26}
-\contentsline {section}{\numberline {4.6}User testing}{26}
-\contentsline {chapter}{\numberline {5}Evaluation}{27}
-\contentsline {chapter}{Appendices}{28}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{29}
-\contentsline {chapter}{\numberline {B}Ethics Submission Assessment reference number: 6663}{30}
-\contentsline {chapter}{\numberline {C}Code Examples}{32}
-\contentsline {section}{\numberline {3.1}Registration AngularJS Controller (register.js)}{32}
-\contentsline {section}{\numberline {3.2}Registration API (register.php)}{36}
-\contentsline {chapter}{Annotated Bibliography}{38}
+\contentsline {section}{\numberline {4.5}}{27}
+\contentsline {section}{\numberline {4.6}User testing}{27}
+\contentsline {chapter}{\numberline {5}Evaluation}{28}
+\contentsline {chapter}{Appendices}{29}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{30}
+\contentsline {chapter}{\numberline {B}Ethics Submission Assessment reference number: 6663}{31}
+\contentsline {chapter}{\numberline {C}Code Examples}{33}
+\contentsline {section}{\numberline {3.1}Registration AngularJS Controller (register.js)}{33}
+\contentsline {section}{\numberline {3.2}Registration API (register.php)}{37}
+\contentsline {chapter}{Annotated Bibliography}{39}
