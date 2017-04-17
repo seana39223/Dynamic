@@ -1,11 +1,26 @@
 \chapter{Evaluation}
 
 \section{Are hybrid apps feasible}
-In determining whether hybrid apps are feasible alternatives to native apps it was important to consider both the advantages and disadvantages of 
+In determining whether hybrid apps are feasible alternatives to native apps it was important to consider both the advantages and disadvantages not of the actual hybrid app technologies but of the actual development  
 
 \subsection{Advantages}
+\begin{itemize}
+	\item Plugins allow for simple access to platform native APIs.
+	\item Porting to multiple platforms is relatively simple.
+	\item More developers are familiar with web technologies and languages than platform specific languages.
+	\item As with native apps, they can be on platform stores such as Google Play Store and App Store.
+\end{itemize}
 \subsection{Disadvantages}
+\begin{itemize}
+    \item Plguins do not give full control, such as issues with orientation.
+    \item Developer does not have full control over apps resource usage such as memory.
+    \item Caching issues caused by the browser (which is displaying the app) caching even when developer tells app to not cache.
+    \item Apps do generally seem slower for navigating around different pages as opposed to native apps. 
+\end{itemize}
 \subsection{Users Thoughts}
+As shown in the testing section the general thoughts on the mobile app by general users were positive, the majority of users felt that the hybrid app which was created was as fast as a native app. Having said that from the mind set of a developer there is 
+\subsection{Conclusion}
+As the testing stage shown it would be fair to state that hybrid apps are feasible alternative apps for the majority of applications. There are clear times where hybrid apps would not be feasible such as for games or graphic heavy applications. Even though hybrid apps are feasible there are negatives in that native features do not always work properly and the speed does appear to be slower.
 
 \section{Future Work}
 For the mobile app to be released commercially there is some more work which would have to be carried out. This work would include:
@@ -13,14 +28,18 @@ For the mobile app to be released commercially there is some more work which wou
 \item Improving the server - If the app was released commercially then the server would have to be able to handle multiple requests at once and large data, this means stress testing would have to be performed.
 \item Push Notifications - Would add push notifications to tell users when upcoming events are happening.
 \item Promotion - Appropriate flyers, web blogs, publications etc. would be produced to promote the app.
+\item Email System - An email system would be set up, this would mean that a user would have to verify an account after creating it to ensure the email they provided was genuine.
+\item Password Reset System - A system which would allow for users to reset there password if they have forgotten them.
 \end{itemize} 
 
 \section{Evaluation of app development itself}
-The app development itself went rather smoothly once the basics of AngularJS had been learned. There were some problems which were encountered such as     
+The app development itself went rather smoothly once the basics of AngularJS had been learned. There were some problems which were encountered such as issues with caching and issues with converting postcodes to lat, long locations. These technical challenges were resolved mainly through research and looking at various online.      
 \subsection{Requirements correctly identified}
-\subsection{Design Decisions}
-\subsection{Best Technology used}
-\subsection{Project aims achieved}
-\subsection{What would do differently}
-Examiners expect to find in your dissertation a section addressing such questions as:
+As this project was an investigation as well as the development of the app. It was important that the development was carried out to aid the investigation. In this case it certainly appears that the requirements were indeed correctly identified as the development of the app enabled a judgement about whether hybrid apps are feasible alternatives to native apps to be made.
 
+There was more requirements which could have been added which would have allowed for a more solid judgement to be made. These requirements would have involved using more platform native api's so features such as push notifications along with access to a device's email could have been added to aid the judgement.
+\subsection{Design Decisions}
+There were some good decisions made in relation to the design of the app. Using ionic was certainly a good idea as it encourages the MVC framework and therefore means that the code created was easy to read and easy to understand. 
+\subsection{Project aims achieved}
+The projects aims were achieved as I established that hybrid apps are feasible alternatives to native applications for the majority of purposes. The aims were achieved by correctly identifying requirements which enabled a sound judgement to be made.
+\subsection{What would do differently}
