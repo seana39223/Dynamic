@@ -13,48 +13,51 @@
 \contentsline {subsection}{\numberline {2.1.3}User Interface}{9}
 \contentsline {subsubsection}{\numberline {2.1.3.1}Schniderman Principles}{9}
 \contentsline {section}{\numberline {2.2}Experimental Methods}{10}
-\contentsline {chapter}{\numberline {3}Implementation}{11}
-\contentsline {section}{\numberline {3.1}The Registration system}{11}
-\contentsline {subsection}{\numberline {3.1.1}Back End}{11}
-\contentsline {subsubsection}{\numberline {3.1.1.1}Security within the registration system}{12}
-\contentsline {subsection}{\numberline {3.1.2}Front end}{13}
-\contentsline {subsection}{\numberline {3.1.3}Validation}{14}
-\contentsline {section}{\numberline {3.2}Posting to a feed}{15}
-\contentsline {section}{\numberline {3.3}Creation of Events}{16}
-\contentsline {subsection}{\numberline {3.3.1}Adding a Venue}{16}
-\contentsline {subsection}{\numberline {3.3.2}Adding an Event}{17}
-\contentsline {section}{\numberline {3.4}Users profile}{18}
-\contentsline {subsection}{\numberline {3.4.1}Camera and FileTransfer plugins}{18}
-\contentsline {subsubsection}{\numberline {3.4.1.1}Caching issue}{19}
-\contentsline {subsubsection}{\numberline {3.4.1.2}Problem with Different Devices}{20}
-\contentsline {section}{\numberline {3.5}Styling}{20}
-\contentsline {section}{\numberline {3.6}Porting over to iOS}{21}
-\contentsline {section}{\numberline {3.7}PHP files}{21}
-\contentsline {section}{\numberline {3.8}Technical challenges}{21}
-\contentsline {section}{\numberline {3.9}Actual implementation vs plan}{21}
-\contentsline {chapter}{\numberline {4}Testing and experimenting}{22}
-\contentsline {section}{\numberline {4.1}Overall Approach to Testing and Experiments}{22}
-\contentsline {section}{\numberline {4.2}Acceptance Testing}{22}
-\contentsline {section}{\numberline {4.3}Unit tests}{24}
-\contentsline {section}{\numberline {4.4}User Interface testing}{24}
-\contentsline {section}{\numberline {4.5}}{27}
-\contentsline {section}{\numberline {4.6}User testing}{27}
-\contentsline {chapter}{\numberline {5}Evaluation}{28}
-\contentsline {section}{\numberline {5.1}Are hybrid apps feasible}{28}
-\contentsline {subsection}{\numberline {5.1.1}Advantages}{28}
-\contentsline {subsection}{\numberline {5.1.2}Disadvantages}{28}
-\contentsline {subsection}{\numberline {5.1.3}Users Thoughts}{28}
-\contentsline {subsection}{\numberline {5.1.4}Conclusion}{29}
-\contentsline {section}{\numberline {5.2}Future Work}{29}
-\contentsline {section}{\numberline {5.3}Evaluation of app development itself}{29}
-\contentsline {subsection}{\numberline {5.3.1}Requirements correctly identified}{29}
-\contentsline {subsection}{\numberline {5.3.2}Design Decisions}{29}
-\contentsline {subsection}{\numberline {5.3.3}Project aims achieved}{30}
-\contentsline {subsection}{\numberline {5.3.4}What would do differently}{30}
-\contentsline {chapter}{Appendices}{31}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{32}
-\contentsline {chapter}{\numberline {B}Ethics Submission Assessment reference number: 6663}{33}
-\contentsline {chapter}{\numberline {C}Code Examples}{35}
-\contentsline {section}{\numberline {3.1}Registration AngularJS Controller (register.js)}{35}
-\contentsline {section}{\numberline {3.2}Registration API (register.php)}{39}
-\contentsline {chapter}{Annotated Bibliography}{41}
+\contentsline {subsection}{\numberline {2.2.1}User Testing}{10}
+\contentsline {chapter}{\numberline {3}Implementation}{12}
+\contentsline {section}{\numberline {3.1}The Registration system}{12}
+\contentsline {subsection}{\numberline {3.1.1}Back End}{12}
+\contentsline {subsubsection}{\numberline {3.1.1.1}Security within the registration system}{13}
+\contentsline {subsection}{\numberline {3.1.2}Front end}{14}
+\contentsline {subsection}{\numberline {3.1.3}Validation}{15}
+\contentsline {section}{\numberline {3.2}Posting to a feed}{16}
+\contentsline {section}{\numberline {3.3}Creation of Events}{17}
+\contentsline {subsection}{\numberline {3.3.1}Adding a Venue}{17}
+\contentsline {subsection}{\numberline {3.3.2}Adding an Event}{18}
+\contentsline {section}{\numberline {3.4}Users profile}{19}
+\contentsline {subsection}{\numberline {3.4.1}Camera and FileTransfer plugins}{19}
+\contentsline {subsubsection}{\numberline {3.4.1.1}Caching issue}{20}
+\contentsline {subsubsection}{\numberline {3.4.1.2}Problem with Different Devices}{21}
+\contentsline {section}{\numberline {3.5}Styling}{21}
+\contentsline {section}{\numberline {3.6}Porting over to iOS}{22}
+\contentsline {section}{\numberline {3.7}PHP files}{22}
+\contentsline {section}{\numberline {3.8}Technical challenges}{22}
+\contentsline {section}{\numberline {3.9}Actual implementation vs plan}{22}
+\contentsline {chapter}{\numberline {4}Testing and experimenting}{23}
+\contentsline {section}{\numberline {4.1}Overall Approach to Testing and Experiments}{23}
+\contentsline {section}{\numberline {4.2}Acceptance Testing}{23}
+\contentsline {section}{\numberline {4.3}Unit tests}{25}
+\contentsline {section}{\numberline {4.4}User Interface testing}{25}
+\contentsline {section}{\numberline {4.5}User testing}{28}
+\contentsline {section}{\numberline {4.6}Resource Usage}{28}
+\contentsline {chapter}{\numberline {5}Evaluation}{29}
+\contentsline {section}{\numberline {5.1}Are hybrid apps feasible}{29}
+\contentsline {subsection}{\numberline {5.1.1}Advantages}{29}
+\contentsline {subsection}{\numberline {5.1.2}Disadvantages}{29}
+\contentsline {subsection}{\numberline {5.1.3}Users Thoughts}{29}
+\contentsline {subsection}{\numberline {5.1.4}Conclusion}{30}
+\contentsline {section}{\numberline {5.2}Future Work}{30}
+\contentsline {section}{\numberline {5.3}Evaluation of app development itself}{30}
+\contentsline {subsection}{\numberline {5.3.1}Requirements correctly identified}{30}
+\contentsline {subsection}{\numberline {5.3.2}Design Decisions}{30}
+\contentsline {subsection}{\numberline {5.3.3}Project aims achieved}{31}
+\contentsline {subsection}{\numberline {5.3.4}What would do differently}{31}
+\contentsline {chapter}{Appendices}{32}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{33}
+\contentsline {chapter}{\numberline {B}Ethics Submission Assessment}{34}
+\contentsline {section}{\numberline {2.1}Ethics Submission Assessment reference number: 6663}{35}
+\contentsline {chapter}{\numberline {C}Code Examples}{36}
+\contentsline {section}{\numberline {3.1}Registration AngularJS Controller (register.js)}{36}
+\contentsline {section}{\numberline {3.2}Registration API (register.php)}{40}
+\contentsline {section}{\numberline {3.3}Unit Tests for Login and Register}{41}
+\contentsline {chapter}{Annotated Bibliography}{43}
