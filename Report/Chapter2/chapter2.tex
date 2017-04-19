@@ -6,25 +6,66 @@ The ionic framework for developing mobile hybrid applications encourages the use
 The model of the app would be the database which is stored on the backend of the system. The view is the html files and the controllers are both the Angular JS controllers and the RESTful PHP API which I created.
 
 \subsection{Overall Architecture}
-Figure X shows the architecture as whole. Whilst figures X separates the model, view and controller.
+The overall architecture of the system is complex and involves a lot of different files, this is due to the API which was created having over 35 PHP files which each perform specific tasks. Figure X shows the overall architecture of the system it doesn't go into each of the specific files however it does provide a good visual representation of the system.
+
+\begin{figure}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/overall}
+\caption{Overall architecture of the system.}
+\end{figure}
+
+
+
+Figure 2.1 shows the system split into the front end view, controllers (which includes both the front end controllers (AngularJS controllers) and the API, PHP file controllers) and the model which is the database. This figure does not show every little detail of the system.
+
+
+\subsection{Navigation System}
+The navigation system is done mainly through view files, a controller is called by the menu. This controller then calls an API file to establish whether the user is a venue owner, if they are then it adds more links to the menu. Figure 2.2 (created using \url{https://www.lucidchart.com/}) shows this.
+
 \begin{figure}[H]
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/va}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/systemdesign}
 \caption{UML Diagram which illustrates the view}
 \end{figure}
-Figure X (created using \url{https://www.lucidchart.com/}) illustrates that once a user has logged in they can access multiple different pages through the menu bar (menu.html). The only page which is restricted is the events.html page as only venue owners can access this page to create events. The register.html page can only be accessed through the login page as it is accessed when a user needs to create a new account to login.
 
-\subsection{Some detailed design}
-The following figure highlights the different relationships between the tables (model) for events.
+\begin{figure}[H]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/va}
+\caption{UML Diagram which illustrates the view interacting with controller.}
+\end{figure}
+Figure 2.3 shows just the view (created using \url{https://www.lucidchart.com/}) illustrates that once a user has logged in they can access multiple different pages through the menu bar (menu.html). The only page which is restricted is the events.html page as only venue owners can access this page to create events. The register.html page can only be accessed through the login page as it is accessed when a user needs to create a new account to login.
+
+\subsection{Design of registration system}
+The design of the registration system considered that there are three different types of user types. The music lovers and artists have the same details where as venue owners can also create events and venues. Figure 2.5 shows both the UML model for the registration system and the interaction between the model view and controllers.
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/register}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/users}
+\caption{UML Diagram for the model in relation to a user registering.}
+\end{figure}
+
+
+
+\subsection{Design of events}
+
+Figure 2.5 is a UML diagram (created using \url{Created using https://www.lucidchart.com/}) which shows the appropriate relationships between the different tables in the database in relation to an event. For the interaction with controllers etc. it works in the same way that the registration system does.
 \begin{figure}[H]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/events}
 \caption{UML Diagram for the model in relation to events.}
 \end{figure}
-Figure 2.2  is a UML diagram (created using \url{Created using https://www.lucidchart.com/}) which shows the appropriate relationships between the different tables in the database in relation to an event.
-\subsubsection{Even more detail}
+
 
 \subsection{User Interface}
 In considering the music social network app it was decided that the name of the app would be Dynamic. Research into different social media sites was carried out and it was decided that blue would be the main colour used for the app, this is because blue is considered a relaxing colour and in terms of accessibility it is one of the most important colours.
-\subsubsection{Schniderman Principles}
+\subsubsection{Shneiderman Principles} \cite{col}
+Schniderman came up with eight golden rules for interface design, below the rules are listed followed by how they will be applied to the UI of the app. \cite{sch}
+\begin{enumerate}
+	\item 'Strive for consistency' - There will be a consistent colour scheme throguhout the user interface of the app, along with this navigation (where appropriate) will be the same throughout the app.
+	\item 'Enable frequent users to use shortcuts' - There are multiple ways in which this can be applied to a mobile phone app. One way which it will be applied to the app will be allowing the menu (for navigation) to be opened simply by the user swiping the screen to the left. It will also be possible for the user to close the menu by them swiping to the right.
+	\item 'Offer informative feedback' - Every time the user clicks a button on the app, the app provides them with feedback in a variety of ways such as by navigating to a different page or by a popup telling them the action they performed was successful.
+	\item 'Design dialog to yield closure' - Popups were designed in such a way that the user can is notified of exactly what has happened and thus this will give them closure.
+	\item 'Offer simple error handling.' - When things can go wrong for example if the user doesn't have GPS enabled they are informed of what the problem is and what a potential fix for the problem may be.
+	\item 'Permit easy reversal of actions.' - The interface was designed so that the user can easily go back and change the options they selected.
+	\item 'Support internal locus of control' - The interface has been designed so that the user is fully in control in terms of the data they are submitting and the way they are navigating between different pages.
+	\item 'Reduce short-term memory load.' - The only thing which the user has to remember is there username and password to access the app.
+\end{enumerate}
 Figure X (created using \url {https://www.fluidui.com}) shows some UI mockups which were created.
 \begin{figure}[H]
 \includegraphics[scale=0.5]{images/ui1}
