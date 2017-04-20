@@ -3,11 +3,12 @@
 \contentsline {figure}{\numberline {1.2}{\ignorespaces The Sprint review template\relax }}{4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Overall architecture of the system.\relax }}{7}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces UML Diagram which illustrates the view\relax }}{8}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces UML Diagram which illustrates the view interacting with controller.\relax }}{9}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces UML Diagram for the model in relation to a user registering.\relax }}{10}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces UML Diagram for the model in relation to events.\relax }}{11}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces User interface mock up\relax }}{12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Use case diagram\relax }}{8}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces UML Diagram which illustrates the view\relax }}{9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces UML Diagram which illustrates the view interacting with controller.\relax }}{9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces UML Diagram for the model in relation to a user registering.\relax }}{10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces UML Diagram for the model in relation to events.\relax }}{11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces User interface mock up\relax }}{12}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Postman testing register.php\relax }}{15}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces User added to the database\relax }}{15}
@@ -21,10 +22,12 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Screen shot of camera functionality.\relax }}{22}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces AngularJS Photo Code.\relax }}{23}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Camera Plugin Options.\relax }}{23}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces ionic serve command running\relax }}{25}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Chrome developer tools\relax }}{26}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces ionic serve command running\relax }}{24}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Chrome developer tools\relax }}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Images showing Facebook and Dynamic CPU.\relax }}{32}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of unit test for login\relax }}{29}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Images showing Facebook and Dynamic CPU.\relax }}{33}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

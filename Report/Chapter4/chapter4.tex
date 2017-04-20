@@ -1,15 +1,13 @@
 \chapter{Testing and experimenting}
 
-Detailed descriptions of every test case are definitely not what is required here. What is important is to show that you adopted a sensible strategy that was, in principle, capable of testing the system adequately even if you did not have the time to test the system fully.
-
-Have you tested your system on ``real users''? For example, if your system is supposed to solve a problem for a business, then it would be appropriate to present your approach to involve the users in the testing process and to record the results that you obtained. Depending on the level of detail, it is likely that you would put any detailed results in an appendix.
-
-The following sections indicate some areas you might include. Other sections may be more appropriate to your project. 
 
 \section{Overall Approach to Testing and Experiments}
+In the sense of this project testing was carried out for multiple purposes. From a software development point of view testing was carried out to ensure that the app performed as expected, where as from the research perceptive of this project testing was carried out to determine whether hybrid apps are feasible alternatives to native apps.
+
+The acceptance and unit testing was carried out to test the actual functionality of the app and that the software performs as expected. The user testing and resource testing was more the experimental side to testing as it helped answer the research element to this project.
 
 \section{Acceptance Testing}
-A table was derived which broke down all of the stories into multiple different features. These features were then tested, and a comment was left if the test did not pass.
+It was important that all of the stories and features of the app worked properly as this would help with the user testing. Whilst there was no business or end user who specifically gave the project the requirements this stimulated. A table was derived which broke down all of the stories into multiple different features. These features were then tested, and a comment was left if the test did not pass.
 
 \begin{center} 
  \begin{tabular}{||c c c c||}  
@@ -51,10 +49,69 @@ Follow system &  \begin{tabular}{@{}c@{}} User can unfollow \\ other users \end{
  \captionof{table}{User Acceptance Testing Table}
 \vspace{5mm}
 
-It is clear from Table 4.1 that in terms of acceptance testing some of the code contained bugs for example the logout system was not working properly. Once all of the issues in Table X had been addressed another table; Table Y was created, this goes through the tests which failed in Table X and evaluates whether they now pass.
+It is clear from Table 4.1 that in terms of acceptance testing some of the code contained bugs for example the logout system was not working properly. Once all of the issues in Table 4.1 had been addressed another table; Table 4.2 was created, this goes through the tests which failed in Table 4.2 and evaluates whether they now pass.
+
+\begin{center} 
+ \begin{tabular}{||c c c c||}  
+ \hline
+ Story & Feature Name & Action Taken & Now Pass/Fail \\
+ \hline\hline
+ Registration and Login & Register User Details & \begin{tabular}{@{}c@{}} API amended \\ so that the \\ postcode variable \\ is now assigned \\ properly \end{tabular} & Pass \\
+ \hline
+ Registration and Login & Logout & \begin{tabular}{@{}c@{}} Now clears \\ cache on logout \end{tabular} & Pass \\
+ \hline
+ \end{tabular}
+ \end{center}
+ \captionof{table}{Corrections of failures from initial user acceptance testing}
 
 \section{Unit tests}
-It is important to unit test each of the functions within the controllers to make sure that the user of the app wont encounter any weird behaviour. The Jasmine and Karma frameworks were used for unit testing the app.  
+It is important to unit test each of the main functions within the controllers to make sure that the user of the app wont encounter any weird behaviour. The Jasmine and Karma frameworks were used for unit testing the app \cite{testing}.
+
+Figure 4.1 gives a small extract of the login unit test (the whole logintest.js file can be found in the appendix) which was wrote this unit test actually tests login controller. The unit tests work in such a way that the developer describes the function, followed by saying what the function should do and finally 
+
+\begin{figure}[H]
+
+\begin{verbatim}
+describe('#doLogin', function() {
+  it('Should Login using correct details', function() {
+    expect(loginMock.doLogin).toHaveBeenCalledWith
+    ('sea6@aber.ac.uk', 'b261la'); 
+  });
+
+  describe('when the login action is performed,', function() {
+    it('if successful, should change state to home', function() {
+      expect(stateMock.go).toHaveBeenCalledWith('app.home');
+    });
+
+    it('if unsuccessful, should show a popup', function() {
+      expect(ionicPopupMock.alert).toHaveBeenCalled();
+    });
+  });
+})
+\end{verbatim}
+\caption{Sample of unit test for login}
+\end{figure}
+
+Table X illustrates the different unit tests which were created (the tests can be viewed within the technical hand in.) and what functions were tested using these unit tests. Not every function was tested as some functions were very similar to functions in other controllers.
+
+\begin{tabular} {||c c c c||}  
+\hline
+ Controller Name & Function Tested & What should happen & Name of Testing File\\
+ \hline
+ \hline 
+ Login & doLogin & Login with details & logintest.js \\
+ \hline
+ Login & register &Move to registration screen & logintest.js \\
+ \hline
+ Register & doRegistration & Register with details & registertest.js \\
+ \hline
+ Register & returnToLogin & Change state to login & registertest.js \\
+ \hline
+ Home & postStatus & Post a status and popup should appear & hometest.js \\
+ \hline
+ \end{tabular}
+  \captionof{table}{Table which shows different unit tests}
+
 
 \section{User Interface testing}
 For a mobile app user interface testing is very important. As the user interface is essentially how the user natvigates around the front end and how they submit data to the back end. Whilst there is no simple automatic way to test the UI on a ionic application, a table was derived which shows all of the different buttons and navigation options to ensure that the UI worked as expected.
