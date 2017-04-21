@@ -11,7 +11,7 @@ angular.module('eventFav.controllers', [])
   //Makes the event a users favoruite.
   $http.post(api, data).then(function(res) {
     popUp("Favoruite Added", "Event added to favoruites");
-    $state.go(app.events);
+    $state.go('app.events');
   });
 
 })
