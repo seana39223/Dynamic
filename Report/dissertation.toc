@@ -31,12 +31,12 @@
 \contentsline {subsection}{\numberline {3.4.2}Caching issue}{23}
 \contentsline {subsubsection}{\numberline {3.4.2.1}Problem with Different Devices}{24}
 \contentsline {section}{\numberline {3.5}Styling}{24}
-\contentsline {section}{\numberline {3.6}Porting over to iOS}{25}
-\contentsline {section}{\numberline {3.7}Debugging and other features of hybrid app development}{25}
-\contentsline {section}{\numberline {3.8}Actual implementation vs plan}{26}
+\contentsline {section}{\numberline {3.6}Machine Learning}{25}
+\contentsline {section}{\numberline {3.7}Porting over to iOS}{25}
+\contentsline {section}{\numberline {3.8}Debugging and other features of hybrid app development}{25}
 \contentsline {section}{\numberline {3.9}PHP files}{26}
 \contentsline {section}{\numberline {3.10}Technical challenges}{26}
-\contentsline {section}{\numberline {3.11}Implementation vs design plan}{27}
+\contentsline {section}{\numberline {3.11}Implementation vs design and plan}{27}
 \contentsline {section}{\numberline {3.12}Conclusion of implementation}{27}
 \contentsline {chapter}{\numberline {4}Testing and experimenting}{28}
 \contentsline {section}{\numberline {4.1}Overall Approach to Testing and Experiments}{28}
