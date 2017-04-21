@@ -11,7 +11,7 @@
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
-
+  <div class="menu-bar">
   <ion-side-menu side="left">
     <ion-header-bar class="bar-stable">
       <h1 class="title">Menu</h1>
@@ -30,8 +30,14 @@
         <ion-item menu-close href="#/app/lovers">
           Music Lovers
         </ion-item>
+        <ion-item menu-close href="#app/listfavevents">
+          Fav Events
+        </ion-item>
         <ion-item menu-close href='#/app/profile'>
           My Profile
+        </ion-item>
+        <ion-item menu-close href='#/app/listfollowing'>
+          Following
         </ion-item>
         <ion-item menu-close href='#/app/makevenue'>
           Add a venue
@@ -45,4 +51,5 @@
       </ion-list>
     </ion-content>
   </ion-side-menu>
+  </div>
 </ion-side-menus>
