@@ -1,12 +1,12 @@
 %\addcontentsline{toc}{chapter}{Development Process}
 \chapter{Design and Experimental Methods}
 \section{Design}
-The ionic framework for developing mobile hybrid applications encourages the use of the Model View Controller (MVC) compound design pattern. MVC is something which is generally considered good practice within the software engineering industry and therefore the app was designed keeping that in mind.
+The ionic framework for developing mobile hybrid applications encourages the use of the Model View Controller (MVC) compound design pattern. MVC is something which is generally considered good practice within the software engineering industry and therefore the app was designed keeping this in mind.
 
 The model of the app would be the database which is stored on the backend of the system. The view is the html files and the controllers are both the Angular JS controllers and the RESTful PHP API which was created.
 
 \subsection{Overall Architecture}
-The overall architecture of the system is complex and involves a lot of different files, this is due to the API which was created having over 35 PHP files which each perform specific tasks. Figure 2.1 shows the overall architecture of the system it doesn't go into each of the specific files however it does provide a good visual representation of the system.
+The overall architecture of the system is complex and involves a lot of different files, this is due to the API having over 35 PHP files where each file performs a specific task. Figure 2.1 shows the overall architecture of the system it doesn't go into each of the specific files however it does provide a good visual representation of the system.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/overall}
@@ -26,7 +26,7 @@ Figure 2.2 gives a use case diagram which shows which different features of the 
 
 
 \subsection{Navigation System}
-The navigation system is done mainly through view files, a controller is called by the menu. This controller then calls an API file to establish whether the user is a venue owner, if they are then it adds more links to the menu. Figure 2.2 (created using \url{https://www.lucidchart.com/}) shows this.
+The navigation system is done mainly through view files, a controller is called by the menu. This controller then checks what type of user the logged in user is, if they are a venue owner then it adds more links to the menu. Figure 2.2 (created using \url{https://www.lucidchart.com/}) shows this.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/systemdesign}
@@ -40,12 +40,17 @@ The navigation system is done mainly through view files, a controller is called 
 Figure 2.3 shows just the view (created using \url{https://www.lucidchart.com/}) illustrates that once a user has logged in they can access multiple different pages through the menu bar (menu.html). The only page which is restricted is the events.html page as only venue owners can access this page to create events. The register.html page can only be accessed through the login page as it is accessed when a user needs to create a new account to login.
 
 \subsection{Design of registration system}
-The design of the registration system considered that there are three different types of user types. The music lovers and artists have the same details where as venue owners can also create events and venues. Figure 2.5 shows both the UML model for the registration system and the interaction between the model view and controllers.
+The design of the registration system considered that there are three different types of user types. The music lovers and artists have the same details where as venue owners can also create events and venues. Figure 2.5 shows both the UML model for the registration system and the interaction between the model view and controllers. Figure 2.6  contains a flow chart which shows how the login and registration system work when the user launches the app.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/register}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/users}
 \caption{UML Diagram for the model in relation to a user registering.}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/flow}
+\caption{Flow diagram for registration system}
 \end{figure}
 
 
@@ -73,7 +78,7 @@ Schniderman came up with eight golden rules for interface design, below the rule
 	\item 'Support internal locus of control' - The interface has been designed so that the user is fully in control in terms of the data they are submitting and the way they are navigating between different pages.
 	\item 'Reduce short-term memory load.' - The only thing which the user has to remember is there username and password to access the app.
 \end{enumerate}
-Figure X (created using \url {https://www.fluidui.com}) shows some UI mockups which were created.
+Figure 2.8 (created using \url {https://www.fluidui.com}) shows some UI mockups which were created. The designs do not show any popup boxes this is because the ionic framework has a default pop up box which uses the device's native popup box.
 \begin{figure}[H]
 \includegraphics[scale=0.5]{images/ui1}
 \includegraphics[scale=0.5]{images/ui2}
@@ -91,7 +96,7 @@ In establishing whether hybrid apps are feasible alternatives to native apps it 
 
 Whilst clearly it would be great to get a large amount of people to participate by filling in a questionnaire realistically only around 10 people were chosen. Before asking each individual questions, the project was explained to them.
 
-The following questions were asked to each individual (a blank copy of the questions is in the apendix.)
+The following questions were asked to each individual (a blank copy of the questions asked is in  Appendix 4.)
 
 \begin{enumerate}
 \item On a scale of 1 to 10, with 1 being slowest and 10 being very fast in your opinion how quick is the app at processing the registration form?

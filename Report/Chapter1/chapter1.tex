@@ -1,11 +1,11 @@
 \chapter{Background \& Objectives}
 
-The purpose of this project is to establish whether hybrid mobile applications are a feasible alternative to native development. This will involve exploring, examining and developing a mobile application in a hybrid manner. For this project, a music social media app will be developed. The app will have various features e.g. looking up events which take place in  venues. A hybrid mobile application framework will be selected which will form the front end of this project. The back end of this project which will be in PHP.
+The purpose of this project is to establish whether hybrid mobile applications are a feasible alternative to native mobile applications. This will involve exploring, examining and developing a mobile application in a hybrid manner. For this project, a music social network app was developed. The app has various features including the ability to follow artists and see what they post as well as looking up events which take place in venues. A hybrid mobile application framework will be selected which will form the front end of this project. The back end of this project was developed using PHP and a MySQL database.
 
 \section{Background}
-There are three different types of mobile applications: native apps, web apps and  hybrid apps \cite{BAB} \cite{IIA} \cite{PTA}. A native app is an app which is developed in a platform specific language and is usually downloaded from a device's app store e.g. Google Play Store for Android and the App Store for iOS devices. As  native apps are developed in a platform specific language e.g. Android apps are developed in Java \cite{AD} and iOS apps are developed in Swift (formerly Objective C) \cite{ID} this means that  code must be written in multiple languages to develop the app for different platforms. Native apps allow for platform specific Application Programming Interface (APIs) to be used and therefore the developer has access to resources such as the device's camera or contact book \cite{MAC} \cite{drupal}.
+There are three different types of mobile applications: native apps, web apps and  hybrid apps \cite{BAB} \cite{IIA} \cite{PTA}. A native app is an app which is developed in a platform specific language and is usually downloaded from a device's app store. As native apps are developed in a platform specific language e.g. Android apps are developed in Java \cite{AD} and iOS apps are developed in Swift (formerly Objective C) \cite{ID} this means that code must be written in multiple languages to develop the app for different platforms. Native apps allow for platform specific Application Programming Interface (APIs) to be used and therefore the developer has access to resources such as the device's camera or contact book \cite{MAC} \cite{drupal}.
 
-Web apps are essentially just web pages which are mobile responsive and therefore display well on mobile devices. They are accessed via a device's browser where the user either inputs the Uniform Resource Locator (URL) or clicks a link which takes them to the web app. Web apps do not (easily) have access to the platforms' APIs therefore it is very challenging for a developer to use native resources such as a device's camera \cite{MAC} \cite{BAB}.
+Web apps are essentially just web pages which are mobile responsive and therefore display well on mobile devices. They are accessed via a device's browser when the user either inputs the Uniform Resource Locator (URL) or clicks a link which takes them to the web app. Web apps do not (easily) have access to the platforms' APIs therefore it is very challenging for a developer to use native resources such as a device's camera \cite{MAC} \cite{BAB}.
 
 Hybrid apps are apps which are written in web technologies (usually HTML5, CSS and JS.) They are usually downloaded through an app store and a piece of middleware enables hybrid apps to have access to native APIs, allowing hybrid apps to access resources such as a device's camera. Unlike native apps, hybrid apps only require one code base for multiple platforms\cite{MAC} \cite{SF}.
 
@@ -14,7 +14,7 @@ It is important to consider the advantages and disadvantages of the different ty
 
 As hybrid mobile apps use one code base across multiple different platforms the development cost is cheaper as companies do not need to hire multiple different programmers to work across different platforms. If a business decided they wanted to release an app on both Android and iOS, if they took a native approach they would have to write the code for the app both in Java and Swift (possibly Objective C instead of Swift). However, if they were to develop the app in a hybrid manner then they would only have to write the app in the web technology framework which has been chosen.
 
-Hybrid mobile apps can access native APIs. This means that the middleware technology must be set up to do so. Because of this, the developer needs to be very careful in choosing the correct framework for developing hybrid apps. They would need to ensure that the framework they want to use has access to all the native features they require. Most frameworks use plugins to access native features.
+Through using middleware technologies hybrid mobile apps can access native APIs. Different hybrid frameworks do this in different ways. Because of this, the developer needs to be very careful in choosing the correct framework for developing hybrid apps. They would need to ensure that the framework they want to use has access to all the native features they require. Most frameworks use plugins to access native features.
 
 It is commonly thought that the performance of hybrid apps' is poor and that they are slow. Whilst this does appear to be a slight exaggeration, hybrid apps are generally slower then native apps and therefore the performance is generally poorer as a user may have to wait longer for an app to load.
 
@@ -22,9 +22,9 @@ It is commonly thought that the performance of hybrid apps' is poor and that the
 \section{Process}
 There is a common debate within software engineering about whether to use a plan driven methodology or an agile methodology. Plan driven methodologies rely on the requirements for the project not changing whereas agile methodologies try and embrace changing requirements \cite{Agile}.
 
-As this project is an investigation, the requirements of the app may change it may be worth spending more time than initially planned building specific features as building those features will help make a judgement as to whether hybrid apps are feasible alternatives to native apps. Therefore an agile approach was used for this project.
+As this project, is an investigation the requirements of the app may change it may be worth spending more time than initially planned building specific features as building those features will help make a judgement as to whether hybrid apps are feasible alternatives to native apps. Therefore an agile approach was used for this project.
 
-There are multiple  agile approaches to software development. Some of these approaches include: eXtreme Programming, Kanban and Scrum. Scrum was the agile methodology I felt was most appropriate for this project this is because Scrum doesn't require planning of how the software will be developed as opposed to other methodologies such as eXtreme programming which informs the programmer that they should be using test driven development and pair programming. Whilst Scrum was the methodology chosen, the project didn't use all of the rules from the Scrum methodology. This is because Scrum involves multiple roles in a team and this was a single person project. \cite{ask}
+There are multiple agile approaches to software development. Some of these approaches include: eXtreme Programming, Kanban and Scrum. Scrum was the agile methodology which was used for this project this is because Scrum doesn't dictate how the  software will be developed as opposed to other methodologies such as eXtreme programming which informs the programmer that they should be developing software in a specific manner, such as using test driven development and pair programming. Whilst Scrum was the methodology chosen, the project didn't use all of the rules from the Scrum methodology. This is because Scrum involves multiple roles in a team and this was a single person project \cite{ask}. 
 
 Scrum (as with most other agile methodologies) splits the requirements for the app into multiple stories. These stories then form the basis of each sprint (a work iteration)\cite{sg}. One of the most important things with using Scrum is to ensure that each sprint is planned and reviewed as this will help reduce errors when developing the app. The creation of templates seemed like a good idea as this meant that less time would have to be spent formatting sprint planning and sprint review documents. Figures 1.1 and 1.2 show the templates.
 
@@ -38,7 +38,7 @@ Scrum (as with most other agile methodologies) splits the requirements for the a
 \end{figure}
 
 \subsection{Initial Requirements}
-Before splitting the different tasks into stories, it is important to consider the overall requirements of the system. Anybody must be able to register for an account; there will be three different types of account (a general music lover, an artist and a venue owner.) The general music lover should be able to follow artists and view events which are relevant to them. An artist should have the same functionality of a music lover however they will appear in a different section of the app. This is so it makes it easier for people to know who they are following. Both artists and music lovers should be able to post and people who follow them will see this post.
+Before splitting the different tasks into stories, it is important to consider the overall requirements of the system. Anyone must be able to register for an account; there will be three different types of account (a general music lover, an artist and a venue owner.) The general music lover should be able to follow artists and view events which are relevant to them. An artist should have the same functionality of a music lover however they will appear in a different section of the app. This is so it makes it easier for people to know who they are following. Both artists and music lovers should be able to post and people who follow them will see this post.
 
 Venue owners need to be able to create events and add artists to these events. Music lovers should then be able to see all the appropriate information about these events. In terms of suggesting to the user who they should follow and what events they should attend, there will be some machine learning code placed on the back end of the system. As well as this the app, will need to be styled.
 
@@ -55,7 +55,7 @@ As Scrum is an agile methodology the project was split into multiple different s
 \end{itemize}
 
 \subsection{Framework}
-There are multiple different frameworks for developing apps using hybrid technologies. These frameworks all use web technologies however it differs from framework to framework as to what specific web technology is used. For example, apps made using the JQuery Mobile Framework are wrote in JQuery and apps made using the ionic framework are written in AngularJS.
+There are multiple different frameworks for developing apps using hybrid technologies. These frameworks all use web technologies however it differs from framework to framework as to what specific web technology is used. For example, apps made using the JQuery Mobile Framework are wrote in JQuery and apps made using the Ionic Framework are written in AngularJS.
 
 As well as considering the language of the framework it was also important to consider other factors before deciding which framework would be most appropriate. These factors include things such as page change speed, access to native APIs and external documentation and community available for support.
 
@@ -64,15 +64,14 @@ Table 1.1 summarises information which was gathered from multiple resources and 
  \begin{center} 
  \begin{tabular}{||c c c c||}  
  \hline
- Framework Name & Summary & Advantages & Disadvantages \\
- \hline\hline
+ Framework Name & Summary & Advantages & Disadvantages \\ \hline\hline
  JQueryMobile & \begin{tabular}{@{}c@{}}Framework uses HTML, \\ CSS and JavaScript \\ \end{tabular}  & Simple to learn. & \begin{tabular}{@{}c@{}} Limited plugins. \\Page transitions \\ are slow. \\Awkward to style \\ No longer a \\ large community \\ so lack of \\ support. \end{tabular} \\
  \hline
  Phone Gap & \begin{tabular}{@{}c@{}}Framework uses HTML, \\ CSS and JavaScript \\ Built on top \\ of JQuery Mobile \end{tabular} & \begin{tabular}{@{}c@{}} Easy to learn -  \\ most developers  have \\ experience with \\ necessary languages. \\ Many Plugins available for \\ access to platform's \\  native  APIs \end{tabular} & \begin{tabular}{@{}c@{}}Can be awkward to style. \\ Page transitions can be \\ slow.\end{tabular} \\ 
  \hline
  Ionic & \begin{tabular}{@{}c@{}}Framework uses HTML, \\ CSS (Sass if developer \\ prefers) and AngularJS. \end{tabular} & \begin{tabular}{@{}c@{}} Simple to style. \\  Large community support.\\ Lots of plugins. \\ Considered fast. \end{tabular} & \begin{tabular}{@{}c@{}} Steep learning curve \\ requires developer to \\ understand AngularJs. \end{tabular} \\ 
  \hline
-Framework 7 & \begin{tabular}{@{}c@{}}Framework uses HTML, \\ CSS  and JavaScript. \end{tabular} & \begin{tabular}{@{}c@{}} Easy to lean. \\  Nice native like styles\\ built in \\ Can use in combination \\ with other frameworks. \end{tabular} & \begin{tabular}{@{}c@{}} Not a very large \\ community so a \\ lack of support. \\ Not many plugins \\ easily accessible by default. \end{tabular} \\ 
+Framework 7 & \begin{tabular}{@{}c@{}}Framework uses HTML, \\ CSS  and JavaScript. \end{tabular} & \begin{tabular}{@{}c@{}} Easy to learn. \\  Nice styling which\\ looks native. \\ Can use in combination \\ with other frameworks. \end{tabular} & \begin{tabular}{@{}c@{}} Not a very large \\ community so a \\ lack of support. \\ Not many plugins \\ easily accessible by default. \end{tabular} \\ 
 \hline
 \end{tabular}
 \end{center}
