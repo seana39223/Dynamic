@@ -1,5 +1,5 @@
 //Below code was initially generated when I created the project (when I ran ionic start sidemenu). I have added my own code to it.
-angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers', 'musiclovers.controllers', 'venue.controllers', 'makeEvent.controllers', 'eventInfo.controllers', 'loversInfo.controllers', 'followUser.controllers', 'unFollowUser.controllers', 'eventFav.controllers', 'eventUnFav.controllers'])
+angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.controllers', 'home.controllers', 'events.controllers', 'artists.controllers', 'shared.controllers', 'profile.controllers', 'musiclovers.controllers', 'venue.controllers', 'makeEvent.controllers', 'eventInfo.controllers', 'loversInfo.controllers', 'followUser.controllers', 'unFollowUser.controllers', 'eventFav.controllers', 'eventUnFav.controllers', 'listEventFav.controllers', 'listFollowing.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -169,6 +169,26 @@ angular.module('starter', ['ionic', 'ngCordova', 'login.controllers', 'register.
       }
     }
   })
+
+    .state('app.listFavEvents', {
+      url: '/listfavevents',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/listeventfav.html',
+          controller: 'ListEventFavCtrl'
+        }
+      }
+    })
+
+    .state('app.listFollowing', {
+      url: '/listfollowing',
+      views: {
+        'menuContent' : {
+          templateUrl: 'views/listfollowing.html',
+          controller: 'ListFollowingCtrl'
+        }
+      }
+    })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
