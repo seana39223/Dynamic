@@ -32,11 +32,11 @@
 \contentsline {subsection}{\numberline {3.6.1}Camera and FileTransfer plugins}{23}
 \contentsline {subsection}{\numberline {3.6.2}Caching issue}{25}
 \contentsline {subsubsection}{\numberline {3.6.2.1}Problem with Different Devices}{25}
-\contentsline {section}{\numberline {3.7}Styling and Porting over to iOS}{26}
+\contentsline {section}{\numberline {3.7}Styling and porting over to iOS}{26}
 \contentsline {section}{\numberline {3.8}Recommendation System}{26}
 \contentsline {subsection}{\numberline {3.8.1}Content Based Filtering}{27}
 \contentsline {subsection}{\numberline {3.8.2}Collaborative filtering}{27}
-\contentsline {section}{\numberline {3.9}Debugging and other features of hybrid app development}{27}
+\contentsline {section}{\numberline {3.9}Debugging and other features of hybrid app development}{28}
 \contentsline {section}{\numberline {3.10}PHP files}{29}
 \contentsline {section}{\numberline {3.11}Technical challenges}{29}
 \contentsline {section}{\numberline {3.12}Implementation vs design and plan}{30}
