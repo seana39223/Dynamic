@@ -35,6 +35,7 @@
 \contentsline {section}{\numberline {3.7}Styling and Porting over to iOS}{26}
 \contentsline {section}{\numberline {3.8}Recommendation System}{26}
 \contentsline {subsection}{\numberline {3.8.1}Content Based Filtering}{27}
+\contentsline {subsection}{\numberline {3.8.2}Collaborative filtering}{27}
 \contentsline {section}{\numberline {3.9}Debugging and other features of hybrid app development}{27}
 \contentsline {section}{\numberline {3.10}PHP files}{29}
 \contentsline {section}{\numberline {3.11}Technical challenges}{29}
