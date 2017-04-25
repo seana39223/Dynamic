@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {3.5.1}Adding a Venue}{21}
 \contentsline {subsection}{\numberline {3.5.2}Adding an Event}{22}
 \contentsline {section}{\numberline {3.6}Users profile}{23}
-\contentsline {subsection}{\numberline {3.6.1}Camera and FileTransfer plugins}{23}
+\contentsline {subsection}{\numberline {3.6.1}Camera and FileTransfer plugins}{24}
 \contentsline {subsection}{\numberline {3.6.2}Caching issue}{25}
 \contentsline {subsubsection}{\numberline {3.6.2.1}Problem with Different Devices}{25}
 \contentsline {section}{\numberline {3.7}Styling and porting over to iOS}{26}
