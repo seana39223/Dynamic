@@ -31,21 +31,21 @@ if(empty($eventsAttending)) {
     $sql = "SELECT genre_id from user_genres WHERE user_id = '$userId'";
     $genres = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
     foreach ($genres as $genre) {
-        $genreIdSql = $genre['genre_id'];
-        $sql = "SELECT * from events WHERE genre_id = '$genreIdSql'";
-        $events = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
-        while($event = mysqli_fetch_assoc($events)) {
-            if( in_array( $event ,$eventsArray ) ) {
-            }
-            else {
-                $eventsArray[] = $event;
-            }
-        }
+      $genreIdSql = $genre['genre_id'];
+      $sql = "SELECT * from events WHERE genre_id = '$genreIdSql'";
+      $events = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
+      while($event = mysqli_fetch_assoc($events)) {
+          if( in_array( $event ,$eventsArray ) ) {
+          }
+          else {
+              $eventsArray[] = $event;
+          }
+       }
     }
-    print json_encode($eventsArray);
+  print json_encode($eventsArray);
 }
-
 else{
-  print json_encode($rows);
+  $url = "events.php?id=" . $userId;
+  header("Location:" . $url);
 }
 ?>
