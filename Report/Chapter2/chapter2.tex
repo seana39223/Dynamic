@@ -73,18 +73,18 @@ Figure 2.7 is a UML diagram (created using \url{https://www.lucidchart.com/}) wh
 \subsection{User Interface}
 In considering the music social network app, it was decided that the name of the app would be Dynamic. Research into different social media sites was carried out and it was decided that blue would be the main colour used for this app. This is because blue is considered a relaxing colour and in terms of accessibility it is one of the most accessible colours \cite{col}.
 \subsubsection{Shneiderman's principles (golden rules)}
-Schniderman came up with eight golden rules for interface design, below the rules are listed followed by how they will be applied to the UI of the app. \cite{sch}
+Schniderman came up with eight golden rules for interface design. The rules are listed followed by how they were applied to the UI of the app. \cite{sch}
 \begin{enumerate}
-	\item 'Strive for consistency' - There will be a consistent colour scheme throughout the user interface of the app, along with this navigation (where appropriate) will be the same throughout the app.
-	\item 'Enable frequent users to use shortcuts' - There are multiple ways in which this can be applied to a mobile phone app. One way it was applied to the app was by allowing the menu (for navigation) to be opened simply by the user swiping the screen to the left. It is also possible to close the menu by swiping to the right.
-	\item 'Offer informative feedback' - Every time the user clicks a button on the app, the app provides them with feedback in a variety of ways such as by navigating to a different page or by a popup telling them the action they performed was successful.
+	\item 'Strive for consistency' - There will be a consistent colour scheme throughout the user interface of the app. Navigation, where appropriate, will be the same throughout the app.
+	\item 'Enable frequent users to use shortcuts' - There are multiple ways in which this can be applied to a mobile phone app. One way it was applied to this app was by allowing the menu (for navigation) to be opened simply by the user swiping the screen to the right. It is also possible to close the menu by swiping to the left.
+	\item 'Offer informative feedback' - Every time the user clicks a button on the app, the app provides them with feedback in a variety of ways such as navigating to a different page or by a popup telling them the action they performed was successful.
 	\item 'Design dialog to yield closure' - Popups were designed in such a way that the user is notified of exactly what has happened and thus this will give them closure.
-	\item 'Offer simple error handling.' - When things go wrong, for example if the user doesn't have GPS enabled they are informed of what the problem is and what a potential fix for the problem may be.
+	\item 'Offer simple error handling.' - When things go wrong, for example if the user doesn't have GPS enabled, they are informed what the problem is and what a potential fix for the problem may be.
 	\item 'Permit easy reversal of actions.' - The interface was designed so that the user can easily go back and change the options they selected.
 	\item 'Support internal locus of control' - The interface has been designed so that the user is fully in control in terms of the data they are submitting and the way they are navigating between different pages.
-	\item 'Reduce short-term memory load.' - The only thing which the user must remember is there username and password to access the app.
+	\item 'Reduce short-term memory load.' - The only thing which the user must remember is their username and password to access the app.
 \end{enumerate}
-Figure 2.8 (created using \url {https://www.fluidui.com}) shows some UI mockups which were created. The designs do not show any popup boxes this is because the ionic framework has a default pop up box which uses the device's native popup box.
+Figure 2.8 (created using \url {https://www.fluidui.com}) shows some UI mockups. The designs do not show any popup boxes. This is because the ionic framework has a default popup box which uses the device's native popup box.
 \begin{center}
 \begin{figure}[H]
 \includegraphics[scale=0.5]{images/ui1}
@@ -95,23 +95,23 @@ Figure 2.8 (created using \url {https://www.fluidui.com}) shows some UI mockups 
 \end{center}
 
 \section{Experimental Methods}
-As the purpose of the project was to determine whether hybrid apps are feasible alternatives to native apps tests had to be derived. User testing is key to this as it allows for general users (people who use apps on a regular basis) to give feedback about whether they think the hybrid app is as good as a native app, if not why not etc. Another key aspect to answering the question is comparing the resource usage on the device of the hybrid app to a standard app, this will include comparing things such as amount of RAM being used.
+As the purpose of the project was to determine whether hybrid apps are feasible alternatives to native apps, tests were derived. User testing is key to this as it allows for general users (people who use apps on a regular basis) to give feedback about whether they think the hybrid app is as good as a native app and if not, why not. Another key aspect to answering the question is comparing the resource usage on the device of the hybrid app to a standard app. This will include comparing things such as amount of RAM being used.
 
 Finally, during each story in the development process, it was considered whether using hybrid app technology was as challenging, more challenging or less challenging than developing using native app technologies.
 
 \subsection{User Testing}
-In establishing whether hybrid apps are feasible alternatives to native apps it was important to get general users thoughts about the app which had been produced. Within the development community there is a bit of a stigma associated towards hybrid mobile applications therefore to remove bias the majority of people who fill in the questionnaires associated with the app will be lay people.
+In establishing whether hybrid apps are feasible alternatives to native apps it was important to get general users' thoughts about the app which had been produced. Within the development community there is a bit of a stigma associated towards hybrid mobile applications \cite{hybridcrap}. Therefore to remove bias, the majority of people who fill in the questionnaires associated with the app will be lay people.
 
 Whilst clearly it would be a good idea to get as many people as possible to fill in the questionnaire, realistically only ( whatever number) were chosen. Before asking each individual question, the project was explained to them.
 
 The following questions were asked to everyone who participated (a blank copy of the questions asked is in  Appendix 4.)
 
 \begin{enumerate}
-\item On a scale of 1 to 10, with 1 being slowest and 10 being very fast in your opinion how quick is the app at processing the registration form?
-\item On a scale of 1 to 10 with 1 being significantly slower than a native app 5 being about the same time as a native app and 10 being significantly faster than a native app. In your opinion, how quick is the app at processing the registration form?
-\item On a scale of 1 to 10 with 1 being slowest and 10 being fast in your opinion how long does the process of uploading a profile picture take?
+\item On a scale of 1 to 10, with 1 being slowest and 10 being very fast in your opinion. How quick is the app at processing the registration form?
+\item On a scale of 1 to 10 with 1 being significantly slower than a native app, 5 being about the same time as a native app and 10 being significantly faster than a native app. In your opinion, how quick is the app at processing the registration form?
+\item On a scale of 1 to 10 with 1 being slowest and 10 being fast. In your opinion how long does the process of uploading a profile picture take?
 \item On a scale of 1 to 10 with 1 being significantly slower than a native app, 5 being about the same and 10 being very fast, faster than a native app. In your opinion how long does the process of uploading a new profile picture take?
-\item On a scale of 1 to 10 with 1 being slowest and 10 being fast in your opinion how long does the process of viewing events and sorting them by using nearest events (GPS) take?
-\item On a scale of 1 to 10 with 1 being significantly slower than a native app, 5 being about the same as a native app and 10 being very fast, faster than a native app in your opinion how long does the viewing events and sorting them by using nearest events (GPS) take?
+\item On a scale of 1 to 10 with 1 being slowest and 10 being fast in your opinion. How long does the process of viewing events and sorting them by using nearest events (GPS) take?
+\item On a scale of 1 to 10 with 1 being significantly slower than a native app, 5 being about the same as a native app and 10 being very fast, faster than a native app. In your opinion how long does the viewing events and sorting them by using nearest events (GPS) take?
 \end{enumerate}
 These questions were decided upon as they ensured that all of the stories which were relevant in terms of testing different elements of hybrid technologies can be tested.
