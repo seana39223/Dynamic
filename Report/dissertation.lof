@@ -14,23 +14,24 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Git repository\relax }}{15}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Postman testing register.php\relax }}{17}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces User added to the database\relax }}{17}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces AngularJS code for posting to register account\relax }}{18}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Code to make API work properly\relax }}{18}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Screenshots of registration system.\relax }}{19}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Validation Screenshots\relax }}{20}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Validation Screenshots\relax }}{21}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Front End for adding a venue\relax }}{22}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Message which displays if the user has no venue.\relax }}{22}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Creating an event\relax }}{23}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Snippet of updatebio.php code which shows SQL command.\relax }}{23}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Screen shot of camera functionality.\relax }}{24}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces AngularJS Photo Code.\relax }}{25}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Camera Plugin Options.\relax }}{25}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces iOS not the same as Android image goes here\relax }}{26}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Code which shows how steps 1 and 2 work for Content Based Filtering\relax }}{27}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Insert figure showing sorted events here.\relax }}{27}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces ionic serve command running\relax }}{28}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Chrome developer tools\relax }}{29}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces View of registration file\relax }}{18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces AngularJS code for posting to register account\relax }}{18}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Code to make API work properly\relax }}{19}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Screenshots of registration system.\relax }}{19}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Validation Screenshots\relax }}{20}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Posting to feed\relax }}{21}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Front End for adding a venue\relax }}{22}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Message which displays if the user has no venue.\relax }}{22}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Creating an event\relax }}{23}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Snippet of updatebio.php code which shows SQL command.\relax }}{23}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Screen shot of camera functionality.\relax }}{24}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces AngularJS Picture Code.\relax }}{25}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Camera Plugin Options.\relax }}{25}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces iOS not the same as Android image goes here\relax }}{26}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Code which shows how steps 1 and 2 work for Content Based Filtering\relax }}{27}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Insert figure showing sorted events here.\relax }}{27}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces ionic serve command running\relax }}{28}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Chrome developer tools\relax }}{29}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Sample of unit test for login\relax }}{34}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Images showing Facebook and Dynamic CPU.\relax }}{38}

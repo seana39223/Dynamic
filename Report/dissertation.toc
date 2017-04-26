@@ -23,12 +23,12 @@
 \contentsline {subsection}{\numberline {3.3.1}Back End}{16}
 \contentsline {subsubsection}{\numberline {3.3.1.1}Security within the registration system}{17}
 \contentsline {subsection}{\numberline {3.3.2}Front end}{18}
-\contentsline {subsection}{\numberline {3.3.3}Validation}{19}
+\contentsline {subsection}{\numberline {3.3.3}Validation}{20}
 \contentsline {section}{\numberline {3.4}Posting to a feed}{20}
 \contentsline {section}{\numberline {3.5}Creation of Events}{21}
 \contentsline {subsection}{\numberline {3.5.1}Adding a Venue}{21}
 \contentsline {subsection}{\numberline {3.5.2}Adding an Event}{22}
-\contentsline {section}{\numberline {3.6}Users profile}{23}
+\contentsline {section}{\numberline {3.6}User's profile}{23}
 \contentsline {subsection}{\numberline {3.6.1}Camera and FileTransfer plugins}{24}
 \contentsline {subsection}{\numberline {3.6.2}Caching issue}{25}
 \contentsline {subsubsection}{\numberline {3.6.2.1}Problem with Different Devices}{25}
