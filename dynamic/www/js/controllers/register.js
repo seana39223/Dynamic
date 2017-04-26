@@ -64,6 +64,11 @@ angular.module('register.controllers', [])
       return false;
     }
 
+    if ($scope.register.dName.indexOf(' ') >= 0) {
+      popUp("Display Name Space", "Display Name can not have a space");
+      return false;
+    }
+
     if ($scope.register.userType==undefined) {
       popUp("Field Missing", "User Type was not selected.");
       return false;

@@ -35,7 +35,8 @@ angular.module('login.controllers', [])
           email: $scope.loginData.email
         }
         $http.post(api, data).then(function(res) {
-        localStorage.setItem('dName', (res['data']['displayname']));
+          localStorage.setItem('dName', (res['data']['displayname']));
+          localStorage.setItem('type', res['data']['type']);
         })
         $state.go('app.home');
       }

@@ -1,5 +1,6 @@
 angular.module('home.controllers', [])
 .controller('HomeCtrl', function($scope, $http, $state) {
+  if (localStorage.get)
   $scope.status = {};
   $scope.$on("$ionicView.beforeEnter", function() {
     //Below code loads feeds in as soon as home controller is called i.e. when home page is clicked on by user.

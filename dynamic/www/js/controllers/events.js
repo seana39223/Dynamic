@@ -29,6 +29,32 @@ angular.module('events.controllers', [])
     });
 
     if ($scope.events.search == "Recommended Events") {
+      $ionicLoading.show();
+      var eventDiv = angular.element(document.querySelector('#events'));
+      eventDiv.html('<div id="events"></div>');
+      var eventsArray = new Array();
+      var api = "http://seananderson.co.uk/api/ml/recommendedevents.php";
+      var data = {
+        email: localStorage.getItem('email')
+      }
+      $http.post(api,data).then(function(res){
+        eventDiv.html('<div id="events"></div>');
+        if (res['data'].includes('Call other machine learning API')) {
+          var api = "http://seananderson.co.uk/api/ml/events.php";
+          $http.post(api,data).then(function(res){
+            res['data'].forEach(function(event) {
+              eventDiv.append('<div id= " ' + event['event_id'] + '" class="events"><h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
+              $ionicLoading.hide();
+            })
+          })
+        }
+        else {
+          res['data'].forEach(function(event) {
+            eventDiv.append('<div id= " ' + event['event_id'] + '" class="events"><h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
+            $ionicLoading.hide();
+          })
+        }
+      })
     }
 
     else if ($scope.events.search == "Nearby Events") {
@@ -133,16 +159,25 @@ angular.module('events.controllers', [])
         })
       }
 
-    	else if ($scope.events.search == "Date of Events") {
-        $ionicLoading.show();
-        var eventDiv = angular.element(document.querySelector('#events'));
-        eventDiv.html('<div id="events"></div>');
-        $scope.eventsList.forEach(function(event) {
-          eventDiv.append('<div id= " ' + event['event_id'] + '" class="events"> <h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
-        })
-        $scope.eventsList.length = 0;
-        $ionicLoading.hide();
-    	}
-        $scope.eventsList.length=0;
+    else if ($scope.events.search == "Date of Events") {
+      $scope.events = {};
+      $scope.eventsList = [];
+      var api = "http://seananderson.co.uk/api/listevents.php?random=" + Math.random();
+      $http.get(api).then(function(res){
+      $scope.listData=[];
+      res['data'].forEach(function(event2) {
+        $scope.eventsList.push(event2);
+      })
+      $ionicLoading.show();
+      var eventDiv = angular.element(document.querySelector('#events'));
+      eventDiv.html('<div id="events"></div>');
+      $scope.eventsList.forEach(function(event) {
+        eventDiv.append('<div id= " ' + event['event_id'] + '" class="events"><h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
+      })
+      $scope.eventsList.length = 0;
+      $ionicLoading.hide();
+      $scope.eventsList.length=0;
+      });
     }
-});
+  }
+})
