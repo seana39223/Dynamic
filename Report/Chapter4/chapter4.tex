@@ -4,10 +4,10 @@
 \section{Overall Approach to Testing and Experiments}
 In the sense of this project testing was carried out for multiple purposes. From a software development point of view testing was carried out to ensure that the app performed as expected, where as from the research perceptive of this project testing was carried out to determine whether hybrid apps are feasible alternatives to native apps.
 
-The acceptance and unit testing was carried out to test the actual functionality of the app and that the software performs as expected. The user testing and resource testing was more the experimental side to testing as it helped answer the research element to this project.
+The acceptance and unit testing was carried out to test the actual functionality of the app and that the software performs as expected. The user testing and resource testing was more the experimental side as it helped answer the research element to this project.
 
 \section{Acceptance Testing}
-It was important that all of the stories and features of the app worked properly as this would help with the user testing. Whilst there was no business or end user who specifically gave the project the requirements this was simulated. A table was derived which broke down all of the stories into multiple different features. These features were then tested, and a comment was left if the test did not pass.
+It was important that all of the stories and features of the app worked properly as this would help with the user testing. Whilst there was no business or end user, who specifically gave the project requirements this was simulated. A table was derived which broke down all of the stories into multiple different features. These features were then tested, and a comment was left if the test did not pass.
 
 \begin{center} 
  \begin{tabular}{||c c c c||}  
@@ -28,7 +28,7 @@ Profile Page & Update bio & Pass & Works as expected \\
 \hline 
 Post System & User Posts & Pass &  \begin{tabular}{@{}c@{}} User posts get \\ added to feed table \\ as expected \end{tabular} \\
 \hline
-Follow System & \begin{tabular}{@{}c@{}} User can follow \\ other users \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} adds data to \\ the correct table \\ and shows as followed \\ on the app \end{tabular} \\
+Follow System & \begin{tabular}{@{}c@{}} User can follow \\ other users \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} Adds data to \\ the correct table \\ and shows as followed \\ on the app \end{tabular} \\
 \hline
 Follow system &  \begin{tabular}{@{}c@{}} User can unfollow \\ other users \end{tabular} & Pass &  \begin{tabular}{@{}c@{}} Can successfully unfollow other users \end{tabular} \\
 \hline
@@ -59,7 +59,7 @@ Follow system &  \begin{tabular}{@{}c@{}} User can unfollow \\ other users \end{
  \captionof{table}{User Acceptance Testing Table}
 \vspace{5mm}
 
-It is clear from Table 4.1 that in terms of acceptance testing some of the code contained bugs for example the logout system was not working properly. Once all of the issues in Table 4.1 had been addressed another table; Table 4.2 was created, this goes through the tests which failed in Table 4.2 and evaluates whether they now pass.
+It is clear from Table 4.1 that in terms of acceptance testing some of the code contained bugs, for example the logout system was not working properly. Once all of the issues in Table 4.1 had been addressed another table; Table 4.2 was created, this goes through the tests which failed in Table 4.2 and evaluates whether they now pass.
 
 \begin{center} 
  \begin{tabular}{||c c c c||}  
@@ -75,9 +75,9 @@ It is clear from Table 4.1 that in terms of acceptance testing some of the code 
  \captionof{table}{Corrections of failures from initial user acceptance testing}
 
 \section{Unit tests}
-It is important to unit test each of the main functions within the controllers to make sure that the user of the app wont encounter any weird behaviour. The Jasmine and Karma frameworks were used for unit testing the app \cite{testing}.
+It is important to unit test each of the main functions within the controllers to make sure that the user of the app will not encounter any weird behaviour. The Jasmine and Karma frameworks were used for unit testing the app \cite{testing}.
 
-Figure 4.1 gives a small extract of the login unit test (the whole logintest.js file can be found in the appendix) which was wrote this unit test actually tests login controller. The unit tests work in such a way that the developer describes the function, followed by saying what the function should do and finally 
+Figure 4.1 gives a small extract of the login unit test (the whole logintest.js file can be found in the appendix) which was written. This unit test actually tests login controller. The unit tests work in such a way that the developer describes the function, followed by saying what the function should do and finally what happens if the function goes wrong. 
 
 \begin{figure}[H]
 
