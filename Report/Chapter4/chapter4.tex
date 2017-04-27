@@ -151,9 +151,9 @@ For a mobile app user interface testing is very important. As the user interface
  \hline
  \begin{tabular}{@{}c@{}} Menu (Shared across \\ multiple pages once \\ user is logged \\ in.) \end{tabular} & Logout link & Pass & \begin{tabular}{@{}c@{}} Logs user out \\ and returns them \\ to login page. \end{tabular} \\
  \hline
- \begin{tabular}{@{}c@{}} Menu (extras only \\ for venue owners.) \end{tabular}& 'Add a venue' link & Pass & \begin{tabular}{@{}c@{}} Takes venue owner \\ to add a \\ venue page. \end{tabular} \\
+ \begin{tabular}{@{}c@{}} Menu (extras only \\ for venue owners.) \end{tabular}& Add a venue link & Pass & \begin{tabular}{@{}c@{}} Takes venue owner \\ to add a \\ venue page. \end{tabular} \\
  \hline
- \begin{tabular}{@{}c@{}} Menu (extras only \\ for venue owners.) \end{tabular}& 'Make event' link & Pass & \begin{tabular}{@{}c@{}} Takes venue owner \\ to add an \\ event page. \end{tabular} \\
+ \begin{tabular}{@{}c@{}} Menu (extras only \\ for venue owners.) \end{tabular}& Make event link & Pass & \begin{tabular}{@{}c@{}} Takes venue owner \\ to add an \\ event page. \end{tabular} \\
  \hline
 Home Page & Submit post button & Pass & \begin{tabular}{@{}c@{}} Button posts the \\ data as expected.\end{tabular} \\
  \hline
@@ -213,7 +213,7 @@ General & \begin{tabular}{@{}c@{}} User swipes screen right \\ when menu open \e
   \captionof{table}{UI testing table}
 
 \section{User testing}
-In terms of user testing the actual questions which were discussed in the experimental methods section (see Appendix 4), all of the questions were measure on a scale of 1 to 10 with 10 meaning that the user found the hybrid app fast and 1 meaning it was slow. table X shows the results.
+In terms of user testing the actual questions which were discussed in the experimental methods section (see Appendix 4), all of the questions were measured on a scale of 1 to 10 with 10 meaning that the user found the hybrid app fast and 1 meaning it was slow. table X shows the results.
 
 \begin{center} 
  \begin{tabular}{||c c c c c c c||}  
@@ -240,7 +240,7 @@ In terms of user testing the actual questions which were discussed in the experi
  \end{center}
 
  \subsection{Statistical breakdown of questions}
- Each of these questions was broken down and statistically analysed; the mean, range and standard deviation was established doing this helped understand not only in how different people have different opinions about the speed and usability of the hybrid app technology but also aided in determining what the overall feeling about each question is.
+ Each of these questions was broken down and statistically analysed; the mean, range and standard deviation was established doing this helped understand not only how different people have different opinions about the speed and usability of the hybrid app technology but also aided in determining what the overall feeling about each question is.
  \begin{enumerate}
   \item Question 1 - The mean for this question was 8.375, the range was 3 and the standard deviation was 1.18773.
   \item Question 2 - The mean for this question was 6, the range was 4 and the standard deviation was 1.51186.
@@ -259,19 +259,33 @@ Figure X (created using \url{http://www.alcula.com/calculators/statistics/box-pl
 \includegraphics[scale=0.45]{images/q4}
 \includegraphics[scale=0.45]{images/q5}
 \includegraphics[scale=0.45]{images/q6}
+\caption{Box plots which give a visual representation of answers}
 \end{figure}
 \end{center}
-From this data it is clear that different people have varying opinions on the performance of the hybrid app which was developed. 
+From this data it is clear that different people have varying opinions on the performance of the hybrid app which was developed. The answers to the questions as a whole generally give a positive response. It is apparent from the questions that users of the app do feel that the camera functionality is slower than a native app.
 
  \section{Resource Usage}
- When considering if hybrid mobile application it is also important to consider how much of the devices resources the app is using. For comparison the resource usage of Facebook has also been listed.
+ When considering the hybrid mobile application it is also important to consider how much of the device's resources the app is using. For comparison the resource usage of Facebook has also been listed (this is because Facebook is a native app.)
 
- One of the main resources which was compared was the amount of CPU, as shown in Figure X when Facebook was looking for events it used 6\% where as when the hybrid app which was developed was also 6\%. It does need to be considered that Facebook is significantly larger than the hybrid app which was created consequently the hybrid app uses more CPU for less data than Facebook.
-
- Figure X shows 
+ One of the resources which was compared was the amount of CPU, as shown in Figure X when Facebook was looking for events it used 6\% where as when the hybrid app which was developed was also 6\%. It does need to be considered that Facebook is significantly larger than the hybrid app which was created consequently the hybrid app uses more CPU for less data than Facebook. Figure 4.3 illustrates this.
 
 \begin{figure}[H]
 \includegraphics[scale=0.45]{images/ram2}
 \includegraphics[scale=0.45]{images/ram3}
 \caption{Images showing Facebook and Dynamic CPU.}
 \end{figure}
+
+The actual amount of storage the app uses is rather high when considering the app stores very little local data, this is mainly due to how ionic does caching. The app after being installed and a user going through different elements of the app uses 13.73MB of a device's storage which is rather large considering most things are stored on the back end rather than on the phone itself. 
+
+\begin{center}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{images/usage}
+\caption{Resource Usage}
+\end{figure}
+\end{center}
+
+The amount of storage the app is using is a clear disadvantage to developing apps in a hybrid manner as developing apps in a native manner would give the developer more control over the amount of resources being used.
+
+\section{Conclusion of testing}
+The software development side to the project was a success as both the user acceptance testing and the unit tests passed. The user testing for actually determining whether hybrid apps are feasible alternatives to native apps was positive. From the multiple answers to the various questions asked it seems clear that users of the app are satisfied with it. Therefore, it would be reasonable to conclude that developing a mobile application in a hybrid manner is a feasible alternative to developing mobile applications in a native manner. When a comparison to Facebook has been made it does need to be considered that Facebook is a substantially larger system and has a lot more data. 
+

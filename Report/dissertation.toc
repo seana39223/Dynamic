@@ -49,28 +49,29 @@
 \contentsline {section}{\numberline {4.5}User testing}{37}
 \contentsline {subsection}{\numberline {4.5.1}Statistical breakdown of questions}{37}
 \contentsline {section}{\numberline {4.6}Resource Usage}{38}
-\contentsline {chapter}{\numberline {5}Evaluation}{40}
-\contentsline {section}{\numberline {5.1}Are hybrid apps feasible}{40}
-\contentsline {subsection}{\numberline {5.1.1}Advantages}{40}
-\contentsline {subsection}{\numberline {5.1.2}Disadvantages}{40}
-\contentsline {subsection}{\numberline {5.1.3}Users thoughts}{41}
-\contentsline {subsection}{\numberline {5.1.4}Feasibility}{41}
-\contentsline {section}{\numberline {5.2}Future Work}{41}
-\contentsline {section}{\numberline {5.3}Evaluation of app development itself}{41}
-\contentsline {subsection}{\numberline {5.3.1}Requirements correctly identified}{42}
-\contentsline {subsection}{\numberline {5.3.2}Design Decisions}{42}
-\contentsline {subsection}{\numberline {5.3.3}Project aims achieved}{42}
-\contentsline {subsection}{\numberline {5.3.4}What would do differently}{42}
-\contentsline {subsection}{\numberline {5.3.5}Conclusion}{42}
-\contentsline {chapter}{Appendices}{43}
-\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{44}
-\contentsline {chapter}{\numberline {B}Ethics Submission Assessment}{45}
-\contentsline {section}{\numberline {2.1}Ethics Submission Assessment reference number: 6663}{46}
-\contentsline {chapter}{\numberline {C}Code Examples}{47}
-\contentsline {section}{\numberline {3.1}Registration AngularJS Controller (register.js)}{47}
-\contentsline {section}{\numberline {3.2}Registration API (register.php)}{51}
-\contentsline {section}{\numberline {3.3}Unit Tests for Login and Register}{52}
-\contentsline {section}{\numberline {3.4}Login Unit Test (logintest.js)}{53}
-\contentsline {chapter}{\numberline {D}Questionnaire}{55}
-\contentsline {section}{\numberline {4.1}Questionnaire handed out for user testing}{55}
-\contentsline {chapter}{Annotated Bibliography}{56}
+\contentsline {section}{\numberline {4.7}Conclusion of testing}{40}
+\contentsline {chapter}{\numberline {5}Evaluation}{41}
+\contentsline {section}{\numberline {5.1}Are hybrid apps feasible}{41}
+\contentsline {subsection}{\numberline {5.1.1}Advantages}{41}
+\contentsline {subsection}{\numberline {5.1.2}Disadvantages}{41}
+\contentsline {subsection}{\numberline {5.1.3}Users thoughts}{42}
+\contentsline {subsection}{\numberline {5.1.4}Feasibility}{42}
+\contentsline {section}{\numberline {5.2}Limitations of the system and future work}{42}
+\contentsline {section}{\numberline {5.3}Evaluation of app development itself}{43}
+\contentsline {subsection}{\numberline {5.3.1}Requirements correctly identified}{43}
+\contentsline {subsection}{\numberline {5.3.2}design decisions}{43}
+\contentsline {subsection}{\numberline {5.3.3}Project aims achieved}{43}
+\contentsline {subsection}{\numberline {5.3.4}What would do differently}{43}
+\contentsline {subsection}{\numberline {5.3.5}conclusion}{43}
+\contentsline {chapter}{Appendices}{45}
+\contentsline {chapter}{\numberline {A}Third-Party Code and Libraries}{46}
+\contentsline {chapter}{\numberline {B}Ethics Submission Assessment}{47}
+\contentsline {section}{\numberline {2.1}Ethics Submission Assessment reference number: 6663}{48}
+\contentsline {chapter}{\numberline {C}Code Examples}{49}
+\contentsline {section}{\numberline {3.1}Registration AngularJS Controller (register.js)}{49}
+\contentsline {section}{\numberline {3.2}Registration API (register.php)}{53}
+\contentsline {section}{\numberline {3.3}Unit Tests for Login and Register}{54}
+\contentsline {section}{\numberline {3.4}Login Unit Test (logintest.js)}{55}
+\contentsline {chapter}{\numberline {D}Questionnaire}{57}
+\contentsline {section}{\numberline {4.1}Questionnaire handed out for user testing}{57}
+\contentsline {chapter}{Annotated Bibliography}{58}
