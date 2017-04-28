@@ -1,63 +1,63 @@
 \chapter{Evaluation}
 
 \section{Are hybrid apps feasible}
-In determining whether hybrid apps are feasible alternatives to native apps it was important to consider both the advantages and disadvantages not just of the actual hybrid app technologies but of the actual development.
+In determining whether hybrid apps are feasible alternatives to native apps it was important to consider both the advantages and disadvantages, not just of the actual hybrid app technologies but also of the actual development.
 
 \subsection{Advantages}
 \begin{itemize}
 	\item Plugins allow for simple access to platform native APIs.
 	\item Porting to multiple platforms is relatively simple.
-	\item More developers are familiar with web technologies and languages than platform specific languages.
-	\item As with native apps, they can be on platform stores such as Google Play Store and App Store.
+	\item More developers are familiar with web technologies and languages as opposed to platform specific languages.
+	\item As with native apps, they can be avaliable on platform stores such as Google Play Store and App Store.
 	\item Developer only needs one language for multiple platforms.
 	\item Useful debugging features such as Google Chrome's developer tools.
 \end{itemize}
 \subsection{Disadvantages}
 \begin{itemize}
     \item Plugins do not give full control, such as issues with orientation on the camera plugin.
-    \item Developer does not have full control over apps resource usage such as memory.
-    \item Caching issues caused by the browser (which is displaying the app) caching even when developer tells app to not cache.
+    \item Developer does not have full control over app's resource usage such as memory.
+    \item Caching issues caused by the browser (which is displaying the app) even when developer tells app to not cache.
     \item Apps do generally seem slower for navigating around different pages as opposed to native apps. 
     \item Styling can be challenging, where as styling a native iOS app using xCode's story board is rather straightforward.
 
 \end{itemize}
 \subsection{Users thoughts}
-As shown in the testing section the general thoughts on the mobile app by general users were positive, the majority of users felt that the hybrid app which was created was as fast as a native app. This is rather interesting as there is generally a stigma in the development community that hybrid apps are significantly slower than native apps yet the user testing was positive and many features of the app ran at the same speed as native apps (according to people who answered the questions.) 
+As shown in the testing section the general thoughts on the mobile app by general users were positive. The majority of users felt that the hybrid app which was created, was as fast as a native app. This is rather interesting as there is generally a stigma in the development community that hybrid apps are significantly slower than native apps \cite{hybridcrap} yet the user testing was positive and many features of the app ran at the same speed as native apps (according to people who answered the questions). 
 
 \subsection{Feasibility}
-As the testing stage showed it would be fair to state that hybrid apps are feasible alternative apps for the majority of applications. This is because users did not seem to notice hybrid apps being significantly slower than native apps even when using a device's platform specific features such as a camera. There are times where hybrid apps would not be feasible, such as for games or graphic heavy applications. Even though hybrid apps are feasible, there are negatives in that native features do not always work properly such as the issue with the camera orientation on Samsung tablets.
+As the testing stage showed, it would be fair to state that hybrid apps are feasible alternative apps for the majority of applications. This is because users did not seem to notice hybrid apps being significantly slower than native apps even when using a device's platform specific features such as a camera. There are times where hybrid apps would not be feasible, such as for games or graphic heavy applications. Even though hybrid apps are feasible, there are negatives in that native features do not always work properly such as the issue with the camera orientation on Samsung tablets.
 
 \section{Limitations of the system and future work}
-In considering the system as a whole there is one potential problem, there is no way for sharing venues across multiple venue owners. Realistically at a big venue it could be multiple people's jobs to create and promote events, however the app was designed in such a way that an email address and password would need to be shared if multiple people are creating events at the same venue.
+In considering the system as a whole there is one potential problem. There is no way for sharing venues across multiple venue owners. Realistically at a big venue, it could be serveral people's jobs to create and promote events, however the app was designed in such a way that an email address and password would need to be shared if multiple people are creating events at the same venue.
 
 For the mobile app to be released commercially there is some more work which would have to be carried out. This work would include:
 \begin{itemize}
-\item Improving the server - If the app was released commercially then the server would have to be able to handle multiple requests at once and large data, this means stress testing would have to be performed.
+\item Improving the server - If the app was released commercially then the server would have to be able to handle multiple requests at once and more data. This means stress testing would have to be performed.
 \item Push Notifications - Would add push notifications to tell users when upcoming events are happening.
 \item Promotion - Appropriate flyers, web blogs, publications etc. would be produced to promote the app.
-\item Email System - An email system would be set up, this would mean that a user would have to verify an account after creating it to ensure the email they provided was genuine.
-\item Password Reset System - A system which would allow for users to reset there password if they have forgotten them.
+\item Email System - An email system would be set up. This would mean that a user would have to verify an account after creating it to ensure the email they provided was genuine.
+\item Password Reset System - A system which would allow for users to reset their password if they have forgotten them.
 \end{itemize} 
-Another key thing which would have to be considered if the app was released in a commercial sense would be ethics. It would be important to have a terms and conditions which explains to the user exactly how their data would be used and that it would not be sold on. It would also be worth considering whether adding a minimum age to the app so that only users above a certain age can use the app, as the app does not have a profanity filter it would be important to ensure that young children aren't exposed to content which could be deemed offensive. Finally in relation to ethics it would possibly also be worth looking more into cyber bullying and how the app could aim to prevent cyber bullying.
+Another key thing which would have to be considered if the app was released in a commercial sense would be ethics. It would be important to have a terms and conditions which explains to the user exactly how their data would be used and that it would not be sold on. It would also be worth considering adding a minimum age to the app so that only users above a certain age can use the app. As the app does not have a profanity filter it would be important to ensure that young children aren't exposed to content which could be deemed offensive. Finally in relation to ethics it would possibly also be worth looking more into cyber bullying and how the app could aim to prevent cyber bullying.
 
 \section{Evaluation of app development itself}
-For the most part using the Scrum methodology worked well as it allowed for each different function of the app to be broken down into a story. At first it was rather difficult to estimate how long each story would take but after doing a few stories estimation became much easier.
+For the most part using the Scrum methodology worked well as it allowed for each different function of the app to be broken down into a story. At first it was rather difficult to estimate how long each story would take but after implementing a few stories, estimation became much easier.
 
-Using a plan driven methodology could have also worked well for developing the app and if a plan driven methodology had been used then a PHP framework would have probably been used rather than having lots of different PHP files. 
+Using a plan driven methodology could have also worked well for developing the app and if a plan driven methodology had been used, then a PHP framework would have probably been used rather than having lots of different PHP files. 
 
-The app development itself went rather smoothly once the basics of AngularJS had been learned. There were some problems which were encountered such as issues with caching and issues with converting postcodes to lat, long locations. These technical challenges were resolved mainly through research and looking at various online.      
+The app development itself went rather smoothly once the basics of AngularJS had been learned. There were some problems which were encountered such as issues with caching and issues with converting postcodes to latitude, longitude locations. These technical challenges were resolved mainly through research and looking at various sources online.      
 \section{Requirements correctly identified}
 As this project was an investigation as well as the development of the app, it was important that the development was carried out to aid the investigation. In this case it certainly appears that the requirements were indeed correctly identified as the development of the app enabled a judgement about whether hybrid apps are feasible alternatives to native apps to be made.
 
-There was more requirements which could have been added which would have allowed for a more solid judgement to be made. These requirements would have involved using more platform native api's so features such as push notifications along with access to a device's email could have been added to aid the judgement.
+There were more requirements which could have been added which would have allowed for a more solid judgement to be made. These requirements would have involved using more platform native APIs so features such as push notifications along with access to a device's email could have been added to aid the judgement.
 \section{Design decisions}
-There were some good decisions made in relation to the design of the app. Using ionic was certainly a good idea as it encourages the MVC framework and therefore means that the code created was easy to read and easy to understand. The decision to create all of the PHP API files manually was a poor decission as it lead to lots of time being spent on the actual development of the PHP files and this time could have been better utilised elsewhere.
+There were some good decisions made in relation to the design of the app. Using ionic was certainly a good idea as it encourages the MVC framework and therefore means that the code created was easy to read and easy to understand. The decision to create all of the PHP API files manually was a poor decision  as it led to lots of time being spent on the actual development of the PHP files and this time could have been better utilised elsewhere.
 \section{Project aims achieved}
-The projects aims were achieved as I established that hybrid apps are feasible alternatives to native applications for the majority of purposes. The aims were achieved by correctly identifying requirements which enabled a sound judgement to be made.
+The projects aims were achieved as I established that hybrid applications are feasible alternatives to native applications for the majority of purposes. The aims were achieved by correctly identifying requirements which enabled a sound judgement to be made.
 \subsection{What would be done differently}
-When considering the project with hindsight a few things would be done differently to make the project more effective. First of all the back end would be created using a framework as this would allow for less PHP files and code repetition. Also SASS would be used as opposed to CSS as SASS would give the developer more flexibility in styling the app.
+When considering the project with hindsight, a few things would be done differently to make the project more effective. First of all the back end would be created using a framework as this would allow for fewer PHP files and less code repetition. Also SASS would be used as opposed to CSS as SASS would give the developer more flexibility in styling the app.
 
 \subsection{Conclusion}
-The project was most certainly a success in that it proved that hybrid apps are feasible alternatives to native apps. As well as this through the actual development of a hybrid app the negatives and advantages of hybrid apps were made clear.
+The project was most certainly a success in that it proved that hybrid apps are feasible alternatives to native apps. As well as this, through the actual development of a hybrid app, the advantages and disadvantages of hybrid apps were made clear.
 
-Whilst hybrid apps are feasible alternatives they do have some way to go especially in terms of giving the developer full control over a device's native features such as a camera. For such things to happen then hybrid apps probably need to become more common. In terms of making hybrid apps more common developers need to be made aware of exactly what hybrid apps are and when it can be useful to use them. 
+Whilst hybrid apps are feasible alternatives they do have some way to go especially in terms of giving the developer full control over a device's native features such as a camera. For such things to happen then hybrid apps probably need to become more common. In terms of making hybrid apps more common, developers need to be made aware of exactly what hybrid apps are and when it can be useful to use them. 
