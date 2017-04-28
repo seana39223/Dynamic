@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {3.8.2}Collaborative filtering}{27}
 \contentsline {section}{\numberline {3.9}Debugging and other features of hybrid app development}{28}
 \contentsline {section}{\numberline {3.10}PHP files}{29}
-\contentsline {section}{\numberline {3.11}Technical challenges}{30}
+\contentsline {section}{\numberline {3.11}Technical challenges}{29}
 \contentsline {section}{\numberline {3.12}Implementation vs design and plan}{30}
 \contentsline {section}{\numberline {3.13}Conclusion of implementation}{30}
 \contentsline {chapter}{\numberline {4}Testing and experimenting}{31}
