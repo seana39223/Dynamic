@@ -29,6 +29,7 @@ angular.module('events.controllers', [])
     });
 
     if ($scope.events.search == "Recommended Events") {
+          $scope.eventsList.length=0;
       $ionicLoading.show();
       var eventDiv = angular.element(document.querySelector('#events'));
       eventDiv.html('<div id="events"></div>');
