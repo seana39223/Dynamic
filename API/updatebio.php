@@ -17,7 +17,7 @@ $bio = mysqli_real_escape_string($connection, $_POST['bio']);
 $sql = "UPDATE users SET bio = '$bio' WHERE displayname = '$dName' ";
 
 if ($connection->query($sql) === TRUE) {
-    echo "Image location updated";
+    echo "Bio updated";
 } 
 else {
     echo "Error: " . $sql . "</br>" . $conn->error;
