@@ -59,4 +59,5 @@ angular.module('loversInfo.controllers', [])
 	})
 	$ionicLoading.hide();
   })
+
 });
