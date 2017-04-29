@@ -91,12 +91,12 @@ angular.module('events.controllers', [])
               eventsArray.sort(function(a,b){
                 return a[1] - b[1];
               });
-              var eventDiv = angular.element(document.querySelector('#events'));
+              })
+            var eventDiv = angular.element(document.querySelector('#events'));
               eventDiv.html('<div id="events"></div>');
               
               eventsArray.forEach(function(event) {
                 eventDiv.append('<div id= " ' + event[0]['event_id'] + '" class="events"> <h2>' + event[0]['event_name'] + '</h2>' +'<p>' + event[0]['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event[0]['event_id'] + '">More Info</a></div></br>');
-              })
             })
           });
         })
