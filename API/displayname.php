@@ -15,9 +15,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 
 //Below code gets the users id from the users email address.
 $dName = mysqli_real_escape_string($connection, $_POST['dName']);
-$sql = "SELECT display_name FROM users WHERE display_name = '$dName'";
+$sql = "SELECT displayname FROM users WHERE displayname = '$dName'";
 $name = $connection->query($sql);
 $array = $name->fetch_array(MYSQLI_ASSOC);
-$name = $array['display_name'];
-echo $name;
+$name = $array['displayname'];
+
+if (empty($name)) {
+    echo "This user name is fine";
+}
+
+else {
+    echo "This user name has already been used";
+}
 ?>

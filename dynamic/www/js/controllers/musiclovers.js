@@ -53,6 +53,7 @@ angular.module('musiclovers.controllers', ['ionic'])
                 return a[1] - b[1];
               });
             })
+            var feed = angular.element(document.querySelector('#lovers'));
             feed.html('<div id="lovers"></div>');
             loversArray.forEach(function(lover) {
             console.log(lover[0])
@@ -62,8 +63,25 @@ angular.module('musiclovers.controllers', ['ionic'])
           })
         });
       })
-      console.log("test");
     });
+  }
+    if ($scope.lovers.search == "Newly Joined") {
+      $scope.lovers = {};
+      $scope.loversList = [];
+      var api = "http://seananderson.co.uk/api/listusers.php?random=" + Math.random();
+      var feed = angular.element(document.querySelector('#lovers'));
+      var data = { 
+        email: localStorage.getItem('email')
+      }
+      feed.html('<div id="lovers"></div>')
+      $http.post(api, data).then(function(res){
+      res['data'].forEach(function(user) {
+        $scope.loversList.push(user);
+        var userNumber = user['id'];
+        feed.append('<div id = " ' + userNumber + '" class="users">' + '<h2>' + user['displayname'] + '</h2> <img  height="50 px" width="50 px" src="'+user['picture']+'"></img></br><a href="#/app/loversinfo?lover=' + userNumber + '">More Info</a></div></br>');
+    });
+  });
+
   }
 }
 });

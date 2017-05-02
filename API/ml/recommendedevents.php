@@ -44,8 +44,9 @@ if(empty($eventsAttending)) {
     }
   print json_encode($eventsArray);
 }
+
+//If they do have events they are attending return this so a different API can be called.
 else{
-  $url = "events.php?id=" . $userId;
-  header("Location:" . $url);
+  print json_encode("Call other machine learning API");
 }
 ?>

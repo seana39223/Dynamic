@@ -1,4 +1,5 @@
 <?php
+//TODO: Update to be much more secure when necessary.
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header('Access-Control-Allow-Methods: GET, POST, PUT');
@@ -9,9 +10,8 @@ if ($connection->connect_error) {
     die ("Connection to the database failed." . $connection->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
     $_POST = json_decode(file_get_contents('php://input'), true);
-}
 
 $email = mysqli_real_escape_string($connection, $_POST['email']);
 $pass = mysqli_real_escape_string($connection, $_POST['pass']);
@@ -21,11 +21,9 @@ $user = $connection->query($sql);
 $array = $user->fetch_array(MYSQLI_ASSOC);
 $correctPassword = $array['password'];
 
-
 if (password_verify($pass, $correctPassword)) {
     $sql = "SELECT * FROM users WHERE email = '$email'";
-    $fullUserInfo = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
-    var_dump($fullUserInfo);
+    $fullUserInfo = $connection->query($sql);
     $encode = array();
     while($row = mysqli_fetch_assoc($fullUserInfo)) {
         $encode[] = array (
@@ -42,4 +40,8 @@ else {
 }
 
 $connection->close();
+
 ?>
+
+            
+        	

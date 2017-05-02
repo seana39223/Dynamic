@@ -19,13 +19,12 @@ $sql = "SELECT id FROM users WHERE email = '$email'";
 $user = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $user->fetch_array(MYSQLI_ASSOC);
 $venue_owner_id = $array['id'];
-var_dump($venue_owner_id);
-die();
+
 //Gets the venues this user owns.
-$sql = "SELECT name FROM VENUE where venue_owner_id = '$venue_owner_id'";
+$sql = "SELECT name FROM venue where venue_owner_id = '$venue_owner_id'";
 $venues = $connection->query($sql);
 $venuesArray = array();
 foreach ($venues as $venue) {
-  $genresArray[] = $venue['name'];
+  $venuesArray[] = $venue['name'];
 }
 echo json_encode($venuesArray);

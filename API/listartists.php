@@ -9,10 +9,10 @@ if ($connection->connect_error) {
     die ("Connection to the database failed." . $connection->connect_error);
 }
 
-$sql = "SELECT displayname FROM users WHERE type = 2";
-$users = $connection->query($sql);
-$usersArray = array();
-foreach ($users as $user) {
-  $usersArray[] = $user['displayname'];
+$sql = "SELECT * FROM users where type = 2";
+$users = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
+$rows = array();
+while($user = mysqli_fetch_assoc($users)) {
+    $rows[] = $user;
 }
-echo json_encode($usersArray);
+print json_encode($rows);

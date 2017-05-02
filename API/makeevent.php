@@ -23,10 +23,11 @@ $end_time = mysqli_real_escape_string($connection, $_POST['end_time']);
 
 
 //Gets venue's id from the email.
-$sql = "SELECT venue_id FROM venue WHERE name = '$venue'";
+$sql = "SELECT * FROM venue WHERE name = '$venue'";
 $venue = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $venue->fetch_array(MYSQLI_ASSOC);
 $venue_id = $array['venue_id'];
+$postcode = $array['postcode'];
 
 //Gets genre's id from the name.
 $sql = "SELECT id FROM genres WHERE name = '$genre'";
@@ -35,8 +36,8 @@ $array = $genre->fetch_array(MYSQLI_ASSOC);
 $genre_id = $array['id'];
 
 //Actually adds the event to the database.
-$sql = "INSERT into events (venue_id, event_name, genre_id, date, start_time, end_time) 
-VALUES('$venue_id', '$event_name', '$genre_id', '$date', '$start_time', '$end_time')";
+$sql = "INSERT into events (venue_id, event_name, genre_id, date, start_time, end_time, postcode) 
+VALUES('$venue_id', '$event_name', '$genre_id', '$date', '$start_time', '$end_time', '$postcode')";
 
 if ($connection->query($sql) === TRUE) {
     echo "Event created succesfully";

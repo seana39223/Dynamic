@@ -22,7 +22,6 @@ $array = $event->fetch_array(MYSQLI_ASSOC);
 $eventId = $array['event_id'];
 
 //Below code artists id
-
 $sql = "SELECT id FROM users WHERE displayname = '$dName'";
 $user = $connection->query($sql);
 $userArray = $user->fetch_array(MYSQLI_ASSOC);

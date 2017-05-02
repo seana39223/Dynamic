@@ -22,6 +22,7 @@ $array = $user->fetch_array(MYSQLI_ASSOC);
 $id = $array['id'];
 
 //Below code gets genre id from genre name
+
 $sql = "SELECT id FROM genres WHERE name = '$genre'";
 $genre = $connection->query($sql);
 $genreArray = $genre->fetch_array(MYSQLI_ASSOC);

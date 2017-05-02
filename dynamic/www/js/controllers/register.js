@@ -164,6 +164,8 @@ angular.module('register.controllers', [])
 
           //Checks Display Name isn't already being used.
           $http.post(api, data).then(function(res) {
+            var date = new Date().toISOString();
+            date = date.substr(0, 10);
             apiReturns = JSON.stringify(res);
             var incorrect = "This user name has already been used";
             if (apiReturns.includes(incorrect)) {
@@ -178,7 +180,8 @@ angular.module('register.controllers', [])
     		        type: type,
     		        password: $scope.register.password,
                 postcode: $scope.register.pCode,
-                dName: $scope.register.dName
+                dName: $scope.register.dName,
+                date: date
     	        }
     	        $http.post(api, data).then(function(res){
                 apiReturns = JSON.stringify(res);

@@ -29,7 +29,6 @@ angular.module('events.controllers', [])
     });
 
     if ($scope.events.search == "Recommended Events") {
-          $scope.eventsList.length=0;
       $ionicLoading.show();
       var eventDiv = angular.element(document.querySelector('#events'));
       eventDiv.html('<div id="events"></div>');
@@ -65,7 +64,7 @@ angular.module('events.controllers', [])
       var eventsArray = new Array();
       //Below code uses plugin and is based  of http://ngcordova.com/docs/plugins/geolocation/
       var posOptions = {timeout: 3000};
-    	$cordovaGeolocation .getCurrentPosition(posOptions) .then(function(position) {
+      $cordovaGeolocation .getCurrentPosition(posOptions) .then(function(position) {
         var lat  = position.coords.latitude
         var long = position.coords.longitude
         $scope.eventsList.forEach(function(event) {
@@ -92,12 +91,12 @@ angular.module('events.controllers', [])
               eventsArray.sort(function(a,b){
                 return a[1] - b[1];
               });
-              })
-            var eventDiv = angular.element(document.querySelector('#events'));
+              var eventDiv = angular.element(document.querySelector('#events'));
               eventDiv.html('<div id="events"></div>');
               
               eventsArray.forEach(function(event) {
                 eventDiv.append('<div id= " ' + event[0]['event_id'] + '" class="events"> <h2>' + event[0]['event_name'] + '</h2>' +'<p>' + event[0]['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event[0]['event_id'] + '">More Info</a></div></br>');
+              })
             })
           });
         })
@@ -108,7 +107,7 @@ angular.module('events.controllers', [])
            alert("Error: Please make sure you have GPS enabled");
       });
     }
-    	
+      
     else if ($scope.events.search == "Near Your Home") {
       var eventsArray = new Array();
       var api = "http://seananderson.co.uk/api/getpostcode.php";
@@ -152,6 +151,7 @@ angular.module('events.controllers', [])
               eventsArray.forEach(function(event) {
                 eventDiv.append('<div id= " ' + event[0]['event_id'] + '" class="events"> <h2>' + event[0]['event_name'] + '</h2>' +'<p>' + event[0]['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event[0]['event_id'] + '">More Info</a></div></br>');
                 })
+              eventsArray.length=0;
               })
             });
           })
@@ -166,18 +166,27 @@ angular.module('events.controllers', [])
       var api = "http://seananderson.co.uk/api/listevents.php?random=" + Math.random();
       $http.get(api).then(function(res){
       $scope.listData=[];
+      $scope.eventsList.length=0;
       res['data'].forEach(function(event2) {
-        $scope.eventsList.push(event2);
+        console.log(event2);
+        if ($scope.eventsList.includes(event2)) {
+
+        }
+        else {
+          $scope.eventsList.push(event2);
+        }
       })
       $ionicLoading.show();
       var eventDiv = angular.element(document.querySelector('#events'));
       eventDiv.html('<div id="events"></div>');
+      console.log($scope.eventsList);
       $scope.eventsList.forEach(function(event) {
         eventDiv.append('<div id= " ' + event['event_id'] + '" class="events"><h2>' + event['event_name'] + '</h2>' +'<p>' + event['event_name'] + '</p>' + '</br> <a href="#/app/eventinfo?event=' + event['event_id'] + '">More Info</a></div></br>');
       })
       $scope.eventsList.length = 0;
       $ionicLoading.hide();
       $scope.eventsList.length=0;
+      $scope.events.length = 0;
       });
     }
   }

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 }
 
 $email = $_POST['email'];
-$sql = "SELECT displayname FROM users WHERE email = '$email'";
+$sql = "SELECT * and type FROM users WHERE email = '$email'";
 $userInfo = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $userInfo->fetch_array(MYSQLI_ASSOC);
 print json_encode($array);

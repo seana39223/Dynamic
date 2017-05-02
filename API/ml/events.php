@@ -13,7 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
     $_POST = json_decode(file_get_contents('php://input'), true);
 }
 
-$id = $_GET['id'];
+$eventsArray = array();
+$email = mysqli_real_escape_string($connection, $_POST['email']);
+$sql = "SELECT id from users WHERE email = '$email'";
+$userId = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
+$array = $userId->fetch_array(MYSQLI_ASSOC);
+$id = $array['id'];
 $sql = "SELECT * from event_fav WHERE user_id = '$id'";
 $eventsAttending = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $eventsAttendingArray = array();

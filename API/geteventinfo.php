@@ -14,9 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
 }
 
 $id = $_POST['id'];
-$sql = "SELECT name FROM genres WHERE id = '$id'";
-$genre = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
-$array = $genre->fetch_array(MYSQLI_ASSOC);
-$genre = $array['name'];
-print json_encode($genre);
+$sql = "SELECT * FROM events WHERE event_id = '$id'";
+$eventInfo = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
+$array = $eventInfo->fetch_array(MYSQLI_ASSOC);
+print json_encode($array);
 ?>

@@ -14,31 +14,38 @@ angular.module('venue.controllers', [])
   	});
   }
 
-  //Function which checks validation for 
-  $scope.doValidation = function() {
-    //Array which will has the type of everything the user should have entered.
-  	var check = ['name', 'email', 'type', 'password', 'cpassword'];
-    //TODO: Complete this code.
-  }
-
   //Function for when the user clicks the validation button.
   $scope.venueRegister = function() {
-    var api = "http://seananderson.co.uk/api/makevenue.php";
-    var data = {
-    	email: localStorage.getItem('email'),
-    	name: $scope.venue.name,
-    	first_line: $scope.venue.address1,
-    	second_line: $scope.venue.address2,
-    	city: $scope.venue.city,
-      postcode: $scope.venue.postcode
+    if ($scope.venue.name==undefined) {
+      popUp("Field Missing", "Venue Name was not entered.");
     }
-    $http.post(api, data).then(function (res){
-      var apiReturns = JSON.stringify(res);
-      console.log(apiReturns);
-      if (apiReturns.includes('Venue created succesfully')>=0) {
-        popUp("Venue added", "The venue was created succesfully");
+    else if ($scope.venue.address1==undefined) {
+      popUp("Field Missing", "First line of venue address was not entered.");
+    }
+    else if ($scope.venue.city==undefined) {
+      popUp("Field Missing", "Venue's city not entered.");
+    }
+    else if ($scope.venue.postcode==undefined) {
+      popUp("Field Missing", "Venue's postcode entered.");
+    }
+    else {
+      var api = "http://seananderson.co.uk/api/makevenue.php";
+      var data = {
+    	  email: localStorage.getItem('email'),
+    	  name: $scope.venue.name,
+    	  first_line: $scope.venue.address1,
+    	  second_line: $scope.venue.address2,
+    	  city: $scope.venue.city,
+        postcode: $scope.venue.postcode
       }
-    })
+      $http.post(api, data).then(function (res){
+        var apiReturns = JSON.stringify(res);
+        console.log(apiReturns);
+        if (apiReturns.includes('Venue created succesfully')>=0) {
+          popUp("Venue added", "The venue was created succesfully");
+        }
+      })
+    }
   }
 
   $scope.registerGenre = function() {

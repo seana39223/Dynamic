@@ -12,6 +12,7 @@ angular.module('eventInfo.controllers', [])
     var result = res
 	var api = "http://seananderson.co.uk/api/getgenre.php";
 	$http.post(api, data).then(function(res){
+		console.log(res);
 	  var eventTitle = angular.element(document.querySelector('#event-title'));
 	  eventTitle.append('<h1>'+result['data']['event_name'] + ' - ' + res['data'].replace(/['"]+/g, '') + '</h1>' );
 	})

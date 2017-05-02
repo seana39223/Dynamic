@@ -20,9 +20,6 @@ $sql = "SELECT id FROM users WHERE email = '$email'";
 $user = $connection->query($sql) or trigger_error($mysqli->error."[$sql]");
 $array = $user->fetch_array(MYSQLI_ASSOC);
 $id = $array['id'];
-var_dump($id);
-die();
-
 $feeds = array();
 $sql = "INSERT into feed (user_id, text) VALUES ('$id', '$text')";
 if ($connection->query($sql) === TRUE) {
