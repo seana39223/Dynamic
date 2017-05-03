@@ -101,14 +101,16 @@ $http, $state, $ionicPopup) {
     })
   }
 
-  //Function which valides that the users postcode they have entered is correct.
+  //Function which valides that the users postcode 
+  //they have entered is correct.
   $scope.checkPostcode = function() {
     var postcode = $scope.register.pCode;
     $scope.register.pCode = postcode.replace(/[\s]/g, '');
     if ($scope.register.pCode.length!=6) {
       if ($scope.register.pCode.length!=7) {
         if ($scope.register.pCode.length!=8) {
-          popUp("Postcode is incorrect length must be 6,7 or 8 characters.")
+          popUp("Postcode is incorrect length must be 
+          6,7 or 8 characters.")
           return false;
         }
       }
@@ -188,7 +190,8 @@ $http, $state, $ionicPopup) {
               }
               $http.post(api, data).then(function(res){
                 apiReturns = JSON.stringify(res);
-                if (apiReturns.includes('New user added succesfully')>=0) {
+                if (apiReturns.includes(
+                'New user added succesfully')>=0) {
                   localStorage.setItem('email', $scope.register.email);
                   localStorage.setItem('dName', $scope.register.dName);
                   if ($scope.registerGenre!=undefined) {
@@ -269,42 +272,70 @@ $connection->close();
 ?>
 \end{verbatim}
 
-\section{Unit Tests for Login and Register}
+\section{recommendedevents.php}
 \begin{verbatim}
-describe('LoginController', function() {
+<?php
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, 
+Content-Type, Accept");
+header('Access-Control-Allow-Methods: GET, POST, PUT');
 
-    var controller, 
-        loginServiceMock,
-        stateMock,
-        ionicPopupMock;
+include "../config.php";
+$connection = new mysqli($server, $dbuser, $dbpass, $dbname);
+if ($connection->connect_error) {
+    die ("Connection to the database failed." . 
+    $connection->connect_error);
+}
 
-    beforeEach(module('app'));  
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST)) {
+    $_POST = json_decode(file_get_contents('php://input'), true);
+}
 
-    describe('#doLogin', function() {
+$eventsArray = array();
+$email = mysqli_real_escape_string($connection, $_POST['email']);
+$sql = "SELECT id from users WHERE email = '$email'";
+$userId = $connection->query($sql) or 
+trigger_error($mysqli->error."[$sql]");
+$array = $userId->fetch_array(MYSQLI_ASSOC);
+$userId = $array['id'];
+$sql = "SELECT * from event_fav WHERE user_id = '$userId'";
+$eventsSql = $connection->query($sql) or 
+trigger_error($mysqli->error."[$sql]");
+$eventsAttending = array();
+while($events = mysqli_fetch_assoc($eventsSql)) {
+    $eventsAttending[] = $events;
+}
 
-        // TODO: Call doLogin on the Controller
+//If the user does not have any events which they are 
+//attending it uses the genre to establish which 
+//events the user should attend.
+if(empty($eventsAttending)) {
+    $sql = "SELECT genre_id from user_genres 
+    WHERE user_id = '$userId'";
+    $genres = $connection->query($sql) or 
+    trigger_error($mysqli->error."[$sql]");
+    foreach ($genres as $genre) {
+      $genreIdSql = $genre['genre_id'];
+      $sql = "SELECT * from events WHERE genre_id = '$genreIdSql'";
+      $events = $connection->query($sql) or 
+      trigger_error($mysqli->error."[$sql]");
+      while($event = mysqli_fetch_assoc($events)) {
+          if( in_array( $event ,$eventsArray ) ) {
+          }
+          else {
+              $eventsArray[] = $event;
+          }
+       }
+    }
+  print json_encode($eventsArray);
+}
 
-        it('should call login on dinnerService', function() {
-            expect(loginServiceMock.login).toHaveBeenCalledWith('sea6@aber.ac.uk', 'b261la'); 
-        });
-
-        describe('when the login action is performed,', function() {
-            it('if successful, should change state to home', function() {
-
-                // TODO: Mock the login response from DinnerService
-
-                expect(stateMock.go).toHaveBeenCalledWith('app.home');
-            });
-
-            it('if unsuccessful, should show a popup', function() {
-
-                // TODO: Mock the login response from DinnerService
-
-                expect(ionicPopupMock.alert).toHaveBeenCalled();
-            });
-        });
-    })
-});
+//If they do have events they are attending return 
+//this so a different API can be called.
+else{
+  print json_encode("Call other machine learning API");
+}
+?>
 \end{verbatim}
 
 \section{Login Unit Test (logintest.js)}
@@ -324,7 +355,8 @@ describe('LoginCtrl', function() {
 
 
         it('Should Login using correct details', function() {
-            expect(loginMock.doLogin).toHaveBeenCalledWith('sea6@aber.ac.uk', 'b261la'); 
+            expect(loginMock.doLogin).
+            toHaveBeenCalledWith('sea6@aber.ac.uk', 'b261la'); 
         });
 
         describe('when the login action is performed,', function() {
@@ -345,8 +377,6 @@ describe('LoginCtrl', function() {
              expect(stateMock.go).toHaveBeenCalledWith('register');
         })
     })
-
-
 });
 \end{verbatim}
 
