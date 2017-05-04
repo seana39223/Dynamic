@@ -19,32 +19,13 @@ angular.module('home.controllers', [])
     })
     //Below code loads feeds in as soon as home controller is called i.e. when home page is clicked on by user.
     var api = "http://seananderson.co.uk/api/feed.php";
-    var feed = angular.element(document.querySelector('#feeds'));
+    var feedDiv = angular.element(document.querySelector('#feeds'));
   //Actually retrieves the data and then adds it to the appropriate div.
     $http.post(api, data).then(function(res){
-	    var res = JSON.stringify(res);
-	    var feedData = res.replace('{"data":', '');
-	    feedData =  feedData.substring(0, feedData.indexOf(']'));
-	    feedData = feedData.replace('[','');
-	    var amountOfFeeds = feedData.split('},{').length;
-      console.logamountOfFeeds>0 
-	      for (i=0;i<amountOfFeeds;i++) {
-	        var text = feedData.substring(0, feedData.indexOf(',"'));
-	        text = text.replace('{"text":', '');
-	        text = text.replace('"text":', '');
-          text = text.replace('"','');
-          text = text.replace('"','');
-	        var user = feedData.substring(0, feedData.indexOf('}'));
-	        user = user.split('display_name":').pop(); 
-          user = user.replace('"','');
-          user = user.replace('"','');
-          feed.append('<div class="post"><h2>' + user + '</h2>' + '<p>' + text + '</p></br></div>')
-          feedData = feedData.split('},{').pop();
-	      }
-      //}
-      //else {
-        //feed.remove();
-      //}
+      var feeds = res['data'];
+      feeds.forEach(function(feed) {
+       feedDiv.append('<div class="post"><h2>' + feed['display_name'] + '</h2>' + '<p>' + feed['text'] + '</p></br></div>');
+      })
     });
   });
 
@@ -54,9 +35,12 @@ angular.module('home.controllers', [])
     //console.log(emojiText.convert($scope.status.text));
     var email = localStorage.getItem('email');
   	var api = "http://seananderson.co.uk/api/status.php";
+    var date = new Date().toISOString();
+    date = date.substr(0, 10);
   	var data = {
   	  email: localStorage.getItem('email'),
-  	  text: $scope.status.text
+  	  text: $scope.status.text,
+      date: date
   	}
   	$http.post(api, data).then(function(res){
   	  popUp("Post posted", "Post has been posted.");
